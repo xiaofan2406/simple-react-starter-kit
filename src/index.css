@@ -1,0 +1,142 @@
+/**********************
+      Reset
+ *********************/
+span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, bdi, bdo, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, center, applet, tr, th, td, article, aside, figure, footer, header, menu, menuitem, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {
+  display: block;
+}
+
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/**********************
+      Common style
+ *********************/
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll;
+}
+
+/* Responsive images and other embedded objects */
+/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+img, object, embed, video, audio {
+  max-width: 100%;
+  height: auto;
+}
+
+
+a {
+  margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;
+}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+/* hand cursor on clickable elements */
+label, input[type=button], input[type=submit], input[type=file], button {
+  cursor: pointer;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {
+  margin: 0;
+}
+
+/* make buttons play nice in IE */
+button, input[type=button] {
+  width: auto;
+  overflow: visible;
+}
+
+
+/**********************
+    Typography
+ *********************/
+h6 {
+  font-size: 1rem;
+  margin: 0 0;
+}
+h5 {
+  font-size: 1.5rem;
+  margin: 0.2em 0;
+}
+h4 {
+  font-size: 2rem;
+  margin: 0.4em 0;
+}
+h3 {
+  font-size: 2.5rem;
+  margin: 0.6em 0;
+}
+h2 {
+  font-size: 3rem;
+  margin: 0.8em 0;
+}
+h1 {
+  font-size: 3.5rem;
+  margin: 1em 0;
+}
+p {
+  font-size: 1rem;
+  line-height: 1em;
+}

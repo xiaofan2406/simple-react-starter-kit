@@ -1,0 +1,32 @@
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    node: true
+  },
+  parser: "babel-eslint",
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 6,
+    ecmaFeatures: {
+      jsx: true,
+      generators: true,
+      experimentalObjectRestSpread: true
+    }
+  },
+  plugins: [
+    "react"
+  ],
+  extends: ["airbnb"],
+  rules: { // these are the rules to work with airbnb style guide together
+    "comma-dangle": [2, "never"], // disallow comma after the last propery of an object
+    "new-cap": 0, // disable for HighOrderComponent wrapping
+    "no-console": 0,
+    "no-plusplus": 0, // i++ is allowed
+    "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }], // better looking arrow-funcs
+    "react/jsx-filename-extension": 0, // enfore all .js extension
+    "react/forbid-prop-types": 0 // PropTypes.object is allowed
+  }
+};

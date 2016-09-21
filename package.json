@@ -1,0 +1,64 @@
+{
+  "name": "Simple-React-Starter-Kit",
+  "version": "0.0.0",
+  "description": "React webpack+eslint+babel",
+  "scripts": {
+    "dev": "node ./scripts/dev.js",
+    "build": "node ./scripts/build.js",
+    "lint": "./node_modules/.bin/eslint -c .eslintrc.js ./src"
+  },
+  "engines": {
+    "node": "6.6.0",
+    "npm": "3.10.3"
+  },
+  "keywords": [
+    "react",
+    "babel",
+    "webpack",
+    "eslint",
+    "airbnb"
+  ],
+  "author": "Xiaofan Wu",
+  "license": "ISC",
+  "dependencies": {
+    "react": "",
+    "react-dom": ""
+  },
+  "devDependencies": {
+    "chalk": "",
+    "filesize": "",
+    "gzip-size": "",
+    "recursive-readdir": "",
+    "strip-ansi": "",
+    "rimraf": "",
+    "webpack": "",
+    "webpack-dev-server": "",
+    "extract-text-webpack-plugin": "",
+    "html-webpack-plugin": "",
+    "case-sensitive-paths-webpack-plugin": "",
+    "url-loader": "",
+    "json-loader": "",
+    "file-loader": "",
+    "style-loader": "",
+    "css-loader": "",
+    "postcss-loader": "",
+    "precss": "",
+    "postcss-cssnext": "",
+    "babel-loader": "",
+    "babel-core": "",
+    "babel-plugin-transform-class-properties": "",
+    "babel-plugin-transform-object-rest-spread": "",
+    "babel-plugin-transform-react-constant-elements": "",
+    "babel-plugin-transform-runtime": "",
+    "babel-preset-latest": "",
+    "babel-preset-react": "",
+    "eslint": "",
+    "eslint-loader": "",
+    "eslint-config-airbnb": "",
+    "eslint-plugin-import": "",
+    "eslint-plugin-jsx-a11y": "",
+    "eslint-plugin-react": "",
+    "babel-eslint": "",
+    "babel-preset-react-hmre": ""
+  }
+}
