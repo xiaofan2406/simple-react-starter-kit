@@ -41,3 +41,4 @@ node_modules/
 # App specific #
 ###################
 build/
+__snapshots__
