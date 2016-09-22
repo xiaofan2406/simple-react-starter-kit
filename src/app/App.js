@@ -4,8 +4,13 @@ import './App.css';
 
 const App = () => (
   <div className="App-root">
-    <img src={logo} className="App-logo" alt="logo" />
-    Hello React
+    <div className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+      <span className="App-title">React Starter Kit</span>
+    </div>
+    <div className="App-main" >
+      Hello world
+    </div>
   </div>
 );
 

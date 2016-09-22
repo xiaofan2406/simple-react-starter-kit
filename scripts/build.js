@@ -1,7 +1,6 @@
 /* eslint-disable no-param-reassign, import/no-extraneous-dependencies */
 process.env.NODE_ENV = 'production';
 
-// TODO update with CRA
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
@@ -39,7 +38,6 @@ function getDifferenceLabel(currentSize, previousSize) {
   }
   return '';
 }
-
 
 // Print a detailed summary of build files.
 function printFileSizes(stats, previousSizeMap) {
