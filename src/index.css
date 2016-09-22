@@ -35,6 +35,7 @@ blockquote:before, blockquote:after, q:before, q:after {
 	content: none;
 }
 
+
 /**********************
       Common style
  *********************/
@@ -43,21 +44,23 @@ html {
   overflow-y: scroll;
 }
 
-/* Responsive images and other embedded objects */
-/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
 img, object, embed, video, audio {
   max-width: 100%;
   height: auto;
 }
 
-
-a {
-  margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;
+del {
+  text-decoration: line-through;
 }
 
-del {text-decoration: line-through;}
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
 
-abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
 
 /* tables still need cellspacing="0" in the markup */
 table {
@@ -65,13 +68,20 @@ table {
 	border-spacing: 0;
 }
 
-hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
 
 pre {
-    white-space: pre; /* CSS2 */
-    white-space: pre-wrap; /* CSS 2.1 */
-    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
-    word-wrap: break-word; /* IE */
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
 }
 
 table {font-size: inherit; font: 100%;}
@@ -80,19 +90,19 @@ small {font-size: 85%;}
 
 strong {font-weight: bold;}
 
-td, td img {vertical-align: top;}
-
 /* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
-sub, sup {font-size: 75%; line-height: 0; position: relative;}
-sup {top: -0.5em;}
-sub {bottom: -0.25em;}
-
-/* standardize any monospaced elements */
-pre, code, kbd, samp {
-  font-family: monospace, sans-serif;
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
 }
 
-/* hand cursor on clickable elements */
 label, input[type=button], input[type=submit], input[type=file], button {
   cursor: pointer;
 }
@@ -110,7 +120,7 @@ button, input[type=button] {
 
 
 /**********************
-    Typography
+      Typography
  *********************/
 h6 {
   font-size: 1rem;

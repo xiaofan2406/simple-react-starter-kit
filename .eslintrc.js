@@ -22,8 +22,9 @@ module.exports = {
   extends: ["airbnb"],
   rules: { // these are the rules to work with airbnb style guide together
     "comma-dangle": [2, "never"], // disallow comma after the last propery of an object
-    "new-cap": 0, // disable for HighOrderComponent wrapping
+    "new-cap": 0, // disable for HigherOrderComponent wrapping
     "no-console": 0,
+    "no-param-reassign": 0, // e.target.value = ''; happens all the time
     "no-plusplus": 0, // i++ is allowed
     "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }], // better looking arrow-funcs
     "react/jsx-filename-extension": 0, // enfore all .js extension
