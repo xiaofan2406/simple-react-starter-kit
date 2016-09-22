@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign, import/no-extraneous-dependencies */
 process.env.NODE_ENV = 'production';
 
 const fs = require('fs');

@@ -27,6 +27,7 @@ module.exports = {
     "no-param-reassign": 0, // e.target.value = ''; happens all the time
     "no-plusplus": 0, // i++ is allowed
     "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }], // better looking arrow-funcs
+    "import/no-extraneous-dependencies": 0,
     "react/jsx-filename-extension": 0, // enfore all .js extension
     "react/forbid-prop-types": 0 // PropTypes.object is allowed
   }
