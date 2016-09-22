@@ -16,3 +16,7 @@ npm run build # build for production
 
 ### CRA
 - [create-react-app](https://github.com/facebookincubator/create-react-app).
+
+### Todo
+- add jest
+- documentation tooling
