@@ -31,7 +31,10 @@ module.exports = {
     // if there any conflicts. This matches Node resolution mechanism.
     // https://github.com/facebookincubator/create-react-app/issues/253
     fallback: NODEMODULES_PATH,
-    extensions: ['', '.js', '.json']
+    extensions: ['', '.js', '.json'],
+    alias: {
+      src: SRC_PATH // this allows import 'src/Component'
+    }
   },
   module: {
     preLoaders: [{

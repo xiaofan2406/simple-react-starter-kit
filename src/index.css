@@ -39,11 +39,6 @@ blockquote:before, blockquote:after, q:before, q:after {
 /**********************
       Common style
  *********************/
-/* force a vertical scrollbar to prevent a jumpy page */
-html {
-  overflow-y: scroll;
-}
-
 img, object, embed, video, audio {
   max-width: 100%;
   height: auto;
@@ -84,11 +79,17 @@ pre {
   word-wrap: break-word; /* IE */
 }
 
-table {font-size: inherit; font: 100%;}
+table {
+  font-size: inherit; font: 100%;
+}
 
-small {font-size: 85%;}
+small {
+  font-size: 85%;
+}
 
-strong {font-weight: bold;}
+strong {
+  font-weight: bold;
+}
 
 /* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
 sub, sup {

@@ -18,7 +18,10 @@ module.exports = {
     path.join(SRC_PATH, 'index')
   ],
   resolve: {
-    extensions: ['', '.js', '.json']
+    extensions: ['', '.js', '.json'],
+    alias: {
+      src: SRC_PATH // this allows import 'src/Component'
+    }
   },
   output: {
     path: BUILD_PATH,

@@ -6,6 +6,13 @@ module.exports = {
     es6: true,
     node: true
   },
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: './config/webpack.dev.js'
+      }
+    }
+  },
   parser: "babel-eslint",
   parserOptions: {
     sourceType: 'module',
@@ -29,6 +36,7 @@ module.exports = {
     "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }], // better looking arrow-funcs
     "import/no-extraneous-dependencies": 0,
     "react/jsx-filename-extension": 0, // enfore all .js extension
+    "react/no-unused-prop-types": [2, { skipShapeProps: true }],
     "react/forbid-prop-types": 0 // PropTypes.object is allowed
   }
 };
