@@ -39,6 +39,12 @@ blockquote:before, blockquote:after, q:before, q:after {
 /**********************
       Common style
  *********************/
+:root {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+
 img, object, embed, video, audio {
   max-width: 100%;
   height: auto;

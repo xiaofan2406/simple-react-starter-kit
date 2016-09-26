@@ -19,11 +19,6 @@ module.exports = {
   entry: [
     path.join(SRC_PATH, 'index')
   ],
-  output: {
-    path: BUILD_PATH,
-    filename: 'js/bundle.js',
-    publicPath: '/' // still confused what does this do for produnction build
-  },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
     // We read `NODE_PATH` environment variable in `paths.js` and pass paths here.
@@ -35,6 +30,11 @@ module.exports = {
     alias: {
       src: SRC_PATH // this allows import 'src/Component'
     }
+  },
+  output: {
+    path: BUILD_PATH,
+    filename: 'js/bundle.js',
+    publicPath: '/' // still confused what does this do for produnction build
   },
   module: {
     preLoaders: [{
