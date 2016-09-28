@@ -36,9 +36,11 @@ module.exports = {
     "comma-dangle": [2, "never"], // disallow comma after the last propery of an object
     "new-cap": 0, // disable for HigherOrderComponent wrapping
     "no-console": 0,
+    "no-underscore-dangle": ["error", { "allowAfterThis": true, "allowAfterSuper": true }],
     "no-param-reassign": 0, // e.target.value = ''; happens all the time
     "no-plusplus": 0, // i++ is allowed
     "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }], // better looking arrow-funcs
+    "jsx-a11y/no-static-element-interactions": 0,
     "import/no-extraneous-dependencies": 0,
     "react/jsx-filename-extension": 0, // enfore all .js extension
     "react/no-unused-prop-types": [2, { skipShapeProps: true }],
