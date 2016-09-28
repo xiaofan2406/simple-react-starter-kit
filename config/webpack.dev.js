@@ -9,6 +9,7 @@ const babelConfig = require('./babel.dev');
 const ROOT_PATH = path.join(__dirname, '..');
 const SRC_PATH = path.join(ROOT_PATH, 'src');
 const BUILD_PATH = path.join(ROOT_PATH, 'build');
+const PUBLIC_PATH = path.join(ROOT_PATH, 'public');
 
 module.exports = {
   devtool: 'eval',
@@ -55,14 +56,14 @@ module.exports = {
       include: SRC_PATH,
       loader: 'file',
       query: {
-        name: 'fonts/[name].[ext]'
+        name: 'fonts/[name].[hash:8].[ext]'
       }
     }, {
       test: /\.(jpg|jpeg|png|gif|svg|ico|webp)(\?.*)?$/,
       include: SRC_PATH,
       loader: 'file',
       query: {
-        name: 'media/[name].[ext]'
+        name: 'media/[name].[hash:8].[ext]'
       }
     }, {
       test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
@@ -70,20 +71,35 @@ module.exports = {
       loader: 'url',
       query: {
         limit: 10000,
-        name: 'media/[name].[ext]'
+        name: 'media/[name].[hash:8].[ext]'
       }
     }]
   },
   postcss() {
-    return [precss, cssnext];
+    return [precss, cssnext({
+      browsers: [
+        '>1%',
+        'last 2 versions',
+        'Firefox ESR',
+        'not ie < 9'
+      ]
+    })];
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.join(SRC_PATH, 'index.html')
+      template: path.join(PUBLIC_PATH, 'index.html'),
+      favicon: path.join(PUBLIC_PATH, 'favicon.ico')
     }),
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }),
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin()
-  ]
+  ],
+  // Some libraries import Node modules but don't use them in the browser.
+  // Tell Webpack to provide empty mocks for them so importing them works.
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  }
 };

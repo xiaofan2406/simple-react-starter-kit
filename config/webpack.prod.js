@@ -9,6 +9,7 @@ const babelConfig = require('./babel.prod');
 const ROOT_PATH = path.join(__dirname, '..');
 const SRC_PATH = path.join(ROOT_PATH, 'src');
 const BUILD_PATH = path.join(ROOT_PATH, 'build');
+const PUBLIC_PATH = path.join(ROOT_PATH, 'public');
 const NODEMODULES_PATH = path.join(ROOT_PATH, 'node_modules');
 
 module.exports = {
@@ -34,7 +35,8 @@ module.exports = {
   },
   output: {
     path: BUILD_PATH,
-    filename: 'js/bundle.js',
+    filename: 'js/[name].[chunkhash:8].js',
+    chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
     publicPath: '/' // still confused what does this do for produnction build
   },
   module: {
@@ -64,14 +66,14 @@ module.exports = {
       include: SRC_PATH,
       loader: 'file',
       query: {
-        name: 'fonts/[name].[ext]'
+        name: 'fonts/[name].[hash:8].[ext]'
       }
     }, {
       test: /\.(jpg|jpeg|png|gif|svg|ico|webp)(\?.*)?$/,
       include: SRC_PATH,
       loader: 'file',
       query: {
-        name: 'media/[name].[ext]'
+        name: 'media/[name].[hash:8].[ext]'
       }
     }, {
       test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
@@ -79,18 +81,26 @@ module.exports = {
       loader: 'url',
       query: {
         limit: 10000,
-        name: 'media/[name].[ext]'
+        name: 'media/[name].[hash:8].[ext]'
       }
     }]
   },
   postcss() {
-    return [precss, cssnext];
+    return [precss, cssnext({
+      browsers: [
+        '>1%',
+        'last 2 versions',
+        'Firefox ESR',
+        'not ie < 9'
+      ]
+    })];
   },
   plugins: [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.join(SRC_PATH, 'index.html'),
+      template: path.join(PUBLIC_PATH, 'index.html'),
+      favicon: path.join(PUBLIC_PATH, 'favicon.ico'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -106,7 +116,7 @@ module.exports = {
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
-    new ExtractTextPlugin('css/styles.css'),
+    new ExtractTextPlugin('css/[name].[contenthash:8].css'),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         screw_ie8: true,
