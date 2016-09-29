@@ -12,9 +12,10 @@ npm run build # build for production
 ### Branches
 - redux
 - mobx
-- react-router
+- electron
 
 ### CRA
+Lots of scripts are updated using CRA (react-scripts)
 - [create-react-app](https://github.com/facebookincubator/create-react-app).
 
 ### Todo
