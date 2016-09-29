@@ -86,6 +86,7 @@ module.exports = {
     })];
   },
   plugins: [
+    new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: path.join(PUBLIC_PATH, 'index.html'),
