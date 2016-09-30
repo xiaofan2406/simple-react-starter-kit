@@ -11,8 +11,8 @@
     "postversion": "git push"
   },
   "engines": {
-    "node": "6.6.0",
-    "npm": "3.10.3"
+    "node": "^6.7.0",
+    "npm": "^3.10.3"
   },
   "keywords": [
     "react",
@@ -51,7 +51,7 @@
     "eslint-config-airbnb": "^12.0.0",
     "eslint-import-resolver-webpack": "^0.6.0",
     "eslint-loader": "1.5.0",
-    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
     "extract-text-webpack-plugin": "^1.0.1",
