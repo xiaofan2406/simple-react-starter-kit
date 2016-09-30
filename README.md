@@ -25,11 +25,8 @@ npm run build
 - [mobx](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
 - [electron](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
 
-### Todo
-- documentation tooling
-
 ### Folders
 - `config`: webpack, babel and jest configuration files
-- `public`: static files are not directly server by the app like the index.html and favicon
+- `public`: static files are not directly server by webpack like the index.html and favicon
 - `scripts`: scripts for development and production
 - `src`: source files directory, processed by webpack

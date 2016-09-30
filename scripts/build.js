@@ -9,16 +9,15 @@ const rimrafSync = require('rimraf').sync;
 const recursive = require('recursive-readdir');
 const stripAnsi = require('strip-ansi');
 const webpack = require('webpack');
+const paths = require('../config/paths');
 const config = require('../config/webpack.prod');
 
-const ROOT_PATH = path.join(__dirname, '..');
-const BUILD_PATH = path.join(ROOT_PATH, 'build');
 
 // Input: /User/dan/app/build/static/js/main.82be8.js
 // Output: /static/js/main.js
 function removeFileNameHash(fileName) {
   return fileName
-    .replace(BUILD_PATH, '')
+    .replace(paths.buildDir, '')
     .replace(/\/?(.*)(\.\w+)(\.js|\.css)/, (match, p1, p2, p3) => p1 + p3);
 }
 
@@ -43,7 +42,7 @@ function printFileSizes(stats, previousSizeMap) {
   const assets = stats.toJson().assets
     .filter(asset => /\.(js|css)$/.test(asset.name))
     .map((asset) => {
-      const fileContents = fs.readFileSync(`${BUILD_PATH}/${asset.name}`);
+      const fileContents = fs.readFileSync(`${paths.buildDir}/${asset.name}`);
       const size = gzipSize(fileContents);
       const previousSize = previousSizeMap[removeFileNameHash(asset.name)];
       const difference = getDifferenceLabel(size, previousSize);
@@ -91,7 +90,7 @@ function build(previousSizeMap) {
 
 // First, read the current file sizes in build directory.
 // This lets us display how much they changed later.
-recursive(BUILD_PATH, (err, fileNames) => {
+recursive(paths.buildDir, (err, fileNames) => {
   const previousSizeMap = (fileNames || [])
     .filter(fileName => /\.(js|css)$/.test(fileName))
     .reduce((memo, fileName) => {
@@ -103,7 +102,7 @@ recursive(BUILD_PATH, (err, fileNames) => {
 
   // Remove all content but keep the directory so that
   // if you're in it, you don't end up in Trash
-  rimrafSync(`${BUILD_PATH}/*`);
+  rimrafSync(`${paths.buildDir}/*`);
 
   // Start the webpack build
   build(previousSizeMap);

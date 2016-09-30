@@ -1,31 +1,27 @@
-const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const precss = require('precss');
 const cssnext = require('postcss-cssnext');
+const paths = require('./paths');
 const babelConfig = require('./babel.dev');
 
-const ROOT_PATH = path.join(__dirname, '..');
-const SRC_PATH = path.join(ROOT_PATH, 'src');
-const BUILD_PATH = path.join(ROOT_PATH, 'build');
-const PUBLIC_PATH = path.join(ROOT_PATH, 'public');
 
 module.exports = {
   devtool: 'eval',
   entry: [
     'webpack-dev-server/client',
     'webpack/hot/dev-server',
-    path.join(SRC_PATH, 'index')
+    `${paths.srcDir}/index.js`
   ],
   resolve: {
     extensions: ['', '.js', '.json'],
     alias: {
-      src: SRC_PATH // this allows import 'src/Component'
+      src: paths.srcDir // this allows import 'src/Component'
     }
   },
   output: {
-    path: BUILD_PATH,
+    path: paths.buildDir,
     // In development, we always serve from the root. This makes config easier.
     publicPath: '/',
     // Add /* filename */ comments to generated require()s in the output.
@@ -35,39 +31,39 @@ module.exports = {
   module: {
     preLoaders: [{
       test: /\.js$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'eslint'
     }],
     loaders: [{
       test: /\.js$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'babel',
       query: babelConfig
     }, {
       test: /\.css$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'style!css!postcss'
     }, {
       test: /\.json$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'json'
     }, {
       test: /\.(eot|otf|ttf|woff|woff2)(\?.*)?$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'file',
       query: {
         name: 'fonts/[name].[hash:8].[ext]'
       }
     }, {
       test: /\.(jpg|jpeg|png|gif|svg|ico|webp)(\?.*)?$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'file',
       query: {
         name: 'media/[name].[hash:8].[ext]'
       }
     }, {
       test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'url',
       query: {
         limit: 10000,
@@ -89,8 +85,8 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.join(PUBLIC_PATH, 'index.html'),
-      favicon: path.join(PUBLIC_PATH, 'favicon.ico')
+      template: `${paths.publicDir}/index.html`,
+      favicon: `${paths.publicDir}/favicon.ico`
     }),
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }),
     new webpack.HotModuleReplacementPlugin(),

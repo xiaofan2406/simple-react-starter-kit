@@ -1,16 +1,11 @@
-const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const precss = require('precss');
 const cssnext = require('postcss-cssnext');
+const paths = require('./paths');
 const babelConfig = require('./babel.prod');
 
-const ROOT_PATH = path.join(__dirname, '..');
-const SRC_PATH = path.join(ROOT_PATH, 'src');
-const BUILD_PATH = path.join(ROOT_PATH, 'build');
-const PUBLIC_PATH = path.join(ROOT_PATH, 'public');
-const NODEMODULES_PATH = path.join(ROOT_PATH, 'node_modules');
 
 module.exports = {
   // Don't attempt to continue if there are any errors.
@@ -18,23 +13,21 @@ module.exports = {
   // We generate sourcemaps in production. This is slow but gives good results.
   // You can exclude the *.map files from the build during deployment.
   devtool: 'source-map',
-  entry: [
-    path.join(SRC_PATH, 'index')
-  ],
+  entry: [`${paths.srcDir}/index.js`],
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
     // We read `NODE_PATH` environment variable in `paths.js` and pass paths here.
     // We use `fallback` instead of `root` because we want `node_modules` to "win"
     // if there any conflicts. This matches Node resolution mechanism.
     // https://github.com/facebookincubator/create-react-app/issues/253
-    fallback: NODEMODULES_PATH,
+    fallback: paths.nodeModulesDir,
     extensions: ['', '.js', '.json'],
     alias: {
-      src: SRC_PATH // this allows import 'src/Component'
+      src: paths.srcDir // this allows import 'src/Component'
     }
   },
   output: {
-    path: BUILD_PATH,
+    path: paths.buildDir,
     filename: 'js/[name].[chunkhash:8].js',
     chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
     publicPath: '/' // still confused what does this do for produnction build
@@ -42,42 +35,42 @@ module.exports = {
   module: {
     preLoaders: [{
       test: /\.js$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'eslint'
     }],
     loaders: [{
       test: /\.js$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'babel',
       query: babelConfig
     }, {
       test: /\.css$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: ExtractTextPlugin.extract(
         'style',
         'css?importLoaders=1!postcss'
       )
     }, {
       test: /\.json$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'json'
     }, {
       test: /\.(eot|otf|ttf|woff|woff2)(\?.*)?$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'file',
       query: {
         name: 'fonts/[name].[hash:8].[ext]'
       }
     }, {
       test: /\.(jpg|jpeg|png|gif|svg|ico|webp)(\?.*)?$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'file',
       query: {
         name: 'media/[name].[hash:8].[ext]'
       }
     }, {
       test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
-      include: SRC_PATH,
+      include: paths.srcDir,
       loader: 'url',
       query: {
         limit: 10000,
@@ -100,8 +93,8 @@ module.exports = {
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.join(PUBLIC_PATH, 'index.html'),
-      favicon: path.join(PUBLIC_PATH, 'favicon.ico'),
+      template: `${paths.publicDir}/index.html`,
+      favicon: `${paths.publicDir}/favicon.ico`,
       minify: {
         removeComments: true,
         collapseWhitespace: true,
