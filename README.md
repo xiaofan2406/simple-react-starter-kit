@@ -32,4 +32,4 @@ npm run build
 - `config`: webpack, babel and jest configuration files
 - `public`: static files are not directly server by the app like the index.html and favicon
 - `scripts`: scripts for development and production
-- `src : source files directory, processed by webpack
+- `src`: source files directory, processed by webpack

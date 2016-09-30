@@ -6,7 +6,7 @@ cache:
 node_js:
   - "6"
 before_script:
-  - rm -r ./build
+  - rm -r -f ./build
 script:
   - npm test
   - npm run build
