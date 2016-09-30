@@ -30,7 +30,7 @@ module.exports = {
     path: paths.buildDir,
     filename: 'js/[name].[chunkhash:8].js',
     chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
-    publicPath: '/' // still confused what does this do for produnction build
+    publicPath: '/'
   },
   module: {
     preLoaders: [{
