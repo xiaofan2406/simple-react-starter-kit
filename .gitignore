@@ -39,5 +39,4 @@ node_modules/
 # App specific #
 ################
 build/
-__snapshots__/
 release/

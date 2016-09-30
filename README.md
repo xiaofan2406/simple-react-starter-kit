@@ -4,7 +4,7 @@
 ### CRA
 Lots of scripts are updated according to [create-react-app](https://github.com/facebookincubator/create-react-app).
 
-### Start n Run
+### Start development
 - install dependencies
 ```
 npm i
@@ -26,7 +26,7 @@ npm run build
 - [electron](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
 
 ### Folders
-- `config`: webpack, babel and jest configuration files
+- `config`: webpack and babel configuration files
 - `public`: static files are not directly server by webpack like the index.html and favicon
 - `scripts`: scripts for development and production
 - `src`: source files directory, processed by webpack
