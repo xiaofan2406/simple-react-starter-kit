@@ -52,7 +52,7 @@ module.exports = {
       include: paths.srcDir,
       loader: ExtractTextPlugin.extract(
         'style',
-        'css?importLoaders=1!postcss'
+        'css?-autoprefixer!postcss'
       )
     }, {
       test: /\.json$/,

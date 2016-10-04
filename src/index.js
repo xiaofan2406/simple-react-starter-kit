@@ -1,11 +1,11 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import './index.css';
 import App from './app/App';
 
 
-render(
+ReactDOM.render(
   <App />,
   document.getElementById('app')
 );

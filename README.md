@@ -1,21 +1,18 @@
 # React Starter Kit
 [![Build Status](https://travis-ci.org/xiaofan2406/react-starter-kit.svg?branch=master)](https://travis-ci.org/xiaofan2406/react-starter-kit) [![dependencies Status](https://david-dm.org/xiaofan2406/react-starter-kit/status.svg)](https://david-dm.org/xiaofan2406/react-starter-kit) [![devDependencies Status](https://david-dm.org/xiaofan2406/react-starter-kit/dev-status.svg)](https://david-dm.org/xiaofan2406/react-starter-kit?type=dev)
 
-### CRA
-Lots of scripts are updated according to [create-react-app](https://github.com/facebookincubator/create-react-app).
-
-### Start development
-- install dependencies
+### Get Started
+- Install dependencies
 ```
 npm i
 ```
 
-- run dev server
+- Run dev server
 ```
 npm run dev
 ```
 
-- build for production (build only, no server setup)
+- Build for production (build only, no server setup)
 ```
 npm run build
 ```
@@ -28,5 +25,8 @@ npm run build
 ### Folders
 - `config`: webpack and babel configuration files
 - `public`: static files are not directly server by webpack like the index.html and favicon
-- `scripts`: scripts for development and production
+- `scripts`: scripts for build process and dev server
 - `src`: source files directory, processed by webpack
+
+### Disclosure
+- Many scripts and config are updated according to [create-react-app](https://github.com/facebookincubator/create-react-app)

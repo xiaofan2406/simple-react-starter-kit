@@ -28,9 +28,7 @@ module.exports = {
       experimentalObjectRestSpread: true
     }
   },
-  plugins: [
-    "react"
-  ],
+  plugins: ["react"],
   extends: ["airbnb"],
   rules: { // additional rules to work with eslint-config-airbnb
     "comma-dangle": [2, "never"], // yuk, disallow comma after the last propery of an object

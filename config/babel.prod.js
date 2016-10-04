@@ -1,7 +1,9 @@
 module.exports = {
   babelrc: false,
   presets: [
+    // Latest stable ECMAScript features
     require.resolve('babel-preset-latest'),
+    // JSX
     require.resolve('babel-preset-react')
   ],
   plugins: [
