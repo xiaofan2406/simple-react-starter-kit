@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const precss = require('precss');
 const cssnext = require('postcss-cssnext');
 const paths = require('./paths');
+const pkg = require('../package.json');
 const babelConfig = require('./babel.prod');
 
 
@@ -13,7 +14,10 @@ module.exports = {
   // We generate sourcemaps in production. This is slow but gives good results.
   // You can exclude the *.map files from the build during deployment.
   devtool: 'source-map',
-  entry: [`${paths.srcDir}/index.js`],
+  entry: {
+    client: `${paths.srcDir}/index.js`,
+    vendor: Object.keys(pkg.dependencies)
+  },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
     // We read `NODE_PATH` environment variable in `paths.js` and pass paths here.
@@ -123,6 +127,10 @@ module.exports = {
         comments: false,
         screw_ie8: true
       }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'js/[name].[chunkhash:8].js'
     })
   ],
   // Some libraries import Node modules but don't use them in the browser.

@@ -42,7 +42,7 @@ module.exports = {
     }, {
       test: /\.css$/,
       include: paths.srcDir,
-      loader: 'style!css!postcss'
+      loader: 'style!css?-autoprefixer!postcss'
     }, {
       test: /\.json$/,
       include: paths.srcDir,
