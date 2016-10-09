@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-const precss = require('precss');
+const postcssImport = require('postcss-import');
 const cssnext = require('postcss-cssnext');
 const paths = require('./paths');
 
@@ -73,15 +73,20 @@ module.exports = {
       }
     }]
   },
-  postcss() {
-    return [precss, cssnext({
-      browsers: [
-        '>1%',
-        'last 2 versions',
-        'Firefox ESR',
-        'not ie < 9'
-      ]
-    })];
+  postcss(wp) {
+    return [
+      postcssImport({
+        addDependencyTo: wp
+      }),
+      cssnext({
+        browsers: [
+          '>1%',
+          'last 2 versions',
+          'Firefox ESR',
+          'not ie < 9'
+        ]
+      })
+    ];
   },
   plugins: [
     new webpack.NoErrorsPlugin(),
