@@ -4,7 +4,6 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const precss = require('precss');
 const cssnext = require('postcss-cssnext');
 const paths = require('./paths');
-const babelConfig = require('./babel.dev');
 
 
 module.exports = {
@@ -17,16 +16,17 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.json'],
     alias: {
-      src: paths.srcDir // this allows import 'src/Component'
+      src: paths.srcDir // this allows import 'src/...' without knowing the relative path
     }
   },
   output: {
+    // For dev, `path` and `filename` are not important because of using webpack-dev-server
     path: paths.buildDir,
+    filename: 'bundle.js',
     // In development, we always serve from the root. This makes config easier.
     publicPath: '/',
     // Add /* filename */ comments to generated require()s in the output.
-    pathinfo: true,
-    filename: 'bundle.js'
+    pathinfo: true
   },
   module: {
     preLoaders: [{
@@ -38,7 +38,9 @@ module.exports = {
       test: /\.js$/,
       include: paths.srcDir,
       loader: 'babel',
-      query: babelConfig
+      query: {
+        cacheDirectory: true
+      }
     }, {
       test: /\.css$/,
       include: paths.srcDir,

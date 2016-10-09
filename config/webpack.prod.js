@@ -5,7 +5,6 @@ const precss = require('precss');
 const cssnext = require('postcss-cssnext');
 const paths = require('./paths');
 const pkg = require('../package.json');
-const babelConfig = require('./babel.prod');
 
 
 module.exports = {
@@ -27,7 +26,7 @@ module.exports = {
     fallback: paths.nodeModulesDir,
     extensions: ['', '.js', '.json'],
     alias: {
-      src: paths.srcDir // this allows import 'src/Component'
+      src: paths.srcDir // this allows import 'src/...' without knowing the relative path
     }
   },
   output: {
@@ -45,8 +44,7 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       include: paths.srcDir,
-      loader: 'babel',
-      query: babelConfig
+      loader: 'babel'
     }, {
       test: /\.css$/,
       include: paths.srcDir,
