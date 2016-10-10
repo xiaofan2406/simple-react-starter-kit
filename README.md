@@ -34,6 +34,11 @@ using [`cssnext`](http://cssnext.io/) and [`postcss-import`](https://github.com/
   - Class Components will hot reload
   - Functional Components will refresh the page
 
+- ##### Test production build
+  ```
+  npm i -g pushstate-server
+  pushstate-server ./build 9000
+  ```
 
 ### Branches
 - [redux](https://github.com/xiaofan2406/react-starter-kit/tree/redux)

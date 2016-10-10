@@ -17,8 +17,7 @@
     "react",
     "babel",
     "webpack",
-    "eslint",
-    "airbnb"
+    "eslint"
   ],
   "author": "Xiaofan Wu",
   "repository": {

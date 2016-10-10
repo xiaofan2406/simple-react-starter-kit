@@ -15,7 +15,7 @@
       "plugins": ["transform-react-jsx-source", "transform-react-jsx-self"]
     },
     "production": {
-      "plugins": ["react-constant-elements"]
+      "plugins": ["transform-react-constant-elements"]
     }
   }
 }
