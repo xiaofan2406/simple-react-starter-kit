@@ -30,9 +30,7 @@ NOT enabled
 using [`cssnext`](http://cssnext.io/) and [`postcss-import`](https://github.com/postcss/postcss-import)
 
 - ##### Hot Module Replacement
-  - CSS will hot reload
-  - Class Components will hot reload
-  - Functional Components will refresh the page
+using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next)
 
 - ##### Test production build
   ```

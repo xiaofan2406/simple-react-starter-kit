@@ -11,8 +11,7 @@
   ],
   "env": {
     "development": {
-      "presets": ["react-hmre"],
-      "plugins": ["transform-react-jsx-source", "transform-react-jsx-self"]
+      "plugins": ["react-hot-loader/babel", "transform-react-jsx-source", "transform-react-jsx-self"]
     },
     "production": {
       "plugins": ["transform-react-constant-elements"]

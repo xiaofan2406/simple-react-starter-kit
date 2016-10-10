@@ -9,8 +9,9 @@ const paths = require('./paths');
 module.exports = {
   devtool: 'eval',
   entry: [
+    'react-hot-loader/patch',
     'webpack-dev-server/client',
-    'webpack/hot/dev-server',
+    'webpack/hot/only-dev-server',
     `${paths.srcDir}/index.js`
   ],
   resolve: {

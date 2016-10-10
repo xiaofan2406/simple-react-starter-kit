@@ -1,11 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 
-import './index.css';
-import App from './app/App';
+import Root from './Root';
 
+
+const rootElement = document.getElementById('root');
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('app')
+  <AppContainer>
+    <Root />
+  </AppContainer>,
+  rootElement
 );
+
+// react-hot-loader setup
+if (module.hot) {
+  module.hot.accept('./Root', () => {
+    const NextRoot = require('./Root').default; // eslint-disable-line
+    ReactDOM.render(
+      <AppContainer>
+        <NextRoot />
+      </AppContainer>,
+      rootElement
+    );
+  });
+}
