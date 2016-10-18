@@ -1,6 +1,6 @@
 {
   "name": "react-starter-kit",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React starter kit",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.dev.js",
