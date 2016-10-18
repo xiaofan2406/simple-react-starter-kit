@@ -61,7 +61,6 @@ module.exports = {
     // as we specified in the config. In development, we always serve from /.
     publicPath: '/',
     stats: 'errors-only',
-    noInfo: true,
     watchOptions: {
       ignored: /node_modules/
     },
