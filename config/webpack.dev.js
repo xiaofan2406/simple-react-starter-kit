@@ -1,24 +1,19 @@
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-const postcssImport = require('postcss-import');
-const cssnext = require('postcss-cssnext');
 const paths = require('./paths');
+const common = require('./webpack.common');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const getLocalIP = require('./ip');
 
 
 module.exports = {
   devtool: 'eval',
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client',
-    'webpack/hot/only-dev-server',
     `${paths.srcDir}/index.js`
   ],
   resolve: {
-    extensions: ['', '.js', '.json'],
-    alias: {
-      src: paths.srcDir // this allows import 'src/...' without knowing the relative path
-    }
+    extensions: common.resolve.extensions,
+    alias: common.resolve.alias
   },
   output: {
     // For dev, `path` and `filename` are not important because of using webpack-dev-server
@@ -30,11 +25,7 @@ module.exports = {
     pathinfo: true
   },
   module: {
-    preLoaders: [{
-      test: /\.js$/,
-      include: paths.srcDir,
-      loader: 'eslint'
-    }],
+    preLoaders: [...common.preLoaders],
     loaders: [{
       test: /\.js$/,
       include: paths.srcDir,
@@ -44,62 +35,39 @@ module.exports = {
       }
     }, {
       test: /\.css$/,
-      loader: 'style!css?-autoprefixer!postcss'
-    }, {
-      test: /\.json$/,
-      loader: 'json'
-    }, {
-      test: /\.(eot|otf|ttf|woff|woff2)(\?.*)?$/,
-      loader: 'file',
-      query: {
-        name: 'fonts/[name].[hash:8].[ext]'
-      }
-    }, {
-      test: /\.(jpg|jpeg|png|gif|svg|ico|webp)(\?.*)?$/,
-      loader: 'file',
-      query: {
-        name: 'media/[name].[hash:8].[ext]'
-      }
-    }, {
-      test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
-      loader: 'url',
-      query: {
-        limit: 10000,
-        name: 'media/[name].[hash:8].[ext]'
-      }
-    }]
+      loader: 'style!css?-autoprefixer&importLoaders=1!postcss'
+    },
+      ...common.loaders
+    ]
   },
-  postcss(wp) {
-    return [
-      postcssImport({
-        addDependencyTo: wp
-      }),
-      cssnext({
-        browsers: [
-          '>1%',
-          'last 2 versions',
-          'Firefox ESR',
-          'not ie < 9'
-        ]
-      })
-    ];
-  },
+  postcss: common.postcss,
+  node: common.node,
   plugins: [
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${paths.publicDir}/index.html`,
-      favicon: `${paths.publicDir}/favicon.ico`
+      template: `${paths.srcDir}/index.html`,
+      favicon: `${paths.srcDir}/favicon.ico`
     }),
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }),
-    new webpack.HotModuleReplacementPlugin(),
-    new CaseSensitivePathsPlugin()
+    new webpack.HotModuleReplacementPlugin()
   ],
-  // Some libraries import Node modules but don't use them in the browser.
-  // Tell Webpack to provide empty mocks for them so importing them works.
-  node: {
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty'
+  devServer: {
+    contentBase: paths.publicDir,
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    // It is important to tell WebpackDevServer to use the same "root" path
+    // as we specified in the config. In development, we always serve from /.
+    publicPath: '/',
+    // WebpackDevServer is noisy by default so we emit custom message instead
+    // by listening to the compiler events with `compiler.plugin` calls above.
+    stats: { colors: true },
+    noInfo: true,
+    watchOptions: {
+      ignored: /node_modules/
+    },
+    host: process.env.HOST || getLocalIP(),
+    port: process.env.PORT || 8080
   }
 };

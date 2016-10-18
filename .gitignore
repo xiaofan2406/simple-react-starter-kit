@@ -41,4 +41,3 @@ yarn.lock
 # App specific #
 ################
 build/
-release/

@@ -45,11 +45,5 @@ using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next
 
 
 ### Folders
-- `config`: webpack and babel configuration files
-- `public`: static files are not directly server by webpack like the index.html and favicon
-- `scripts`: scripts for build process and dev server
+- `config`: webpack configuration files
 - `src`: source files directory, processed by webpack
-
-
-### Disclosure
-- Many scripts and config are updated according to [create-react-app](https://github.com/facebookincubator/create-react-app)
