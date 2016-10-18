@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 
 import Root from './Root';
 
@@ -7,8 +8,6 @@ import Root from './Root';
 const rootElement = document.getElementById('root');
 
 if (process.env.NODE_ENV === 'development') {
-  const AppContainer = require('react-hot-loader').AppContainer; // eslint-disable-line
-
   ReactDOM.render(
     <AppContainer>
       <Root />
