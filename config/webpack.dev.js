@@ -53,7 +53,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: paths.publicDir,
+    contentBase: paths.buildDir,
     historyApiFallback: true,
     hot: true,
     inline: true,
