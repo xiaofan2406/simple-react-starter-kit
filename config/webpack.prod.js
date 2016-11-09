@@ -3,6 +3,7 @@ const paths = require('./paths');
 const common = require('./webpack.common');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 const pkg = require('../package.json');
 
 
@@ -13,15 +14,11 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: 'source-map',
   entry: {
-    client: `${paths.srcDir}/index.js`,
+    client: `${paths.appDir}/index.js`,
     vendor: Object.keys(pkg.dependencies)
   },
   resolve: {
-    // This allows you to set a fallback for where Webpack should look for modules.
-    // We use `fallback` instead of `root` because we want `node_modules` to "win"
-    // if there any conflicts. This matches Node resolution mechanism.
-    // https://github.com/facebookincubator/create-react-app/issues/253
-    fallback: paths.nodeModulesDir,
+    fallback: common.resolve.fallback,
     extensions: common.resolve.extensions,
     alias: common.resolve.alias
   },
@@ -35,7 +32,7 @@ module.exports = {
     preLoaders: [...common.preLoaders],
     loaders: [{
       test: /\.js$/,
-      include: paths.srcDir,
+      include: paths.appDir,
       loader: 'babel'
     }, {
       test: /\.css$/,
@@ -56,8 +53,8 @@ module.exports = {
     new ExtractTextPlugin('css/[name].[contenthash:8].css'),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${paths.srcDir}/index.html`,
-      favicon: `${paths.srcDir}/favicon.ico`,
+      template: `${paths.appDir}/index.html`,
+      favicon: `${paths.appDir}/favicon.ico`,
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -87,6 +84,9 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'js/[name].[chunkhash:8].js'
+    }),
+    new ManifestPlugin({
+      fileName: 'asset-manifest.json'
     })
   ]
 };

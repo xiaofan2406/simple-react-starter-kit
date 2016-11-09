@@ -2,16 +2,17 @@ const webpack = require('webpack');
 const paths = require('./paths');
 const common = require('./webpack.common');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const getLocalIP = require('./ip');
+const getLocalIP = require('./local-ip');
 
 
 module.exports = {
   devtool: 'eval',
   entry: [
     'react-hot-loader/patch',
-    `${paths.srcDir}/index.dev.js`
+    `${paths.appDir}/index.dev.js`
   ],
   resolve: {
+    fallback: common.resolve.fallback,
     extensions: common.resolve.extensions,
     alias: common.resolve.alias
   },
@@ -28,7 +29,7 @@ module.exports = {
     preLoaders: [...common.preLoaders],
     loaders: [{
       test: /\.js$/,
-      include: paths.srcDir,
+      include: paths.appDir,
       loader: 'babel',
       query: {
         cacheDirectory: true
@@ -46,8 +47,8 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${paths.srcDir}/index.html`,
-      favicon: `${paths.srcDir}/favicon.ico`
+      template: `${paths.appDir}/index.html`,
+      favicon: `${paths.appDir}/favicon.ico`
     }),
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }),
     new webpack.HotModuleReplacementPlugin()

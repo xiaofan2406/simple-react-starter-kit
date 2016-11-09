@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Root from './Root';
+import LoadApp from './LoadApp';
 
 
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
-  <Root />,
+  <LoadApp />,
   rootElement
 );

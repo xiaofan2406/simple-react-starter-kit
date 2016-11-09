@@ -1,5 +1,6 @@
 # React Starter Kit
 [![Build Status](https://travis-ci.org/xiaofan2406/react-starter-kit.svg?branch=master)](https://travis-ci.org/xiaofan2406/react-starter-kit) [![dependencies Status](https://david-dm.org/xiaofan2406/react-starter-kit/status.svg)](https://david-dm.org/xiaofan2406/react-starter-kit) [![devDependencies Status](https://david-dm.org/xiaofan2406/react-starter-kit/dev-status.svg)](https://david-dm.org/xiaofan2406/react-starter-kit?type=dev)
+> A simple boilerplate for starting new React projects.
 
 
 ### Get Started
@@ -13,7 +14,7 @@ npm i
 npm run dev
 ```
 
-- Build for production (build only, no server setup)
+- Build for production (build only, no server setup yet)
 ```
 npm run build
 ```
@@ -38,6 +39,7 @@ using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next
   pushstate-server ./build 9000
   ```
 
+
 ### Branches
 - [redux](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
 - [mobx](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
@@ -46,4 +48,4 @@ using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next
 
 ### Folders
 - `config`: webpack configuration files
-- `src`: source files directory, processed by webpack
+- `client`: React app source files directory, processed by webpack

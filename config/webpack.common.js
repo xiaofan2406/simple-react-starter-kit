@@ -5,15 +5,20 @@ const paths = require('./paths');
 
 module.exports = {
   resolve: {
+    // This allows you to set a fallback for where Webpack should look for modules.
+    // We use `fallback` instead of `root` because we want `node_modules` to "win"
+    // if there any conflicts. This matches Node resolution mechanism.
+    // https://github.com/facebookincubator/create-react-app/issues/253
+    fallback: paths.nodeModulesDir,
     extensions: ['', '.js', '.json'],
     alias: {
-      src: paths.srcDir // this allows import 'src/...' without knowing the relative path
+      app: paths.appDir // this allows import 'app/...' without knowing the relative path
     }
   },
   preLoaders: [
     {
       test: /\.js$/,
-      include: paths.srcDir,
+      include: paths.appDir,
       loader: 'eslint'
     }
   ],
