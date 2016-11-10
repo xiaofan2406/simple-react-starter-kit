@@ -29,6 +29,7 @@ function HeaderNav({ sheet: { classes }, location }) {
             [classes.link]: true,
             [classes.linkActive]: route.pattern === location.pathname
           })}
+          key={route.pattern}
           to={route.pattern}
         >
           {route.name}
