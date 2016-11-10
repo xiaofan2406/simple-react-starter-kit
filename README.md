@@ -8,7 +8,7 @@
 > A simple boilerplate for starting new React projects.
 
 
-### Get Started
+## Get Started
 - Install dependencies
   ```
   npm i
@@ -24,15 +24,19 @@
   npm run build
   ```
 
+## CSS
+#### [Read this](https://github.com/oliviertassinari/a-journey-toward-better-style)
 
-### Details
-- ##### [React Router v4](https://react-router.now.sh/)
+#### JSS
+  - using [`react-jss`](https://github.com/cssinjs/react-jss)
+  - custom setup at `src/styles/index.js`
 
-- ##### JSS
-  using [`react-jss`](https://github.com/cssinjs/react-jss)
-
-- ##### CSS
+#### CSS
   using [`ExtractTextPlugin`](https://github.com/webpack/extract-text-webpack-plugin) to combine all css into one file in production
+
+
+## Details
+- ##### [React Router v4](https://react-router.now.sh/)
 
 - ##### Hot Module Replacement
   using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next)
@@ -51,5 +55,12 @@
 
 
 ### Folders
-- `config`: webpack configuration files
-- `client`: React app source files directory, processed by webpack
+path | import alias | description
+--- | --- | ---
+`config/` |  | project tooling configuration files
+`src/` | `app` | React app source files directory, processed by webpack
+`src/components/` | `components` | React components folder
+`src/hocs/` | `hocs` | Higher-order components folder
+`src/router/` |  | React Router setup and route-level components folder
+`src/styles/` | `styles` | JSS setup and global CSS folder
+`src/utils/` | `utils` | JavaScript helper functions folder
