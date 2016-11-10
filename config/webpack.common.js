@@ -11,8 +11,9 @@ module.exports = {
     extensions: ['', '.js', '.json'],
     alias: {
       components: `${paths.appDir}/components`,
-      utils: `${paths.appDir}/utils`,
+      hocs: `${paths.appDir}/hocs`,
       styles: `${paths.appDir}/styles`,
+      utils: `${paths.appDir}/utils`,
       app: paths.appDir // this allows import 'app/...' without knowing the relative path
     }
   },

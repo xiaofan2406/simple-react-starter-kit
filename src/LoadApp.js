@@ -1,12 +1,11 @@
 import React from 'react';
-import 'styles/reset.css';
 
-import App from './components/App';
+import AppRouter from './router';
 
 
 function LoadApp() {
   return (
-    <App />
+    <AppRouter />
   );
 }
 
