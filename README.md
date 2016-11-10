@@ -11,50 +11,64 @@
 ## Get Started
 - Install dependencies
   ```
-  npm i
+  yarn
   ```
 
 - Run dev server
   ```
-  npm run dev
+  yarn run dev
   ```
 
 - Build for production (build only, no server setup yet)
   ```
-  npm run build
+  yarn run build
   ```
 
-## CSS
-#### [Read this](https://github.com/oliviertassinari/a-journey-toward-better-style)
-
-#### JSS
-  - using [`react-jss`](https://github.com/cssinjs/react-jss)
-  - custom setup at `src/styles/index.js`
-
-#### CSS
-  using [`ExtractTextPlugin`](https://github.com/webpack/extract-text-webpack-plugin) to combine all css into one file in production
-
-
-## Details
-- ##### [React Router v4](https://react-router.now.sh/)
-
-- ##### Hot Module Replacement
-  using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next)
-
-- ##### Test production build
+- Test production build
   ```
-  npm i -g pushstate-server
+  yarn global add pushstate-server
+
   pushstate-server ./build 9000
   ```
 
 
-### Branches
-- [redux](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
-- [mobx](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
-- [electron](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
+## Details
+
+#### [Read this](https://github.com/oliviertassinari/a-journey-toward-better-style)
+
+#### JSS
+  - Using together with [`react-jss`](https://github.com/cssinjs/react-jss)
+  - Setup at `src/styles/index.js`
+  - Using [classnames](https://github.com/JedWatson/classnames) helper to make conditional class names cleaner
+
+#### CSS
+  - Using [`ExtractTextPlugin`](https://github.com/webpack/extract-text-webpack-plugin) to combine all css into one file in production
+  - No PostCSS, SASS or CSS Module setup
+  - Includes a Semantic UI [`reset.css`](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
+
+#### [React Router v4](https://react-router.now.sh/)
+  - Together with [react-router-v4-hocs](https://www.npmjs.com/package/react-router-v4-hocs)
+
+#### Redux
+  - See [redux branch](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
+
+#### Mobx
+  - See [mobx branch](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
+
+#### Electron
+  - See [electron branch](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
+
+## Development
+
+#### Hot Module Replacement
+  - using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next)
+  - JSS, CSS and components are hot reloading
+
+#### Eslint
+  - based on [Airbnb React Style Guide](https://github.com/airbnb/javascript/tree/master/react)
 
 
-### Folders
+## Folders
 path | import alias | description
 --- | --- | ---
 `config/` |  | project tooling configuration files

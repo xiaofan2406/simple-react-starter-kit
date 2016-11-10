@@ -1,13 +1,12 @@
 import React from 'react';
 import Link from 'react-router/Link';
 import classnames from 'classnames';
-import injectSheet, { primaryColor } from 'styles';
-
-
-import compose from 'utils/compose';
 import withLocation from 'react-router-v4-hocs/lib/withLocation';
 
+import injectSheet, { primaryColor } from 'styles';
+import compose from 'utils/compose';
 import { routes } from 'app/router';
+
 
 const styles = {
   link: {
@@ -45,10 +44,10 @@ HeaderNav.propTypes = {
   location: React.PropTypes.object.isRequired
 };
 
+
 const enhance = compose(
   withLocation,
   injectSheet(styles)
 );
-
 
 export default enhance(HeaderNav);
