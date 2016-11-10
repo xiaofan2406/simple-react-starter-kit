@@ -21,7 +21,6 @@ const styles = {
 };
 
 function HeaderNav({ sheet: { classes }, location }) {
-  console.log(classes);
   return (
     <div>
       {routes.map(route => (
