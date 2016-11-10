@@ -1,37 +1,41 @@
 # React Starter Kit
-[![Build Status](https://travis-ci.org/xiaofan2406/react-starter-kit.svg?branch=master)](https://travis-ci.org/xiaofan2406/react-starter-kit) [![dependencies Status](https://david-dm.org/xiaofan2406/react-starter-kit/status.svg)](https://david-dm.org/xiaofan2406/react-starter-kit) [![devDependencies Status](https://david-dm.org/xiaofan2406/react-starter-kit/dev-status.svg)](https://david-dm.org/xiaofan2406/react-starter-kit?type=dev)
+[![Build Status][build-badge]][build] [![Dependencies Status][dependencies-badge]][dependencies]
+
+[build-badge]: https://img.shields.io/travis/xiaofan2406/react-starter-kit.svg?style=flat-square
+[build]: https://travis-ci.org/xiaofan2406/react-starter-kit
+[dependencies-badge]: https://img.shields.io/david/xiaofan2406/react-starter-kit.svg?style=flat-square
+[dependencies]: https://david-dm.org/xiaofan2406/react-starter-kit
 > A simple boilerplate for starting new React projects.
 
 
 ### Get Started
 - Install dependencies
-```
-npm i
-```
+  ```
+  npm i
+  ```
 
 - Run dev server
-```
-npm run dev
-```
+  ```
+  npm run dev
+  ```
 
 - Build for production (build only, no server setup yet)
-```
-npm run build
-```
+  ```
+  npm run build
+  ```
 
 
 ### Details
+- ##### [React Router v4](https://react-router.now.sh/)
+
+- ##### JSS
+  using [`react-jss`](https://github.com/cssinjs/react-jss)
+
 - ##### CSS
-using [`ExtractTextPlugin`](https://github.com/webpack/extract-text-webpack-plugin) to combine all css files into one
-
-- ##### CSS Modules
-NOT enabled
-
-- ##### PostCSS
-using [`cssnext`](http://cssnext.io/) and [`postcss-import`](https://github.com/postcss/postcss-import)
+  using [`ExtractTextPlugin`](https://github.com/webpack/extract-text-webpack-plugin) to combine all css into one file in production
 
 - ##### Hot Module Replacement
-using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next)
+  using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next)
 
 - ##### Test production build
   ```

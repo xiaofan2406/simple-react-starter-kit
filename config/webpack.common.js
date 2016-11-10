@@ -1,5 +1,3 @@
-const postcssImport = require('postcss-import');
-const cssnext = require('postcss-cssnext');
 const paths = require('./paths');
 
 
@@ -12,6 +10,9 @@ module.exports = {
     fallback: paths.nodeModulesDir,
     extensions: ['', '.js', '.json'],
     alias: {
+      components: `${paths.appDir}/components`,
+      utils: `${paths.appDir}/utils`,
+      styles: `${paths.appDir}/styles`,
       app: paths.appDir // this allows import 'app/...' without knowing the relative path
     }
   },
@@ -50,21 +51,6 @@ module.exports = {
       }
     }
   ],
-  postcss(wp) {
-    return [
-      postcssImport({
-        addDependencyTo: wp
-      }),
-      cssnext({
-        browsers: [
-          '>1%',
-          'last 2 versions',
-          'Firefox ESR',
-          'not ie < 9'
-        ]
-      })
-    ];
-  },
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {

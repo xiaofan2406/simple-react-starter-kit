@@ -38,13 +38,12 @@ module.exports = {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract(
         'style',
-        'css?-autoprefixer&importLoaders=1!postcss'
+        'css?-autoprefixer'
       )
     },
       ...common.loaders
     ]
   },
-  postcss: common.postcss,
   node: common.node,
   plugins: [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),

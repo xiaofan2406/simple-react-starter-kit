@@ -36,12 +36,11 @@ module.exports = {
       }
     }, {
       test: /\.css$/,
-      loader: 'style!css?-autoprefixer&importLoaders=1!postcss'
+      loader: 'style!css?'
     },
       ...common.loaders
     ]
   },
-  postcss: common.postcss,
   node: common.node,
   plugins: [
     new webpack.NoErrorsPlugin(),
