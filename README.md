@@ -36,7 +36,7 @@
 
 #### JSS [Read this](https://github.com/oliviertassinari/a-journey-toward-better-style)
   - Using together with [`react-jss`](https://github.com/cssinjs/react-jss)
-  - Setup at `src/styles/index.js`
+  - Setup at **src/styles/index.js**
   - Using [classnames](https://github.com/JedWatson/classnames) helper to make conditional class names cleaner
 
 #### CSS
@@ -63,17 +63,17 @@
   - using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next)
   - JSS, CSS and components are hot reloading
 
-#### ESlint
+#### ESLint
   - based on [Airbnb React Style Guide](https://github.com/airbnb/javascript/tree/master/react)
 
 
 ## Folders
-path | import alias | description
+Path | Import alias | Description
 --- | --- | ---
-`config/` |  | project tooling configuration files
-`src/` | `app` | React app source files directory, processed by webpack
-`src/components/` | `components` | React components folder
-`src/hocs/` | `hocs` | Higher-order components folder
-`src/router/` |  | React Router setup and route-level components folder
-`src/styles/` | `styles` | JSS setup and global CSS folder
-`src/utils/` | `utils` | JavaScript helper functions folder
+**config/** |  | project tooling configuration files
+**src/** | `app` | React app source files directory, processed by webpack
+src/**components/** | `components` | React components folder
+src/**hocs/** | `hocs` | Higher-order components folder
+src/**router/** |  | React Router setup and route-level components folder
+src/**styles/** | `styles` | JSS setup and global CSS folder
+src/**utils/** | `utils` | JavaScript helper functions folder
