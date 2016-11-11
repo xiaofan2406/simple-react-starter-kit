@@ -6,6 +6,8 @@
 import React from 'react';
 import Router from 'react-router/BrowserRouter';
 import Match from 'react-router/Match';
+import Miss from 'react-router/Miss';
+import Redirect from 'react-router/Redirect';
 
 import Layout from 'components/Layout';
 import Home from './Home';
@@ -27,6 +29,8 @@ export const routes = [
 ];
 
 
+const HomeRedirect = () => <Redirect to="/" />;
+
 function AppRouter() {
   return (
     <Router>
@@ -39,6 +43,7 @@ function AppRouter() {
             component={route.component}
           />
         ))}
+        <Miss component={HomeRedirect} />
       </Layout>
     </Router>
   );
