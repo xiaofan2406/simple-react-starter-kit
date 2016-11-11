@@ -3,16 +3,27 @@ import Link from 'react-router/Link';
 import classnames from 'classnames';
 import withLocation from 'react-router-v4-hocs/lib/withLocation';
 
-import injectSheet, { primaryColor } from 'styles';
+import injectSheet, { primaryColor, headerHeight } from 'styles';
 import compose from 'utils/compose';
 import { routes } from 'app/router';
 
 
 const styles = {
+  headerNav: {
+    height: headerHeight
+  },
+
   link: {
     color: '#fff',
     textDecoration: 'none',
-    marginRight: '1em'
+    padding: '0 0.5em',
+    display: 'inline-block',
+    lineHeight: headerHeight,
+    height: headerHeight,
+
+    '&:hover': {
+      backgroundColor: '#3b4045'
+    }
   },
 
   linkActive: {
@@ -22,7 +33,7 @@ const styles = {
 
 function HeaderNav({ sheet: { classes }, location }) {
   return (
-    <div>
+    <div className={classes.headerNav}>
       {routes.map(route => (
         <Link
           className={classnames({

@@ -1,14 +1,15 @@
 import React from 'react';
-import injectSheet from 'styles';
+import injectSheet, { headerHeight } from 'styles';
 
 import logo from './logo.svg';
 import HeaderNav from './HeaderNav';
 
 
 const styles = {
-  root: {
+  header: {
+    height: headerHeight,
+    backgroundColor: '#242729',
     display: 'flex',
-    backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'space-between'
   },
@@ -20,20 +21,19 @@ const styles = {
 
   logo: {
     animation: 'spin infinite 10s linear',
-    height: '40px'
+    height: '34px'
   },
 
   title: {
     animation: 'fadeIn 2s ease',
     fontSize: '18px',
-    color: '#fff',
-    fontFamily: 'monospace'
+    color: '#fff'
   }
 };
 
 function Header({ sheet: { classes } }) {
   return (
-    <div className={classes.root}>
+    <div className={classes.header}>
       <div className={classes.brand}>
         <img src={logo} className={classes.logo} alt="logo" />
         <span className={classes.title}>React Starter Kit</span>

@@ -34,9 +34,7 @@
 
 ## Details
 
-#### [Read this](https://github.com/oliviertassinari/a-journey-toward-better-style)
-
-#### JSS
+#### JSS [Read this](https://github.com/oliviertassinari/a-journey-toward-better-style)
   - Using together with [`react-jss`](https://github.com/cssinjs/react-jss)
   - Setup at `src/styles/index.js`
   - Using [classnames](https://github.com/JedWatson/classnames) helper to make conditional class names cleaner
@@ -58,13 +56,14 @@
 #### Electron
   - See [electron branch](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
 
+
 ## Development
 
 #### Hot Module Replacement
   - using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next)
   - JSS, CSS and components are hot reloading
 
-#### Eslint
+#### ESlint
   - based on [Airbnb React Style Guide](https://github.com/airbnb/javascript/tree/master/react)
 
 
