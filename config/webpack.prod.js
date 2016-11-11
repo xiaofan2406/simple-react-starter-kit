@@ -36,10 +36,7 @@ module.exports = {
       loader: 'babel'
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract(
-        'style',
-        'css?-autoprefixer'
-      )
+      loader: ExtractTextPlugin.extract('style', 'css')
     },
       ...common.loaders
     ]
