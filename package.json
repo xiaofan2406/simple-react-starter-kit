@@ -1,6 +1,6 @@
 {
   "name": "react-starter-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple boilerplate for starting new React projects.",
   "scripts": {
     "dev": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config ./config/webpack.dev.js",
