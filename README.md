@@ -34,8 +34,9 @@
 
 ## Details
 
-#### JSS [Read this](https://github.com/oliviertassinari/a-journey-toward-better-style)
-  - Using together with [`react-jss`](https://github.com/cssinjs/react-jss)
+#### [JSS](https://github.com/cssinjs/jss)
+  - [Read this](https://github.com/oliviertassinari/a-journey-toward-better-style)
+  - Using together with [`react-jss`](https://github.com/cssinjs/react-jss) and [`jss-preset-default`](https://github.com/cssinjs/jss-preset-default)
   - Setup at **src/styles/index.js**
   - Using [classnames](https://github.com/JedWatson/classnames) helper to make conditional class names cleaner
 
