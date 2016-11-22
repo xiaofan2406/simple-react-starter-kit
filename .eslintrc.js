@@ -7,20 +7,20 @@ module.exports = {
     node: true
   },
   settings: {
-    'import/ignore': [
-      'node_modules',
-      '\\.(json|css|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$',
+    "import/ignore": [
+      "node_modules",
+      "\\.(json|css|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$",
     ],
-    'import/extensions': ['.js'],
-    'import/resolver': {
+    "import/extensions": [".js"],
+    "import/resolver": {
       webpack: {
-        config: './config/webpack.dev.js'
+        config: "./config/webpack.dev.js"
       }
     }
   },
   parser: "babel-eslint",
   parserOptions: {
-    sourceType: 'module',
+    sourceType: "module",
     ecmaVersion: 6,
     ecmaFeatures: {
       jsx: true,
@@ -37,7 +37,7 @@ module.exports = {
     "no-underscore-dangle": 0, // _whatever is allowed
     "no-param-reassign": 0, // e.target.value = ''; happens all the time
     "no-plusplus": 0, // i++ is allowed
-    'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement'],
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
     "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }], // better looking arrow-funcs
     "jsx-a11y/no-static-element-interactions": 0, // div onClick should be allowed
     "import/no-extraneous-dependencies": 0, // not necessary at all
