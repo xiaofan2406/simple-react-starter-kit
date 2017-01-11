@@ -26,28 +26,27 @@ module.exports = {
   ],
   loaders: [
     {
-      test: /\.json$/,
-      loader: 'json'
-    },
-    {
-      test: /\.(eot|otf|ttf|woff|woff2)(\?.*)?$/,
-      loader: 'file',
+      exclude: [
+        /\.html$/,
+        /\.js$/,
+        /\.css$/,
+        /\.json$/,
+        /\.svg$/
+      ],
+      loader: 'url',
       query: {
-        name: 'fonts/[name].[hash:8].[ext]'
-      }
-    },
-    {
-      test: /\.(jpg|jpeg|png|gif|svg|ico|webp)(\?.*)?$/,
-      loader: 'file',
-      query: {
+        limit: 10000,
         name: 'media/[name].[hash:8].[ext]'
       }
     },
     {
-      test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
-      loader: 'url',
+      test: /\.json$/,
+      loader: 'json'
+    },
+    {
+      test: /\.svg$/,
+      loader: 'file',
       query: {
-        limit: 10000,
         name: 'media/[name].[hash:8].[ext]'
       }
     }
