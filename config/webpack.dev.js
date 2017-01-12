@@ -9,7 +9,7 @@ module.exports = {
   devtool: 'eval',
   entry: [
     'react-hot-loader/patch',
-    `${paths.appDir}/index.dev.js`
+    `${paths.appDir}/index.js`
   ],
   resolve: {
     fallback: common.resolve.fallback,
