@@ -4,18 +4,13 @@ const common = require('./webpack.common');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const getLocalIP = require('./local-ip');
 
-
 module.exports = {
-  devtool: 'eval',
+  devtool: 'cheap-module-source-map',
   entry: [
     'react-hot-loader/patch',
     `${paths.appDir}/index.js`
   ],
-  resolve: {
-    fallback: common.resolve.fallback,
-    extensions: common.resolve.extensions,
-    alias: common.resolve.alias
-  },
+  resolve: common.resolve,
   output: {
     // For dev, `path` and `filename` are not important because of using webpack-dev-server
     path: paths.buildDir,
@@ -26,24 +21,28 @@ module.exports = {
     pathinfo: true
   },
   module: {
-    preLoaders: [...common.preLoaders],
-    loaders: [{
-      test: /\.js$/,
-      include: paths.appDir,
-      loader: 'babel',
-      query: {
-        cacheDirectory: true
-      }
-    }, {
-      test: /\.css$/,
-      loader: 'style!css'
-    },
-      ...common.loaders
+    rules: [
+      ...common.rules,
+      {
+        test: /\.js$/,
+        include: paths.appDir,
+        loader: 'babel-loader',
+        query: {
+          cacheDirectory: true
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }      
     ]
   },
   node: common.node,
+  performance: { hints: false },
   plugins: [
-    new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: `${paths.appDir}/index.html`,
@@ -53,12 +52,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
+    compress: true,
     contentBase: paths.buildDir,
-    historyApiFallback: true,
     hot: true,
-    inline: true,
-    // It is important to tell WebpackDevServer to use the same "root" path
-    // as we specified in the config. In development, we always serve from /.
     publicPath: '/',
     stats: 'errors-only',
     watchOptions: {
