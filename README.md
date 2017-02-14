@@ -16,12 +16,12 @@
 
 - Run dev server
   ```
-  yarn run dev
+  yarn dev
   ```
 
 - Build for production (build only, no server setup yet)
   ```
-  yarn run build
+  yarn build
   ```
 
 - Test production build
@@ -45,8 +45,7 @@
   - No PostCSS, SASS or CSS Module setup
   - Includes a Semantic UI [`reset.css`](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
 
-#### [React Router v4](https://react-router.now.sh/)
-  - Together with [react-router-v4-hocs](https://www.npmjs.com/package/react-router-v4-hocs)
+#### [React Router v4](https://reacttraining.com/react-router)
 
 #### Redux
   - See [redux branch](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
@@ -72,9 +71,10 @@
 Path | Import alias | Description
 --- | --- | ---
 **config/** |  | project tooling configuration files
-**src/** | `app` | React app source files directory, processed by webpack
+**src/** | `src` | App source files directory, processed by webpack
 src/**components/** | `components` | React components folder
 src/**hocs/** | `hocs` | Higher-order components folder
 src/**router/** |  | React Router setup and route-level components folder
 src/**styles/** | `styles` | JSS setup and global CSS folder
 src/**utils/** | `utils` | JavaScript helper functions folder
+src/**widgets/** | `widgets` | Shared small React components folder
