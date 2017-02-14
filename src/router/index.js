@@ -1,53 +1,39 @@
-/**
- * Root route config
- * @see https://react-router.now.sh/route-config
- */
-
 import React from 'react';
-import Router from 'react-router/BrowserRouter';
-import Match from 'react-router/Match';
-import Miss from 'react-router/Miss';
-import Redirect from 'react-router/Redirect';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import Layout from 'components/Layout';
 import Home from './Home';
 import About from './About';
 
-
 export const routes = [
   {
-    pattern: '/',
+    path: '/',
     name: 'Home',
-    exactly: true,
+    exact: true,
     component: Home
   },
   {
-    pattern: '/about',
+    path: '/about',
     name: 'About',
     component: About
   }
 ];
 
-
-const HomeRedirect = () => <Redirect to="/" />;
-
-function AppRouter() {
+function Router() {
   return (
-    <Router>
+    <BrowserRouter>
       <Layout>
         {routes.map(route => (
-          <Match
-            key={route.pattern}
-            pattern={route.pattern}
-            exactly={route.exactly}
+          <Route
+            key={route.path}
+            path={route.path}
+            exact={route.exact}
             component={route.component}
           />
         ))}
-        <Miss component={HomeRedirect} />
       </Layout>
-    </Router>
+    </BrowserRouter>
   );
 }
 
-
-export default AppRouter;
+export default Router;

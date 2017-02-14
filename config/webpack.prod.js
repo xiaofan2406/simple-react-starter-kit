@@ -6,12 +6,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const pkg = require('../package.json');
 
-
 module.exports = {
   bail: true,
   devtool: 'source-map',
   entry: {
-    client: `${paths.appDir}/index.js`,
+    client: `${paths.srcDir}/index.js`,
     vendor: Object.keys(pkg.dependencies)
   },
   resolve: common.resolve,
@@ -26,14 +25,14 @@ module.exports = {
       ...common.rules,
       {
         test: /\.js$/,
-        include: paths.appDir,
+        include: paths.srcDir,
         loader: 'babel-loader'
       },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
+          fallback: 'style-loader',
+          use: 'css-loader'
         })
       }
     ]
@@ -45,8 +44,8 @@ module.exports = {
     new ExtractTextPlugin('css/[name].[contenthash:8].css'),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${paths.appDir}/index.html`,
-      favicon: `${paths.appDir}/favicon.ico`,
+      template: `${paths.srcDir}/index.html`,
+      favicon: `${paths.srcDir}/favicon.ico`,
       minify: {
         removeComments: true,
         collapseWhitespace: true,

@@ -5,7 +5,6 @@ import 'styles/animation.css';
 
 import Header from './Header';
 
-
 const styles = {
   layout: {
     fontFamily,
@@ -16,7 +15,6 @@ const styles = {
   }
 };
 
-/* Use functions rather than constant elements for better debugging */
 function Layout({ sheet: { classes }, children }) {
   return (
     <div className={classes.layout}>
@@ -32,6 +30,5 @@ Layout.propTypes = {
   sheet: React.PropTypes.object.isRequired,
   children: React.PropTypes.node.isRequired
 };
-
 
 export default injectSheet(styles)(Layout);

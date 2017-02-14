@@ -2,13 +2,14 @@ const webpack = require('webpack');
 const paths = require('./paths');
 const common = require('./webpack.common');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const getLocalIP = require('./local-ip');
+
+const localIp = require('./localIp');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: [
     'react-hot-loader/patch',
-    `${paths.appDir}/index.js`
+    `${paths.srcDir}/index.js`
   ],
   resolve: common.resolve,
   output: {
@@ -25,7 +26,7 @@ module.exports = {
       ...common.rules,
       {
         test: /\.js$/,
-        include: paths.appDir,
+        include: paths.srcDir,
         loader: 'babel-loader',
         query: {
           cacheDirectory: true
@@ -37,7 +38,7 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
-      }      
+      }
     ]
   },
   node: common.node,
@@ -45,8 +46,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${paths.appDir}/index.html`,
-      favicon: `${paths.appDir}/favicon.ico`
+      template: `${paths.srcDir}/index.html`,
+      favicon: `${paths.srcDir}/favicon.ico`
     }),
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }),
     new webpack.HotModuleReplacementPlugin()
@@ -60,7 +61,7 @@ module.exports = {
     watchOptions: {
       ignored: /node_modules/
     },
-    host: process.env.HOST || getLocalIP(),
+    host: process.env.HOST || localIp,
     port: process.env.PORT || 8080
   }
 };
