@@ -26,9 +26,7 @@
 
 - Test production build
   ```
-  yarn global add pushstate-server
-
-  pushstate-server ./build 9000
+  yarn prod
   ```
 
 
