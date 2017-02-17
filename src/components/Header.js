@@ -5,7 +5,7 @@ import SmartLink from 'widgets/SmartLink';
 import logo from './logo.svg';
 import { routes } from '../router';
 
-const styles = {
+const sheet = {
   header: {
     height: headerHeight,
     backgroundColor: '#242729',
@@ -72,4 +72,4 @@ Header.propTypes = {
   sheet: React.PropTypes.object.isRequired
 };
 
-export default injectSheet(styles)(Header);
+export default injectSheet(sheet)(Header);

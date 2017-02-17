@@ -19,7 +19,7 @@
   yarn dev
   ```
 
-- Build for production (build only, no server setup yet)
+- Build for production
   ```
   yarn build
   ```
@@ -68,11 +68,11 @@
 ## Folders
 Path | Import alias | Description
 --- | --- | ---
-**config/** |  | project tooling configuration files
+**config/** |  | Project tooling configuration files
 **src/** | `src` | App source files directory, processed by webpack
 src/**components/** | `components` | React components folder
 src/**hocs/** | `hocs` | Higher-order components folder
 src/**router/** |  | React Router setup and route-level components folder
 src/**styles/** | `styles` | JSS setup and global CSS folder
 src/**utils/** | `utils` | JavaScript helper functions folder
-src/**widgets/** | `widgets` | Shared small React components folder
+src/**widgets/** | `widgets` | Small shared React components folder

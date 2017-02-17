@@ -5,7 +5,7 @@ import 'styles/animation.css';
 
 import Header from './Header';
 
-const styles = {
+const sheet = {
   layout: {
     fontFamily,
     fontSize
@@ -31,4 +31,4 @@ Layout.propTypes = {
   children: React.PropTypes.node.isRequired
 };
 
-export default injectSheet(styles)(Layout);
+export default injectSheet(sheet)(Layout);
