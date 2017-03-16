@@ -38,6 +38,7 @@ module.exports = {
     "no-param-reassign": 0, // e.target.value = ''; happens all the time
     "no-plusplus": 0, // i++ is allowed
     "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+    "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
     "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }], // better looking arrow-funcs
     "jsx-a11y/no-static-element-interactions": 0, // div onClick should be allowed
     "import/no-extraneous-dependencies": 0, // not necessary at all

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import classnames from 'classnames';
-import withLocation from 'hocs/withLocation';
 
 function SmarkLink({ activeClassName, location, ...rest }) {
   return (
@@ -27,4 +26,4 @@ SmarkLink.defaultProps = {
   activeClassName: null
 };
 
-export default withLocation(SmarkLink);
+export default withRouter(SmarkLink);

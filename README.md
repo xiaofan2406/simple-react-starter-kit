@@ -34,8 +34,7 @@
 
 #### [JSS](https://github.com/cssinjs/jss)
   - [Read this](https://github.com/oliviertassinari/a-journey-toward-better-style)
-  - Using together with [`react-jss`](https://github.com/cssinjs/react-jss) and [`jss-preset-default`](https://github.com/cssinjs/jss-preset-default)
-  - Setup at **src/styles/index.js**
+  - Using together with [`react-jss`](https://github.com/cssinjs/react-jss)
   - Using [classnames](https://github.com/JedWatson/classnames) helper to make conditional class names cleaner
 
 #### CSS
@@ -73,6 +72,6 @@ Path | Import alias | Description
 src/**components/** | `components` | React components folder
 src/**hocs/** | `hocs` | Higher-order components folder
 src/**router/** |  | React Router setup and route-level components folder
-src/**styles/** | `styles` | JSS setup and global CSS folder
+src/**styles/** | `styles` | Global CSS and JSS folder
 src/**utils/** | `utils` | JavaScript helper functions folder
 src/**widgets/** | `widgets` | Small shared React components folder

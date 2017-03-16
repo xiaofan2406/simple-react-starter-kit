@@ -1,11 +1,12 @@
 import React from 'react';
-import injectSheet, { fontFamily, fontSize } from 'styles';
+import jss from 'react-jss';
+import { fontFamily, fontSize } from 'styles';
 import 'styles/reset.css';
 import 'styles/animation.css';
 
 import Header from './Header';
 
-const sheet = {
+const css = {
   layout: {
     fontFamily,
     fontSize
@@ -15,7 +16,7 @@ const sheet = {
   }
 };
 
-function Layout({ sheet: { classes }, children }) {
+function Layout({ classes, children }) {
   return (
     <div className={classes.layout}>
       <Header />
@@ -27,8 +28,8 @@ function Layout({ sheet: { classes }, children }) {
 }
 
 Layout.propTypes = {
-  sheet: React.PropTypes.object.isRequired,
+  classes: React.PropTypes.object.isRequired,
   children: React.PropTypes.node.isRequired
 };
 
-export default injectSheet(sheet)(Layout);
+export default jss(css)(Layout);

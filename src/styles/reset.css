@@ -1,5 +1,5 @@
-/**
- * # Semantic UI 2.2.4 - Reset
+/*!
+ * # Semantic UI 2.2.9 - Reset
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -12,6 +12,7 @@
 /*******************************
              Reset
 *******************************/
+
 
 /* Border-Box */
 *,
@@ -39,7 +40,11 @@ input[type="password"] {
          Theme Overrides
 *******************************/
 
-/** normalize.css v3.0.1 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -411,3 +416,8 @@ td,
 th {
   padding: 0;
 }
+
+
+/*******************************
+         Site Overrides
+*******************************/

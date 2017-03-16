@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -5,8 +6,8 @@ import Router from './router';
 
 const rootElement = document.getElementById('root');
 
-if (process.env.NODE_ENV === 'development') { // react-hot-loader setup
-  const AppContainer = require('react-hot-loader').AppContainer; // eslint-disable-line global-require
+if (process.env.NODE_ENV === 'development') {
+  const AppContainer = require('react-hot-loader').AppContainer;
 
   ReactDOM.render(
     <AppContainer>
@@ -17,7 +18,7 @@ if (process.env.NODE_ENV === 'development') { // react-hot-loader setup
 
   if (module.hot) {
     module.hot.accept('./router', () => {
-      const NextRouter = require('./router').default; // eslint-disable-line global-require
+      const NextRouter = require('./router').default;
       ReactDOM.render(
         <AppContainer>
           <NextRouter />

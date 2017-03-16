@@ -1,11 +1,12 @@
 import React from 'react';
-import injectSheet, { primaryColor, headerHeight } from 'styles';
+import jss from 'react-jss';
+import { primaryColor, headerHeight } from 'styles';
 import SmartLink from 'widgets/SmartLink';
 
 import logo from './logo.svg';
 import { routes } from '../router';
 
-const sheet = {
+const css = {
   header: {
     height: headerHeight,
     backgroundColor: '#242729',
@@ -45,7 +46,7 @@ const sheet = {
   }
 };
 
-function Header({ sheet: { classes } }) {
+function Header({ classes }) {
   return (
     <div className={classes.header}>
       <div className={classes.brand}>
@@ -69,7 +70,7 @@ function Header({ sheet: { classes } }) {
 }
 
 Header.propTypes = {
-  sheet: React.PropTypes.object.isRequired
+  classes: React.PropTypes.object.isRequired
 };
 
-export default injectSheet(sheet)(Header);
+export default jss(css)(Header);

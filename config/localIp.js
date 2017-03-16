@@ -10,6 +10,4 @@ function getLocalIp() {
   return detail && detail.address;
 }
 
-const localIp = getLocalIp();
-
-module.exports = localIp;
+module.exports = getLocalIp;
