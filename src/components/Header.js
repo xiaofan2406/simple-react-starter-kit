@@ -1,5 +1,6 @@
 import React from 'react';
-import jss from 'react-jss';
+import PropTypes from 'prop-types';
+import withCss from 'react-jss';
 import { primaryColor, headerHeight } from 'styles';
 import SmartLink from 'widgets/SmartLink';
 
@@ -70,7 +71,7 @@ function Header({ classes }) {
 }
 
 Header.propTypes = {
-  classes: React.PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired
 };
 
-export default jss(css)(Header);
+export default withCss(css)(Header);

@@ -1,5 +1,6 @@
 import React from 'react';
-import jss from 'react-jss';
+import PropTypes from 'prop-types';
+import withCss from 'react-jss';
 import { fontFamily, fontSize } from 'styles';
 import 'styles/reset.css';
 import 'styles/animation.css';
@@ -28,8 +29,8 @@ function Layout({ classes, children }) {
 }
 
 Layout.propTypes = {
-  classes: React.PropTypes.object.isRequired,
-  children: React.PropTypes.node.isRequired
+  classes: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired
 };
 
-export default jss(css)(Layout);
+export default withCss(css)(Layout);

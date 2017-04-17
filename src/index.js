@@ -28,8 +28,5 @@ if (process.env.NODE_ENV === 'development') {
     });
   }
 } else {
-  ReactDOM.render(
-    <Router />,
-    rootElement
-  );
+  ReactDOM.render(<Router />, rootElement);
 }

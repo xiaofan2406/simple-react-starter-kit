@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import classnames from 'classnames';
 
@@ -18,8 +19,8 @@ function SmarkLink({ activeClassName, location, ...rest }) {
 }
 
 SmarkLink.propTypes = {
-  location: React.PropTypes.object.isRequired,
-  activeClassName: React.PropTypes.string
+  location: PropTypes.object.isRequired,
+  activeClassName: PropTypes.string
 };
 
 SmarkLink.defaultProps = {
