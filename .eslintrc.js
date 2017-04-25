@@ -45,7 +45,7 @@ module.exports = {
       'WithStatement'
     ],
     'no-unused-vars': ['error', { ignoreRestSiblings: true }],
-    'arrow-parens': [2, 'as-needed', { requireForBlockBody: true }], // better looking arrow-funcs
+    'arrow-parens': [2, 'as-needed'],
     'jsx-a11y/no-static-element-interactions': 0, // div onClick should be allowed
     'import/no-extraneous-dependencies': 0, // not necessary at all
     'react/jsx-filename-extension': 0, // enfore all .js extension
