@@ -22,6 +22,7 @@ module.exports = {
     pathinfo: true
   },
   module: {
+    strictExportPresence: true,
     rules: [
       ...common.rules,
       {

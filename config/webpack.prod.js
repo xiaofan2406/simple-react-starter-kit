@@ -21,6 +21,7 @@ module.exports = {
     publicPath: '/'
   },
   module: {
+    strictExportPresence: true,
     rules: [
       ...common.rules,
       {
