@@ -5,6 +5,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const common = require('./webpack.common');
 const { paths, title } = require('./configs');
 const pkg = require('../package.json');
+const babelrc = require('../.babelrc');
 
 module.exports = {
   bail: true,
@@ -27,7 +28,11 @@ module.exports = {
       {
         test: /\.js$/,
         include: paths.srcDir,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        options: {
+          babelrc: false,
+          presets: babelrc
+        }
       },
       {
         test: /\.css$/,

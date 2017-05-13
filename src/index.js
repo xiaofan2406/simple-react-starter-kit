@@ -9,23 +9,19 @@ const rootElement = document.getElementById('root');
 if (process.env.NODE_ENV === 'development') {
   const AppContainer = require('react-hot-loader').AppContainer;
 
-  ReactDOM.render(
-    <AppContainer>
-      <Router />
-    </AppContainer>,
-    rootElement
-  );
+  const render = () => {
+    ReactDOM.render(
+      <AppContainer>
+        <Router />
+      </AppContainer>,
+      rootElement
+    );
+  };
+
+  render();
 
   if (module.hot) {
-    module.hot.accept('./router', () => {
-      const NextRouter = require('./router').default;
-      ReactDOM.render(
-        <AppContainer>
-          <NextRouter />
-        </AppContainer>,
-        rootElement
-      );
-    });
+    module.hot.accept('./router', render);
   }
 } else {
   ReactDOM.render(<Router />, rootElement);
