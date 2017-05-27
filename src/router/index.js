@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { Layout } from 'components';
 
-import Layout from 'components/Layout';
 import Home from './Home';
 import About from './About';
+import Contact from './Contact';
 
 export const routes = [
   {
@@ -16,6 +17,11 @@ export const routes = [
     path: '/about',
     name: 'About',
     component: About
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
   }
 ];
 

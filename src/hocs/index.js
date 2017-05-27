@@ -1,0 +1,1 @@
+export withPathname from './withPathname';

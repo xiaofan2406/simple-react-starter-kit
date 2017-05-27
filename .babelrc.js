@@ -13,12 +13,12 @@ const plugins = [
     {
       helpers: false,
       polyfill: false,
-      regenerator: true,
-      moduleName: path.dirname(require.resolve('babel-runtime/package'))
+      regenerator: true
     }
   ],
   [require.resolve('babel-plugin-transform-regenerator'), { async: false }],
-  require.resolve('babel-plugin-syntax-dynamic-import')
+  require.resolve('babel-plugin-syntax-dynamic-import'),
+  require.resolve('babel-plugin-transform-export-extensions')
 ];
 
 if (process.env.NODE_ENV === 'development') {
