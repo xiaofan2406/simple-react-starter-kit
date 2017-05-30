@@ -79,7 +79,6 @@ module.exports = {
     // otherwise, the build would actually give unexpected results
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new ExtractTextPlugin('css/[name].[contenthash:8].css'),
     new HtmlWebpackPlugin({
       inject: true,
       template: `${paths.srcDir}/assets/index.html`,
@@ -99,22 +98,21 @@ module.exports = {
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        screw_ie8: true,
-        warnings: false
-      },
-      mangle: {
-        screw_ie8: true
+        warnings: false,
+        comparisons: false
       },
       output: {
-        comments: false,
-        screw_ie8: true
+        comments: false
       },
       sourceMap: true
     }),
+    new ExtractTextPlugin('css/[name].[contenthash:8].css'),
     new ManifestPlugin({
       fileName: 'asset-manifest.json'
     }),
-    // Frome create-react-app
+    // From create-react-app
+    // Generate a service worker script that will precache, and keep up to date,
+    // the HTML & assets that are part of the Webpack build.
     new SWPrecacheWebpackPlugin({
       // By default, a cache-busting query parameter is appended to requests
       // used to populate the caches, to ensure the responses are fresh.
