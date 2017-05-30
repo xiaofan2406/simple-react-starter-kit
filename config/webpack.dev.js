@@ -10,12 +10,12 @@ module.exports = {
     'react-hot-loader/patch',
     `webpack-dev-server/client?http://${devServerIp}:${devServerPort}`,
     'webpack/hot/only-dev-server',
-    `${paths.srcDir}/index.js`
+    `${paths.srcPath}/index.js`
   ],
   resolve: common.resolve,
   output: {
     // For dev, `path` and `filename` are not important because of using webpack-dev-server
-    path: paths.buildDir,
+    path: paths.distPath,
     filename: 'bundle.js',
     // Necessary for HMR to know where to load the hot update chunks
     publicPath: '/',
@@ -28,7 +28,7 @@ module.exports = {
       ...common.rules,
       {
         test: /\.js$/,
-        include: paths.srcDir,
+        include: paths.srcPath,
         loader: require.resolve('babel-loader'),
         options: {
           babelrc: false,
@@ -47,8 +47,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${paths.srcDir}/assets/index.html`,
-      favicon: `${paths.srcDir}/assets/favicon.ico`
+      template: `${paths.srcPath}/assets/index.html`,
+      favicon: `${paths.srcPath}/assets/favicon.ico`
     }),
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }),
     new webpack.HotModuleReplacementPlugin(),

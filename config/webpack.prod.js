@@ -14,18 +14,18 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     polyfill: require.resolve('./polyfills'),
-    client: `${paths.srcDir}/index.js`,
+    main: `${paths.srcPath}/index.js`,
     vendor: vendors
   },
   resolve: common.resolve,
   output: {
-    path: paths.buildDir,
+    path: paths.distPath,
     filename: 'js/[name].[chunkhash:8].js',
     chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
     publicPath: '/',
     // Point sourcemap entries to original disk location
     devtoolModuleFilenameTemplate: info =>
-      path.relative(paths.srcDir, info.absoluteResourcePath)
+      path.relative(paths.srcPath, info.absoluteResourcePath)
   },
   module: {
     strictExportPresence: true,
@@ -33,7 +33,7 @@ module.exports = {
       ...common.rules,
       {
         test: /\.js$/,
-        include: paths.srcDir,
+        include: paths.srcPath,
         loader: require.resolve('babel-loader'),
         options: {
           presets: babelrc
@@ -58,6 +58,8 @@ module.exports = {
   },
   node: common.node,
   plugins: [
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NamedChunksPlugin(chunk => {
       if (chunk.name) {
@@ -77,12 +79,10 @@ module.exports = {
     new NameAllModulesPlugin(),
     // all plugins above has to stay before the following plugins
     // otherwise, the build would actually give unexpected results
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${paths.srcDir}/assets/index.html`,
-      favicon: `${paths.srcDir}/assets/favicon.ico`,
+      template: `${paths.srcPath}/assets/index.html`,
+      favicon: `${paths.srcPath}/assets/favicon.ico`,
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -134,7 +134,7 @@ module.exports = {
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
       // Work around Windows path issue in SWPrecacheWebpackPlugin:
       // https://github.com/facebookincubator/create-react-app/issues/2235
-      stripPrefix: `${paths.buildDir.replace(/\\/g, '/')}/`
+      stripPrefix: `${paths.distPath.replace(/\\/g, '/')}/`
     })
   ]
 };
