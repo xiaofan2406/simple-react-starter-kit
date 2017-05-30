@@ -64,6 +64,7 @@
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
     "json-loader": "^0.5.4",
+    "name-all-modules-plugin": "^1.0.1",
     "object-assign": "^4.1.1",
     "promise": "^7.1.1",
     "prop-types": "^15.5.10",

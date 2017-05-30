@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const NameAllModulesPlugin = require('name-all-modules-plugin');
 const common = require('./webpack.common');
 const { paths, vendors } = require('./configs');
 const babelrc = require('../.babelrc');
@@ -91,7 +92,8 @@ module.exports = {
       },
       sourceMap: true
     }),
-    new webpack.NamedModulesPlugin(chunk => {
+    new webpack.NamedModulesPlugin(),
+    new webpack.NamedChunksPlugin(chunk => {
       if (chunk.name) {
         return chunk.name;
       }
@@ -100,9 +102,13 @@ module.exports = {
         .join('_');
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['runtime'],
-      filename: 'js/[name].[chunkhash:8].js'
+      name: 'vendor',
+      minChunks: Infinity
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime'
+    }),
+    new NameAllModulesPlugin(),
     new ManifestPlugin({
       fileName: 'asset-manifest.json'
     }),
