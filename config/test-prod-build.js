@@ -10,4 +10,4 @@ server(configs.paths.buildDir, {
 
 console.log('Production server listening...');
 console.log(`http://localhost:${port}`);
-console.log(`http://${configs.devIp}:${port}`);
+console.log(`http://${configs.devServerIp}:${port}`);

@@ -30,7 +30,6 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-jss": "^6.1.1",
@@ -48,6 +47,7 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-react-jsx-self": "^6.22.0",
     "babel-plugin-transform-react-jsx-source": "^6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.5",
     "babel-plugin-transform-regenerator": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.5.1",
@@ -66,6 +66,7 @@
     "json-loader": "^0.5.4",
     "object-assign": "^4.1.1",
     "promise": "^7.1.1",
+    "prop-types": "^15.5.10",
     "react-hot-loader": "next",
     "serve": "^5.1.5",
     "style-loader": "^0.18.1",

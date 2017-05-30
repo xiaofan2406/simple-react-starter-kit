@@ -1,14 +1,14 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common');
-const { devPort, devIp, paths } = require('./configs');
+const { devServerPort, devServerIp, paths } = require('./configs');
 const babelrc = require('../.babelrc');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: [
     'react-hot-loader/patch',
-    `webpack-dev-server/client?http://${devIp}:${devPort}`,
+    `webpack-dev-server/client?http://${devServerIp}:${devServerPort}`,
     'webpack/hot/only-dev-server',
     `${paths.srcDir}/index.js`
   ],
@@ -64,8 +64,8 @@ module.exports = {
       ignored: /node_modules/
     },
     https: process.env.HTTPS === 'true',
-    host: process.env.HOST || devIp,
-    port: process.env.PORT || devPort,
+    host: process.env.HOST || devServerIp,
+    port: process.env.PORT || devServerPort,
     setup(app) {
       app.use((req, res, next) => {
         if (req.url === '/service-worker.js') {

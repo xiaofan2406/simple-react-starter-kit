@@ -5,8 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const common = require('./webpack.common');
-const { paths } = require('./configs');
-const pkg = require('../package.json');
+const { paths, vendors } = require('./configs');
 const babelrc = require('../.babelrc');
 
 module.exports = {
@@ -15,7 +14,7 @@ module.exports = {
   entry: {
     polyfill: require.resolve('./polyfills'),
     client: `${paths.srcDir}/index.js`,
-    vendor: Object.keys(pkg.dependencies)
+    vendor: vendors
   },
   resolve: common.resolve,
   output: {

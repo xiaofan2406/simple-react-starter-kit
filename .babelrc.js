@@ -1,6 +1,6 @@
 const path = require('path');
 
-const plugins = [
+let plugins = [
   require.resolve('babel-plugin-transform-decorators-legacy'),
   require.resolve('babel-plugin-transform-class-properties'),
   [
@@ -27,6 +27,17 @@ if (process.env.NODE_ENV === 'development') {
     require.resolve('babel-plugin-transform-react-jsx-source'),
     require.resolve('babel-plugin-transform-react-jsx-self')
   ]);
+}
+
+if (process.env.NODE_ENV === 'production') {
+  plugins = [
+    [
+      // this plugin has to be the first or else it will not work
+      require.resolve('babel-plugin-transform-react-remove-prop-types'),
+      { removeImport: true }
+    ],
+    ...plugins
+  ];
 }
 
 module.exports = {
