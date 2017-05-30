@@ -91,8 +91,9 @@ module.exports = {
       },
       sourceMap: true
     }),
+    new webpack.NamedModulesPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
+      name: ['runtime'],
       filename: 'js/[name].[chunkhash:8].js'
     }),
     new ManifestPlugin({
