@@ -91,7 +91,14 @@ module.exports = {
       },
       sourceMap: true
     }),
-    new webpack.NamedModulesPlugin(),
+    new webpack.NamedModulesPlugin(chunk => {
+      if (chunk.name) {
+        return chunk.name;
+      }
+      return chunk.modules
+        .map(m => path.relative(m.context, m.request))
+        .join('_');
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['runtime'],
       filename: 'js/[name].[chunkhash:8].js'
