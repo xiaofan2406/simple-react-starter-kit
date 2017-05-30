@@ -35,42 +35,45 @@ A simple boilerplate for starting new React projects.
 
 ## Details
 
-###### [JSS](https://github.com/cssinjs/jss)
+##### [JSS](https://github.com/cssinjs/jss)
   - [Read this](https://github.com/oliviertassinari/a-journey-toward-better-style)
   - Using together with [`react-jss`](https://github.com/cssinjs/react-jss)
   - Using [classnames](https://github.com/JedWatson/classnames) helper to make conditional class names cleaner
 
-###### CSS
+##### CSS
   - Using [`ExtractTextPlugin`](https://github.com/webpack/extract-text-webpack-plugin) to combine all css into one file in production
   - No PostCSS, SASS or CSS Module setup
   - Includes a Semantic UI [`reset.css`](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
 
-###### Progressive Web App
+##### Progressive Web App
   - Based on [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
 
-###### [React Router v4](https://reacttraining.com/react-router)
+##### [React Router v4](https://reacttraining.com/react-router)
 
-###### Redux
+##### Redux
   - See [redux branch](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
 
-###### Mobx
+##### Mobx
   - See [mobx branch](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
 
-###### Electron
+##### Electron
   - See [electron branch](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
 
 
 ## Development
 
-###### Hot Module Replacement
+##### Hot Module Replacement
   - using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next)
   - JSS, CSS and components are hot reloading
 
-###### ESLint
+##### ESLint
   - based on [Airbnb React Style Guide](https://github.com/airbnb/javascript/tree/master/react)
 
-###### Performance
+##### Performance
   - used [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) as a baseline
+
+##### Code Splitting
+  - [Read me](https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31)
 
 
 ## Folders
