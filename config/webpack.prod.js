@@ -58,6 +58,25 @@ module.exports = {
   },
   node: common.node,
   plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.NamedChunksPlugin(chunk => {
+      if (chunk.name) {
+        return chunk.name;
+      }
+      return chunk.modules
+        .map(m => path.relative(m.context, m.request))
+        .join('_');
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime'
+    }),
+    new NameAllModulesPlugin(),
+    // all plugins above has to stay before the following plugins
+    // otherwise, the build would actually give unexpected results
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin('css/[name].[contenthash:8].css'),
@@ -92,23 +111,6 @@ module.exports = {
       },
       sourceMap: true
     }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.NamedChunksPlugin(chunk => {
-      if (chunk.name) {
-        return chunk.name;
-      }
-      return chunk.modules
-        .map(m => path.relative(m.context, m.request))
-        .join('_');
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: Infinity
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'runtime'
-    }),
-    new NameAllModulesPlugin(),
     new ManifestPlugin({
       fileName: 'asset-manifest.json'
     }),
