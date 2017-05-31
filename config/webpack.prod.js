@@ -6,7 +6,8 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const NameAllModulesPlugin = require('name-all-modules-plugin');
 const common = require('./webpack.common');
-const { paths, vendors } = require('./configs');
+const { paths } = require('./configs');
+const pkg = require('../package');
 const babelrc = require('../.babelrc');
 
 module.exports = {
@@ -15,7 +16,7 @@ module.exports = {
   entry: {
     polyfill: require.resolve('./polyfills'),
     main: `${paths.srcPath}/index.js`,
-    vendor: vendors
+    vendor: Object.keys(pkg.dependencies)
   },
   resolve: common.resolve,
   output: {
