@@ -30,9 +30,7 @@ class Brand extends React.PureComponent {
     return (
       <div className={classes.Brand}>
         <img src={logo} className={classes.logo} alt="logo" />
-        <span className={classes.title}>
-          React Starter Kit
-        </span>
+        <span className={classes.title}>React Starter Kit</span>
       </div>
     );
   }

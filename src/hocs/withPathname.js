@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function withPathname(Component) {
-  const WithPathname = (props, context) => (
-    <Component pathname={context.router.route.location.pathname} {...props} />
-  );
+  const WithPathname = (props, context) =>
+    <Component pathname={context.router.route.location.pathname} {...props} />;
 
   WithPathname.contextTypes = {
     router: PropTypes.shape({
@@ -14,7 +13,8 @@ export default function withPathname(Component) {
     })
   };
 
-  WithPathname.displayName = `withPathname(${Component.displayName || Component.name})`;
+  WithPathname.displayName = `withPathname(${Component.displayName ||
+    Component.name})`;
 
   return WithPathname;
 }

@@ -26,7 +26,7 @@ const css = {
 function Navigation({ classes }) {
   return (
     <div className={classes.Navigation}>
-      {routes.map(route => (
+      {routes.map(route =>
         <SmartLink
           className={classes.link}
           activeClassName={classes.linkActive}
@@ -35,7 +35,7 @@ function Navigation({ classes }) {
         >
           {route.name}
         </SmartLink>
-      ))}
+      )}
     </div>
   );
 }

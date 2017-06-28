@@ -8,11 +8,9 @@
  *
  */
 
-
 /*******************************
              Reset
 *******************************/
-
 
 /* Border-Box */
 *,
@@ -32,9 +30,8 @@ input[type="password"] {
   -webkit-appearance: none;
   -moz-appearance: none;
 
-/* mobile firefox too! */
+  /* mobile firefox too! */
 }
-
 
 /*******************************
          Theme Overrides
@@ -53,13 +50,13 @@ input[type="password"] {
 html {
   font-family: sans-serif;
 
-/* 1 */
+  /* 1 */
   -ms-text-size-adjust: 100%;
 
-/* 2 */
+  /* 2 */
   -webkit-text-size-adjust: 100%;
 
-/* 2 */
+  /* 2 */
 }
 /**
  * Remove default margin.
@@ -99,10 +96,10 @@ progress,
 video {
   display: inline-block;
 
-/* 1 */
+  /* 1 */
   vertical-align: baseline;
 
-/* 2 */
+  /* 2 */
 }
 /**
  * Prevent modern browsers from displaying `audio` without controls.
@@ -261,13 +258,13 @@ select,
 textarea {
   color: inherit;
 
-/* 1 */
+  /* 1 */
   font: inherit;
 
-/* 2 */
+  /* 2 */
   margin: 0;
 
-/* 3 */
+  /* 3 */
 }
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
@@ -298,10 +295,10 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
 
-/* 2 */
+  /* 2 */
   cursor: pointer;
 
-/* 3 */
+  /* 3 */
 }
 /**
  * Re-set default cursor for disabled elements.
@@ -336,10 +333,10 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
 
-/* 1 */
+  /* 1 */
   padding: 0;
 
-/* 2 */
+  /* 2 */
 }
 /**
  * Fix the cursor style for Chrome's increment/decrement buttons. For certain
@@ -358,7 +355,7 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
 
-/* 1 */
+  /* 1 */
 }
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
@@ -384,10 +381,10 @@ fieldset {
 legend {
   border: 0;
 
-/* 1 */
+  /* 1 */
   padding: 0;
 
-/* 2 */
+  /* 2 */
 }
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
@@ -416,7 +413,6 @@ td,
 th {
   padding: 0;
 }
-
 
 /*******************************
          Site Overrides
