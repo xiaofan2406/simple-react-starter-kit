@@ -41,6 +41,7 @@ module.exports = {
     'react/jsx-indent': 0,
     'react/jsx-indent-props': 0,
     'react/jsx-closing-bracket-location': 0,
+    'react/jsx-wrap-multilines': 0,
     indent: 0, // prettier takes care of indenting
     'comma-dangle': [2, 'never'], // disallow trailing comma
     'global-require': 0,

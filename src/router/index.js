@@ -1,27 +1,30 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Layout } from 'components';
-
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
+import { asyncLoad } from 'hocs';
 
 export const routes = [
   {
     path: '/',
     name: 'Home',
     exact: true,
-    component: Home
+    component: asyncLoad({
+      importer: () => import(/* webpackChunkName: "Home" */ './Home')
+    })
   },
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: asyncLoad({
+      importer: () => import(/* webpackChunkName: "About" */ './About')
+    })
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: Contact
+    component: asyncLoad({
+      importer: () => import(/* webpackChunkName: "Contact" */ './Contact')
+    })
   }
 ];
 
@@ -29,14 +32,16 @@ function Router() {
   return (
     <BrowserRouter>
       <Layout>
-        {routes.map(route => (
-          <Route
-            key={route.path}
-            path={route.path}
-            exact={route.exact}
-            component={route.component}
-          />
-        ))}
+        <Switch>
+          {routes.map(route =>
+            <Route
+              key={route.path}
+              path={route.path}
+              exact={route.exact}
+              component={route.component}
+            />
+          )}
+        </Switch>
       </Layout>
     </BrowserRouter>
   );
