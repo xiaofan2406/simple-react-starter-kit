@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common');
 const { devServerPort, devServerIp, paths } = require('./configs');
-const babelrc = require('../.babelrc');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
@@ -36,8 +35,6 @@ module.exports = {
         include: paths.srcPath,
         loader: require.resolve('babel-loader'),
         options: {
-          babelrc: false,
-          presets: babelrc,
           cacheDirectory: true
         }
       },

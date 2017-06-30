@@ -8,7 +8,6 @@ const NameAllModulesPlugin = require('name-all-modules-plugin');
 const common = require('./webpack.common');
 const { paths } = require('./configs');
 const pkg = require('../package');
-const babelrc = require('../.babelrc');
 
 module.exports = {
   bail: true,
@@ -35,10 +34,7 @@ module.exports = {
       {
         test: /\.js$/,
         include: paths.srcPath,
-        loader: require.resolve('babel-loader'),
-        options: {
-          presets: babelrc
-        }
+        loader: require.resolve('babel-loader')
       },
       {
         test: /\.css$/,

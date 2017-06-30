@@ -23,7 +23,6 @@ const css = {
 };
 
 function Layout({ classes, children }) {
-  console.log('render Layout');
   return (
     <div className={classes.Layout}>
       <div className={classes.header}>

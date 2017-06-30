@@ -16,14 +16,15 @@ let plugins = [
       regenerator: true
     }
   ],
-  [require.resolve('babel-plugin-transform-regenerator'), { async: false }],
-  require.resolve('babel-plugin-syntax-dynamic-import'),
   require.resolve('babel-plugin-transform-export-extensions')
 ];
 
 if (process.env.NODE_ENV === 'development') {
+  plugins.concat([require.resolve('react-hot-loader/babel')]);
+}
+
+if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
   plugins.concat([
-    require.resolve('react-hot-loader/babel'),
     require.resolve('babel-plugin-transform-react-jsx-source'),
     require.resolve('babel-plugin-transform-react-jsx-self')
   ]);
@@ -40,13 +41,29 @@ if (process.env.NODE_ENV === 'production') {
   ];
 }
 
-module.exports = {
-  presets: [
-    [
-      require.resolve('babel-preset-env'),
-      { useBuiltIns: false, modules: false }
+if (process.env.NODE_ENV === 'test') {
+  module.exports = {
+    presets: [
+      [require('babel-preset-env').default, { targets: { node: 'current' } }],
+      require.resolve('babel-preset-react')
     ],
-    require.resolve('babel-preset-react')
-  ],
-  plugins
-};
+    plugins: plugins.concat([
+      require.resolve('babel-plugin-dynamic-import-node')
+    ])
+  };
+} else {
+  module.exports = {
+    presets: [
+      [
+        require.resolve('babel-preset-env'),
+        { useBuiltIns: false, modules: false }
+      ],
+      require.resolve('babel-preset-react')
+    ],
+    plugins: [
+      ...plugins,
+      [require.resolve('babel-plugin-transform-regenerator'), { async: false }],
+      require.resolve('babel-plugin-syntax-dynamic-import')
+    ]
+  };
+}
