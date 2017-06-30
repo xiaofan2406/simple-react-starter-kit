@@ -78,8 +78,6 @@ module.exports = {
       name: 'runtime'
     }),
     new NameAllModulesPlugin(),
-    // all plugins above has to stay before the following plugins
-    // otherwise, the build would actually give unexpected results
     new HtmlWebpackPlugin({
       inject: true,
       template: `${paths.srcPath}/assets/index.html`,
@@ -103,7 +101,8 @@ module.exports = {
         comparisons: false
       },
       output: {
-        comments: false
+        comments: false,
+        ascii_only: true
       },
       sourceMap: true
     }),
@@ -123,6 +122,7 @@ module.exports = {
       filename: 'service-worker.js',
       logger(message) {
         if (message.indexOf('Total precache size is') === 0) return;
+        if (message.indexOf('Skipping static resource') === 0) return;
         console.log(message);
       },
       minify: true,
@@ -132,10 +132,7 @@ module.exports = {
       // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
       navigateFallbackWhitelist: [/^(?!\/__).*/],
       // Don't precache sourcemaps (they're large) and build asset manifest:
-      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
-      // Work around Windows path issue in SWPrecacheWebpackPlugin:
-      // https://github.com/facebookincubator/create-react-app/issues/2235
-      stripPrefix: `${paths.distPath.replace(/\\/g, '/')}/`
+      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
     })
   ]
 };

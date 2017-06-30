@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common');
@@ -10,6 +11,7 @@ module.exports = {
     'react-hot-loader/patch',
     `webpack-dev-server/client?http://${devServerIp}:${devServerPort}`,
     'webpack/hot/only-dev-server',
+    require.resolve('./polyfills'),
     `${paths.srcPath}/index.js`
   ],
   resolve: common.resolve,
@@ -17,10 +19,13 @@ module.exports = {
     // For dev, `path` and `filename` are not important because of using webpack-dev-server
     path: paths.distPath,
     filename: 'bundle.js',
+    chunkFilename: 'js/[name].chunk.js',
     // Necessary for HMR to know where to load the hot update chunks
     publicPath: '/',
     // Add /* filename */ comments to generated require()s in the output.
-    pathinfo: true
+    pathinfo: true,
+    devtoolModuleFilenameTemplate: info =>
+      path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')
   },
   module: {
     strictExportPresence: true,
