@@ -12,8 +12,8 @@
     "prod": "NODE_ENV=production node ./config/test-prod-server"
   },
   "engines": {
-    "node": ">6",
-    "npm": ">3"
+    "node": ">8",
+    "npm": ">5"
   },
   "keywords": [
     "react",
@@ -57,6 +57,8 @@
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
+    "enzyme": "^2.9.1",
+    "enzyme-to-json": "^1.5.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-import-resolver-webpack": "^0.8.3",
@@ -100,11 +102,12 @@
     "transform": {
       "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
     "moduleNameMapper": {
       "^assets(.*)$": "<rootDir>/src/assets$1",
       "^components(.*)$": "<rootDir>/src/components$1",
+      "^configs(.*)$": "<rootDir>/src/configs$1",
       "^hocs(.*)$": "<rootDir>/src/hocs$1",
       "^router(.*)$": "<rootDir>/src/router$1",
       "^styles(.*)$": "<rootDir>/src/styles$1",
@@ -113,6 +116,10 @@
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
     ],
     "coverageThreshold": {
       "global": {
