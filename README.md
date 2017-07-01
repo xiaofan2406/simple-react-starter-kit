@@ -86,7 +86,7 @@ Path                | Import Alias | Description
 **src/**            | `src`        | Project source files directory
 src/**assets/**     | `assets`     | Common static assets directory
 src/**components/** | `components` | Components directory
-src/**constants/**  | `constants`  | Constant values directory
+src/**configs/**    | `configs`    | App config values directory
 src/**hocs/**       | `hocs`       | Higher-order components directory
 src/**router/**     |              | React Router setup and route-level components directory
 src/**styles/**     | `styles`     | Global CSS and JSS directory
