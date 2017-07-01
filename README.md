@@ -12,41 +12,35 @@ A simple boilerplate for starting new React projects.
 
 
 ## Get Started
-- Install dependencies
-  ```
-  yarn
-  ```
-
-- Run dev server
-  ```
-  yarn dev
-  ```
-
-- Build for production
-  ```
-  yarn build
-  ```
-
-- Test production build
-  ```
-  yarn prod
-  ```
+```
+git clone https://github.com/xiaofan2406/react-starter-kit.git
+yarn # install dependencies
+yarn dev # run webpack-dev-server
+```
 
 
-## Details
-
-##### [JSS](https://github.com/cssinjs/jss)
-  - [Read this](https://github.com/oliviertassinari/a-journey-toward-better-style)
-  - Using together with [`react-jss`](https://github.com/cssinjs/react-jss)
-  - Using [classnames](https://github.com/JedWatson/classnames) helper to make conditional class names cleaner
+## Features
 
 ##### CSS
-  - Using [`ExtractTextPlugin`](https://github.com/webpack/extract-text-webpack-plugin) to combine all css into one file in production
   - No PostCSS, SASS or CSS Module setup
+  - [A journey toward better style](https://github.com/oliviertassinari/a-journey-toward-better-style)
+  - Using [JSS](https://github.com/cssinjs/jss) together with [`react-jss`](https://github.com/cssinjs/react-jss)
+  - Using [classnames](https://github.com/JedWatson/classnames) helper to make conditional class names cleaner
   - Includes a Semantic UI [`reset.css`](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
+
+##### Code Splitting
+  - Base on [Predictable long term caching with webpack](https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31)
+  - Includes a solution for dynamic import that helps async loading
+
+##### Hot Module Replacement
+  - Using [`react-hot-loader@next`](https://github.com/gaearon/react-hot-loader/tree/next) to include functional components hot reload during development
+
+##### Component Testing
+  - Using [`jest`](https://facebook.github.io/jest) with setup based on [create-react-app](https://github.com/facebookincubator/create-react-app)
 
 ##### Progressive Web App
   - Based on [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
+  - Using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) as a baseline measurement
 
 ##### [React Router v4](https://reacttraining.com/react-router)
 
@@ -60,31 +54,39 @@ A simple boilerplate for starting new React projects.
   - See [electron branch](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
 
 
-## Development
+## Commands
 
-##### Hot Module Replacement
-  - using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/tree/next)
-  - JSS, CSS and components are hot reloading
+##### Development
+```
+yarn dev
+```
 
-##### ESLint
-  - based on [Airbnb React Style Guide](https://github.com/airbnb/javascript/tree/master/react)
+##### Testing
+```
+yarn test
+```
 
-##### Performance
-  - used [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) as a baseline
+##### Production
+- Build the project for production
+  ```
+  yarn build
+  ```
+- Start a local server to test production build
+  ```
+  yarn prod
+  ```
 
-##### Code Splitting
-  - [Read me](https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31)
 
-
-## Folders
-Path                | Import alias | Description
-------------------- | ------------ | ----------------------------------------------------
+## Project Structure
+Path                | Import Alias | Description
+------------------- | ------------ | -------------------------------------------------------
 **config/**         |              | Project tooling configuration files
-**src/**            | `src`        | App source files directory, processed by webpack
-src/**assets/**     | `assets`     | Common static assets folder
-src/**components/** | `components` | React components folder
-src/**hocs/**       | `hocs`       | Higher-order components folder
-src/**router/**     | `router`     | React Router setup and route-level components folder
-src/**styles/**     | `styles`     | Global CSS and JSS folder
-src/**utils/**      | `utils`      | JavaScript helper functions folder
-src/**widgets/**    | `widgets`    | Small shared React components folder
+**src/**            | `src`        | Project source files directory
+src/**assets/**     | `assets`     | Common static assets directory
+src/**components/** | `components` | Components directory
+src/**constants/**  | `constants`  | Constant values directory
+src/**hocs/**       | `hocs`       | Higher-order components directory
+src/**router/**     |              | React Router setup and route-level components directory
+src/**styles/**     | `styles`     | Global CSS and JSS directory
+src/**utils/**      | `utils`      | Utility functions directory
+src/**widgets/**    | `widgets`    | Small non business logic related components directory

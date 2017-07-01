@@ -11,8 +11,6 @@ exports[`should match snapshot 1`] = `
   />
   <span
     className="title-0-2"
-  >
-    React Starter Kit
-  </span>
+  />
 </div>
 `;

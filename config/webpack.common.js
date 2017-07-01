@@ -6,8 +6,8 @@ module.exports = {
     alias: {
       assets: `${paths.srcPath}/assets`,
       components: `${paths.srcPath}/components`,
+      constants: `${paths.srcPath}/constants`,
       hocs: `${paths.srcPath}/hocs`,
-      router: `${paths.srcPath}/router`,
       styles: `${paths.srcPath}/styles`,
       utils: `${paths.srcPath}/utils`,
       widgets: `${paths.srcPath}/widgets`

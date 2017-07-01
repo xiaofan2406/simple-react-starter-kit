@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withCss from 'react-jss';
 import { SmartLink } from 'widgets';
-import { routes } from 'router';
+import { ROUTES } from 'constants';
 import { theme, variables } from 'styles';
 
 const css = {
@@ -26,7 +26,7 @@ const css = {
 function Navigation({ classes }) {
   return (
     <div className={classes.Navigation}>
-      {routes.map(route =>
+      {Object.values(ROUTES).map(route =>
         <SmartLink
           className={classes.link}
           activeClassName={classes.linkActive}

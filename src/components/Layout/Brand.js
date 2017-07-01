@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withCss from 'react-jss';
 import { variables, fontSizes, theme } from 'styles';
+import { APP_TITLE } from 'constants';
 import logo from 'assets/logo.svg';
 
 const css = {
@@ -35,7 +36,9 @@ class Brand extends React.Component {
     return (
       <div className={classes.Brand}>
         <img src={logo} className={classes.logo} alt="logo" />
-        <span className={classes.title}>React Starter Kit</span>
+        <span className={classes.title}>
+          {APP_TITLE}
+        </span>
       </div>
     );
   }
