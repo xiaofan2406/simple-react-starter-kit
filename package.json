@@ -28,7 +28,7 @@
     "type": "git",
     "url": "https://github.com/xiaofan2406/react-starter-kit"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^15.6.1",
