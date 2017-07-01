@@ -14,8 +14,8 @@ A simple boilerplate for starting new React projects.
 ## Get Started
 ```
 git clone https://github.com/xiaofan2406/react-starter-kit.git
-yarn # install dependencies
-yarn dev # run webpack-dev-server
+yarn
+yarn dev
 ```
 
 
