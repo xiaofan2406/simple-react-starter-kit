@@ -1,1 +1,1 @@
-export SmartLink from './SmartLink';
+export Loader from './Loader';

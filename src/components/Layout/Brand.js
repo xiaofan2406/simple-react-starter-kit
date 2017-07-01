@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withCss from 'react-jss';
 import { variables, fontSizes, theme } from 'styles';
-import { APP_TITLE } from 'constants';
+import { APP_TITLE } from 'configs';
 import logo from 'assets/logo.svg';
 
 const css = {
@@ -21,7 +21,6 @@ const css = {
   }
 };
 
-@withCss(css)
 class Brand extends React.Component {
   static propTypes = {
     classes: PropTypes.object.isRequired
@@ -44,4 +43,6 @@ class Brand extends React.Component {
   }
 }
 
-export default Brand;
+export { Brand as Component };
+
+export default withCss(css)(Brand);

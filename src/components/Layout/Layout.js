@@ -39,4 +39,6 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired
 };
 
+export { Layout as Component };
+
 export default withCss(css)(Layout);

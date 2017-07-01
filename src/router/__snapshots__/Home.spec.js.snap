@@ -2,12 +2,6 @@
 
 exports[`should match snapshot 1`] = `
 <div>
-  <img
-    alt="logo"
-    src="logo.svg"
-  />
-  <span>
-    React Starter Kit
-  </span>
+  Hello world
 </div>
 `;

@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<Jss(Loader)
+  classes={Object {}}
+  color="#ffffff"
+  size={60}
+>
+  <Loader
+    classes={Object {}}
+    color="#ffffff"
+    sheet={
+      StyleSheet {
+        "attached": true,
+        "classes": Object {
+          "Loader": "Loader-0-8 Loader-0-0",
+          "innerFirst": "innerFirst-0-6 innerFirst-0-3",
+          "innerSecond": "innerSecond-0-7 innerSecond-0-4",
+          "outer": "outer-0-5 outer-0-1",
+          "withAnimation": "withAnimation-0-9 withAnimation-0-2",
+        },
+        "deployed": true,
+        "linked": true,
+        "options": Object {
+          "Renderer": [Function],
+          "classes": Object {
+            "Loader": "Loader-0-8 Loader-0-0",
+            "innerFirst": "innerFirst-0-6 innerFirst-0-3",
+            "innerSecond": "innerSecond-0-7 innerSecond-0-4",
+            "outer": "outer-0-5 outer-0-1",
+            "withAnimation": "withAnimation-0-9 withAnimation-0-2",
+          },
+          "generateClassName": [Function],
+          "index": -100000,
+          "insertionPoint": "jss",
+          "jss": Jss {
+            "options": Object {
+              "generateClassName": [Function],
+              "insertionPoint": "jss",
+              "plugins": Array [
+                Object {
+                  "onCreateRule": [Function],
+                  "onProcessRule": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onChangeValue": [Function],
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onChangeValue": [Function],
+                  "onProcessRule": [Function],
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+              ],
+            },
+            "plugins": PluginsRegistry {
+              "hooks": Object {
+                "onChangeValue": Array [
+                  [Function],
+                  [Function],
+                ],
+                "onCreateRule": Array [
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                ],
+                "onProcessRule": Array [
+                  [Function],
+                  [Function],
+                ],
+                "onProcessSheet": Array [],
+                "onProcessStyle": Array [
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                ],
+              },
+            },
+            "version": "7.1.7",
+          },
+          "link": true,
+          "meta": "LoaderDynamic",
+          "parent": [Circular],
+          "sheet": [Circular],
+        },
+        "renderer": DomRenderer {
+          "element": <style
+            type="text/css"
+            data-jss=""
+            data-meta="LoaderDynamic"
+      >
+            .outer-0-5 { width: 60px; height: 60px; } .innerFirst-0-6 { width: 60px; height: 60px; border: 6px solid #ffffff; } .innerSecond-0-7 { width: 60px; height: 60px; border: 6px solid #ffffff; }
+      </style>,
+          "getSelector": [Function],
+          "getStyle": [Function],
+          "hasInsertedRules": false,
+          "setSelector": [Function],
+          "setStyle": [Function],
+          "sheet": [Circular],
+        },
+        "rules": RulesContainer {
+          "classes": Object {
+            "Loader": "Loader-0-8 Loader-0-0",
+            "innerFirst": "innerFirst-0-6 innerFirst-0-3",
+            "innerSecond": "innerSecond-0-7 innerSecond-0-4",
+            "outer": "outer-0-5 outer-0-1",
+            "withAnimation": "withAnimation-0-9 withAnimation-0-2",
+          },
+          "index": Array [
+            Object {
+              "height": "60px",
+              "width": "60px",
+            },
+            Object {
+              "border": "6px solid #ffffff",
+              "height": "60px",
+              "width": "60px",
+            },
+            Object {
+              "border": "6px solid #ffffff",
+              "height": "60px",
+              "width": "60px",
+            },
+            Object {},
+            Object {},
+          ],
+          "map": Object {
+            ".Loader-0-8": Object {},
+            ".innerFirst-0-6": Object {
+              "border": "6px solid #ffffff",
+              "height": "60px",
+              "width": "60px",
+            },
+            ".innerSecond-0-7": Object {
+              "border": "6px solid #ffffff",
+              "height": "60px",
+              "width": "60px",
+            },
+            ".outer-0-5": Object {
+              "height": "60px",
+              "width": "60px",
+            },
+            ".withAnimation-0-9": Object {},
+            "Loader": Object {},
+            "innerFirst": Object {
+              "border": "6px solid #ffffff",
+              "height": "60px",
+              "width": "60px",
+            },
+            "innerSecond": Object {
+              "border": "6px solid #ffffff",
+              "height": "60px",
+              "width": "60px",
+            },
+            "outer": Object {
+              "height": "60px",
+              "width": "60px",
+            },
+            "withAnimation": Object {},
+          },
+          "options": Object {
+            "Renderer": [Function],
+            "classes": Object {
+              "Loader": "Loader-0-8 Loader-0-0",
+              "innerFirst": "innerFirst-0-6 innerFirst-0-3",
+              "innerSecond": "innerSecond-0-7 innerSecond-0-4",
+              "outer": "outer-0-5 outer-0-1",
+              "withAnimation": "withAnimation-0-9 withAnimation-0-2",
+            },
+            "generateClassName": [Function],
+            "index": -100000,
+            "insertionPoint": "jss",
+            "jss": Jss {
+              "options": Object {
+                "generateClassName": [Function],
+                "insertionPoint": "jss",
+                "plugins": Array [
+                  Object {
+                    "onCreateRule": [Function],
+                    "onProcessRule": [Function],
+                  },
+                  Object {
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onChangeValue": [Function],
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onChangeValue": [Function],
+                    "onProcessRule": [Function],
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onProcessStyle": [Function],
+                  },
+                ],
+              },
+              "plugins": PluginsRegistry {
+                "hooks": Object {
+                  "onChangeValue": Array [
+                    [Function],
+                    [Function],
+                  ],
+                  "onCreateRule": Array [
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                  ],
+                  "onProcessRule": Array [
+                    [Function],
+                    [Function],
+                  ],
+                  "onProcessSheet": Array [],
+                  "onProcessStyle": Array [
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                  ],
+                },
+              },
+              "version": "7.1.7",
+            },
+            "link": true,
+            "meta": "LoaderDynamic",
+            "parent": [Circular],
+            "sheet": [Circular],
+          },
+          "raw": Object {
+            "Loader": Object {
+              "composes": "Loader-0-0",
+            },
+            "innerFirst": Object {
+              "border": [Function],
+              "composes": "innerFirst-0-3",
+              "height": [Function],
+              "width": [Function],
+            },
+            "innerSecond": Object {
+              "border": [Function],
+              "composes": "innerSecond-0-4",
+              "height": [Function],
+              "width": [Function],
+            },
+            "outer": Object {
+              "composes": "outer-0-1",
+              "height": [Function],
+              "width": [Function],
+            },
+            "withAnimation": Object {
+              "composes": "withAnimation-0-2",
+            },
+          },
+        },
+      }
+    }
+    size={60}
+  >
+    <div
+      className=""
+    >
+      <div>
+        <div />
+        <div />
+      </div>
+    </div>
+  </Loader>
+</Jss(Loader)>
+`;

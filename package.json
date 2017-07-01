@@ -109,7 +109,6 @@
       "^components(.*)$": "<rootDir>/src/components$1",
       "^configs(.*)$": "<rootDir>/src/configs$1",
       "^hocs(.*)$": "<rootDir>/src/hocs$1",
-      "^router(.*)$": "<rootDir>/src/router$1",
       "^styles(.*)$": "<rootDir>/src/styles$1",
       "^utils(.*)$": "<rootDir>/src/utils$1",
       "^widgets(.*)$": "<rootDir>/src/widgets$1"
@@ -128,6 +127,11 @@
         "lines": 50,
         "statements": 50
       }
-    }
+    },
+    "coveragePathIgnorePatterns": [
+      "index.js",
+      "<rootDir>/src/utils/compose.js",
+      "<rootDir>/src/utils/serviceWorker.js"
+    ]
   }
 }

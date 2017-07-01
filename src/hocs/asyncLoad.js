@@ -18,10 +18,10 @@ function asyncLoad({ importer }) {
 
     render() {
       const { Component } = this.state;
-
       return Component ? <Component {...this.props} /> : null;
     }
   }
+
   return AsyncLoad;
 }
 

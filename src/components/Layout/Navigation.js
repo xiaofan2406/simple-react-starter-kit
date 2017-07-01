@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withCss from 'react-jss';
-import { SmartLink } from 'widgets';
-import { ROUTES } from 'constants';
+import { NavLink } from 'react-router-dom';
+import { ROUTES } from 'configs';
 import { theme, variables } from 'styles';
 
 const css = {
@@ -27,14 +27,15 @@ function Navigation({ classes }) {
   return (
     <div className={classes.Navigation}>
       {Object.values(ROUTES).map(route =>
-        <SmartLink
+        <NavLink
           className={classes.link}
           activeClassName={classes.linkActive}
           key={route.path}
+          exact={route.exact}
           to={route.path}
         >
           {route.name}
-        </SmartLink>
+        </NavLink>
       )}
     </div>
   );
@@ -43,5 +44,7 @@ function Navigation({ classes }) {
 Navigation.propTypes = {
   classes: PropTypes.object.isRequired
 };
+
+export { Navigation as Component };
 
 export default withCss(css)(Navigation);
