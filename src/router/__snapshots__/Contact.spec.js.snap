@@ -2,6 +2,6 @@
 
 exports[`should match snapshot 1`] = `
 <div>
-  Loade
+  Contact
 </div>
 `;

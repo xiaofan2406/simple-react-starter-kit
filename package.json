@@ -70,7 +70,6 @@
     "html-webpack-plugin": "^2.29.0",
     "jest": "^20.0.4",
     "json-loader": "^0.5.4",
-    "name-all-modules-plugin": "^1.0.1",
     "object-assign": "^4.1.1",
     "promise": "^8.0.0",
     "prop-types": "^15.5.10",

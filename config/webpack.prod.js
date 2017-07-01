@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-const NameAllModulesPlugin = require('name-all-modules-plugin');
 const common = require('./webpack.common');
 const { paths } = require('./configs');
 const pkg = require('../package');
@@ -73,7 +72,6 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'runtime'
     }),
-    new NameAllModulesPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: `${paths.srcPath}/assets/index.html`,
