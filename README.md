@@ -1,12 +1,14 @@
 # React Starter Kit
-[![Build Status][build-badge]][build] [![Dependencies Status][dependencies-badge]][dependencies] [![Styled with prettier][prettier-badge]][prettier]
+[![Styled with prettier][prettier-badge]][prettier] [![Dependencies Status][dependencies-badge]][dependencies] [![Build Status][build-badge]][build] [![Coverage Status][coverage-badge]][coverage]
 
-[build-badge]: https://img.shields.io/travis/xiaofan2406/react-starter-kit.svg?style=flat-square
-[build]: https://travis-ci.org/xiaofan2406/react-starter-kit
-[dependencies-badge]: https://img.shields.io/david/xiaofan2406/react-starter-kit.svg?style=flat-square
-[dependencies]: https://david-dm.org/xiaofan2406/react-starter-kit
 [prettier-badge]: https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square
 [prettier]: https://github.com/prettier/prettier
+[dependencies-badge]: https://img.shields.io/david/xiaofan2406/react-starter-kit.svg?style=flat-square
+[dependencies]: https://david-dm.org/xiaofan2406/react-starter-kit
+[build-badge]: https://img.shields.io/travis/xiaofan2406/react-starter-kit.svg?style=flat-square
+[build]: https://travis-ci.org/xiaofan2406/react-starter-kit
+[coverage-badge]: https://img.shields.io/codecov/c/github/xiaofan2406/react-starter-kit.svg?style=flat-square
+[coverage]: https://codecov.io/gh/xiaofan2406/react-starter-kit
 
 A simple boilerplate for starting new React projects.
 
