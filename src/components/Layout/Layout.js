@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withCss from 'react-jss';
-import { fontFamily, fontSize, headerHeight } from 'styles';
+import { theme, variables } from 'styles';
 import 'styles/reset.css';
 import 'styles/animation.css';
 
@@ -10,12 +10,12 @@ import Navigation from './Navigation';
 
 const css = {
   Layout: {
-    fontFamily,
-    fontSize
+    fontFamily: theme.fontFamily,
+    fontSize: theme.fontSize
   },
   header: {
-    height: headerHeight,
-    backgroundColor: '#242729',
+    height: variables.Layout.headerHeight,
+    backgroundColor: theme.bgColor,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between'

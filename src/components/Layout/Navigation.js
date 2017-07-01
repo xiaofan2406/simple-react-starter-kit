@@ -3,23 +3,23 @@ import PropTypes from 'prop-types';
 import withCss from 'react-jss';
 import { SmartLink } from 'widgets';
 import { routes } from 'router';
-import { headerHeight, primaryColor } from 'styles';
+import { theme, variables } from 'styles';
 
 const css = {
   Navigation: {},
   link: {
-    color: '#FFFFFF',
+    color: theme.inverseColor,
     textDecoration: 'none',
     padding: '0 0.5em',
     display: 'inline-block',
     lineHeight: '42px',
-    height: headerHeight,
+    height: variables.Layout.headerHeight,
     '&:hover': {
-      backgroundColor: '#3B4045'
+      backgroundColor: theme.bgAccentColor
     }
   },
   linkActive: {
-    borderBottom: `2px solid ${primaryColor}`
+    borderBottom: `2px solid ${theme.primaryColor}`
   }
 };
 
