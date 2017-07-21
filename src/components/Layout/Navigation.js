@@ -1,35 +1,32 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import withCss from 'react-jss';
+import { css } from 'emotion';
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from 'configs';
 import { theme, variables } from 'styles';
 
-const css = {
-  Navigation: {},
-  link: {
-    color: theme.inverseColor,
-    textDecoration: 'none',
-    padding: '0 0.5em',
-    display: 'inline-block',
-    lineHeight: '42px',
-    height: variables.Layout.headerHeight,
-    '&:hover': {
-      backgroundColor: theme.bgAccentColor
-    }
-  },
-  linkActive: {
-    borderBottom: `2px solid ${theme.primaryColor}`
+const navLink = css`
+  color: ${theme.inverseColor};
+  text-decoration: none;
+  padding: 0 0.5em;
+  display: inline-block;
+  line-height: calc(${variables.Layout.headerHeight} * 1px);
+  height: calc(${variables.Layout.headerHeight} * 1px);
+  :hover {
+    background-color: ${theme.bgAccentColor}
   }
-};
+`;
 
-function Navigation({ classes }) {
+const navLinkActive = css`
+  border-bottom: 2px solid ${theme.primaryColor};
+`;
+
+function Navigation() {
   return (
-    <div className={classes.Navigation}>
+    <div>
       {Object.values(ROUTES).map(route =>
         <NavLink
-          className={classes.link}
-          activeClassName={classes.linkActive}
+          className={navLink}
+          activeClassName={navLinkActive}
           key={route.path}
           exact={route.exact}
           to={route.path}
@@ -41,10 +38,6 @@ function Navigation({ classes }) {
   );
 }
 
-Navigation.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
 export { Navigation as Component };
 
-export default withCss(css)(Navigation);
+export default Navigation;

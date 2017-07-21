@@ -1,19 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot 1`] = `
-<div>
-  <div>
-    <Jss(Brand) />
-    <Jss(Navigation) />
+<div
+  className="css-layout-ebsr67 vars-1qlysg4"
+>
+  <div
+    className="css-header-1w91r59 vars-pe0ktd"
+  >
+    <Brand />
+    <Navigation
+      height={100}
+    />
   </div>
 </div>
 `;
 
 exports[`should render children 1`] = `
-<div>
-  <div>
-    <Jss(Brand) />
-    <Jss(Navigation) />
+<div
+  className="css-layout-ebsr67 vars-1qlysg4"
+>
+  <div
+    className="css-header-1w91r59 vars-pe0ktd"
+  >
+    <Brand />
+    <Navigation
+      height={100}
+    />
   </div>
   <Child />
 </div>

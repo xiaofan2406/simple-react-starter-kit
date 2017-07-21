@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot 1`] = `
-<div>
+<div
+  className="css-brand-2sf3o9 vars-123jc49"
+>
   <img
     alt="logo"
     src="logo.svg"

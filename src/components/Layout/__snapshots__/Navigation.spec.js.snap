@@ -3,20 +3,23 @@
 exports[`should match snapshot 1`] = `
 <div>
   <NavLink
-    activeClassName="active"
+    activeClassName="css-navLinkActive-tckffi vars-1q7lj12"
+    className="css-navLink-r9273j vars-ngo31e"
     exact={true}
     to="/"
   >
     Home
   </NavLink>
   <NavLink
-    activeClassName="active"
+    activeClassName="css-navLinkActive-tckffi vars-1q7lj12"
+    className="css-navLink-r9273j vars-ngo31e"
     to="/about"
   >
     About
   </NavLink>
   <NavLink
-    activeClassName="active"
+    activeClassName="css-navLinkActive-tckffi vars-1q7lj12"
+    className="css-navLink-r9273j vars-ngo31e"
     to="/contact"
   >
     Contact

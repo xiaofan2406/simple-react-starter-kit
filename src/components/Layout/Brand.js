@@ -1,41 +1,33 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import withCss from 'react-jss';
+import { css } from 'emotion/react';
 import { variables, fontSizes, theme } from 'styles';
 import { APP_TITLE } from 'configs';
 import logo from 'assets/logo.svg';
 
-const css = {
-  Brand: {
-    display: 'flex',
-    alignItems: 'center'
-  },
-  logo: {
-    animation: 'spin infinite 10s linear',
-    height: variables.Brand.logoHeight
-  },
-  title: {
-    animation: 'fadeIn 2s ease',
-    fontSize: fontSizes.large,
-    color: theme.inverseColor
+const brand = css`
+  display: flex;
+  align-items: center;
+  img {
+    animation: spin infinite 10s linear;
+    height: calc(${variables.Brand.logoHeight} * 1px);
   }
-};
+  span {
+    animation: fadeIn 2s ease;
+    font-size: calc(${fontSizes.large} * 1px);
+    color: ${theme.inverseColor};
+  }
+`;
 
 class Brand extends React.Component {
-  static propTypes = {
-    classes: PropTypes.object.isRequired
-  };
-
   shouldComponentUpdate() {
     return false;
   }
 
   render() {
-    const { classes } = this.props;
     return (
-      <div className={classes.Brand}>
-        <img src={logo} className={classes.logo} alt="logo" />
-        <span className={classes.title}>
+      <div className={brand}>
+        <img src={logo} alt="logo" />
+        <span>
           {APP_TITLE}
         </span>
       </div>
@@ -45,4 +37,4 @@ class Brand extends React.Component {
 
 export { Brand as Component };
 
-export default withCss(css)(Brand);
+export default Brand;

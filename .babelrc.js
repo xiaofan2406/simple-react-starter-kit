@@ -1,6 +1,7 @@
 const path = require('path');
 
 let plugins = [
+  require.resolve('emotion/babel'),
   require.resolve('babel-plugin-transform-class-properties'),
   [
     require.resolve('babel-plugin-transform-object-rest-spread'),

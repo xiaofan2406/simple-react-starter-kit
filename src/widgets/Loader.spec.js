@@ -5,8 +5,7 @@ import toJson from 'enzyme-to-json';
 import Loader from './Loader';
 
 it('should match snapshot', () => {
-  const props = { classes: {} };
-  const component = mount(<Loader {...props} />);
+  const component = mount(<Loader />);
 
   expect(toJson(component)).toMatchSnapshot();
 });
