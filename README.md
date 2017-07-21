@@ -26,8 +26,7 @@ yarn dev
 ##### CSS
   - No PostCSS, SASS or CSS Module setup
   - [A journey toward better style](https://github.com/oliviertassinari/a-journey-toward-better-style)
-  - Using [JSS](https://github.com/cssinjs/jss) together with [`react-jss`](https://github.com/cssinjs/react-jss)
-  - Using [classnames](https://github.com/JedWatson/classnames) helper to make conditional class names cleaner
+  - Using [emotion](https://github.com/tkh44/emotion) in extract mode
   - Includes a Semantic UI [`reset.css`](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
 
 ##### Code Splitting
@@ -89,6 +88,6 @@ src/**components/** | `components` | Components directory
 src/**configs/**    | `configs`    | App config values directory
 src/**hocs/**       | `hocs`       | Higher-order components directory
 src/**router/**     |              | React Router setup and route-level components directory
-src/**styles/**     | `styles`     | Global CSS and JSS directory
+src/**styles/**     | `styles`     | Global CSS directory
 src/**utils/**      | `utils`      | Utility functions directory
 src/**widgets/**    | `widgets`    | Small non business logic related components directory
