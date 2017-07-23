@@ -61,8 +61,8 @@ module.exports = {
       if (chunk.name) {
         return chunk.name;
       }
-      return chunk.modules
-        .map(m => path.relative(m.context, m.request))
+      return chunk
+        .mapModules(m => path.relative(m.context, m.request))
         .join('_');
     }),
     new webpack.optimize.CommonsChunkPlugin({
