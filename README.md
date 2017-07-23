@@ -25,7 +25,6 @@ yarn dev
 
 ##### CSS
   - No PostCSS, SASS or CSS Module setup
-  - [A journey toward better style](https://github.com/oliviertassinari/a-journey-toward-better-style)
   - Using [emotion](https://github.com/tkh44/emotion) in extract mode
   - Includes a Semantic UI [`reset.css`](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
 
