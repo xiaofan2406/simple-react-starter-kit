@@ -1,4 +1,6 @@
 # React Starter Kit
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/xiaofan2406/react-starter-kit.svg)](https://greenkeeper.io/)
 [![Styled with prettier][prettier-badge]][prettier] [![Dependencies Status][dependencies-badge]][dependencies] [![Build Status][build-badge]][build] [![Coverage Status][coverage-badge]][coverage]
 
 [prettier-badge]: https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square
