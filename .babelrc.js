@@ -20,14 +20,7 @@ let plugins = [
 ];
 
 if (process.env.NODE_ENV === 'development') {
-  plugins.concat([require.resolve('react-hot-loader/babel')]);
-}
-
-if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
-  plugins.concat([
-    require.resolve('babel-plugin-transform-react-jsx-source'),
-    require.resolve('babel-plugin-transform-react-jsx-self')
-  ]);
+  plugins = [...plugins, require.resolve('react-hot-loader/babel')];
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -39,6 +32,12 @@ if (process.env.NODE_ENV === 'production') {
     ],
     ...plugins
   ];
+} else {
+  plugins = [
+    ...plugins,
+    require.resolve('babel-plugin-transform-react-jsx-source'),
+    require.resolve('babel-plugin-transform-react-jsx-self')
+  ];
 }
 
 if (process.env.NODE_ENV === 'test') {
@@ -47,9 +46,7 @@ if (process.env.NODE_ENV === 'test') {
       [require('babel-preset-env').default, { targets: { node: 'current' } }],
       require.resolve('babel-preset-react')
     ],
-    plugins: plugins.concat([
-      require.resolve('babel-plugin-dynamic-import-node')
-    ])
+    plugins: [...plugins, require.resolve('babel-plugin-dynamic-import-node')]
   };
 } else {
   module.exports = {
