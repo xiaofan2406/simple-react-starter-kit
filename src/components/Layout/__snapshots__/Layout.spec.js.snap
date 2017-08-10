@@ -2,10 +2,10 @@
 
 exports[`should match snapshot 1`] = `
 <div
-  className="css-layout-ebsr67 vars-1qlysg4"
+  className="css-e2wgdg"
 >
   <div
-    className="css-header-1w91r59 vars-pe0ktd"
+    className="css-1kqepsy"
   >
     <Brand />
     <Navigation
@@ -17,10 +17,10 @@ exports[`should match snapshot 1`] = `
 
 exports[`should render children 1`] = `
 <div
-  className="css-layout-ebsr67 vars-1qlysg4"
+  className="css-e2wgdg"
 >
   <div
-    className="css-header-1w91r59 vars-pe0ktd"
+    className="css-1kqepsy"
   >
     <Brand />
     <Navigation

@@ -7,13 +7,13 @@ import logo from 'assets/logo.svg';
 const brand = css`
   display: flex;
   align-items: center;
-  img {
+  & img {
     animation: spin infinite 10s linear;
-    height: calc(${variables.Brand.logoHeight} * 1px);
+    height: ${variables.Brand.logoHeight}px;
   }
-  span {
+  & span {
     animation: fadeIn 2s ease;
-    font-size: calc(${fontSizes.large} * 1px);
+    font-size: ${fontSizes.large}px;
     color: ${theme.inverseColor};
   }
 `;

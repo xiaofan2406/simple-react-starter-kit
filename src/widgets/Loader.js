@@ -7,11 +7,11 @@ import styled from 'emotion/react';
 
 const LoaderContainer = styled.div`
   display: inline-block;
-  > div {
+  & > div {
     width: ${({ size }) => `${size}px`};
     height: ${({ size }) => `${size}px`};
     position: relative;
-    div {
+    & div {
       width: ${({ size }) => `${size}px`};
       height: ${({ size }) => `${size}px`};
       border: ${({ size, color }) => `${size / 10}px solid ${color}`};
@@ -23,10 +23,10 @@ const LoaderContainer = styled.div`
       perspective: 800px;
       animation-fill-mode: forwards;
     }
-    div:first-child {
+    & div:first-child {
       animation: loaderRigthRotate 2s 0s infinite linear;
     }
-    div:nth-child(2) {
+    & div:nth-child(2) {
       animation: loaderLeftRotate 2s 0s infinite linear;
     }
   }
