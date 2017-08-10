@@ -12,7 +12,7 @@ const navLink = css`
   line-height: ${variables.Layout.headerHeight}px;
   height: ${variables.Layout.headerHeight}px;
   :hover {
-    background-color: ${theme.bgAccentColor}
+    background-color: ${theme.bgAccentColor};
   }
 `;
 

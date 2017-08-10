@@ -10,7 +10,7 @@ import Navigation from './Navigation';
 
 const layout = css`
   font-family: ${theme.fontFamily};
-  font-size: ${theme.fontSize}px
+  font-size: ${theme.fontSize}px;
 `;
 
 const header = css`
