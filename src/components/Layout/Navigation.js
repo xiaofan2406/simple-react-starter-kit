@@ -9,8 +9,8 @@ const navLink = css`
   text-decoration: none;
   padding: 0 0.5em;
   display: inline-block;
-  line-height: calc(${variables.Layout.headerHeight} * 1px);
-  height: calc(${variables.Layout.headerHeight} * 1px);
+  line-height: ${variables.Layout.headerHeight}px;
+  height: ${variables.Layout.headerHeight}px;
   :hover {
     background-color: ${theme.bgAccentColor}
   }

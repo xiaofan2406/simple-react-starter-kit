@@ -5,12 +5,12 @@ exports[`should match snapshot 1`] = `
   color="#e8e8e8"
   size={60}
 >
-  <styled(ComponentLoaderContainer)
+  <styled(Component)
     color="#e8e8e8"
     size={60}
   >
     <div
-      className="css-LoaderContainer-17fo30n vars-1hjfu8r"
+      className="css-gdzku00 css-oybh0d"
       color="#e8e8e8"
       size={60}
     >
@@ -19,6 +19,6 @@ exports[`should match snapshot 1`] = `
         <div />
       </div>
     </div>
-  </styled(ComponentLoaderContainer)>
+  </styled(Component)>
 </Loader>
 `;

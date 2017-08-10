@@ -10,11 +10,11 @@ import Navigation from './Navigation';
 
 const layout = css`
   font-family: ${theme.fontFamily};
-  font-size: calc(${theme.fontSize} * 1px)
+  font-size: ${theme.fontSize}px
 `;
 
 const header = css`
-  height: calc(${variables.Layout.headerHeight} * 1px);
+  height: ${variables.Layout.headerHeight}px;
   background-color: ${theme.bgColor};
   display: flex;
   align-items: center;
