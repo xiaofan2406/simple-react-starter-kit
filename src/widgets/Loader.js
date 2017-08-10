@@ -8,13 +8,15 @@ import styled from 'emotion/react';
 const LoaderContainer = styled.div`
   display: inline-block;
   & > div {
-    width: ${({ size }) => `${size}px`};
-    height: ${({ size }) => `${size}px`};
+    width: ${({ size }) => size}px;
+    height: ${({ size }) => size}px;
     position: relative;
     & div {
-      width: ${({ size }) => `${size}px`};
-      height: ${({ size }) => `${size}px`};
-      border: ${({ size, color }) => `${size / 10}px solid ${color}`};
+      width: ${({ size }) => size}px;
+      height: ${({ size }) => size}px;
+      border-style: solid;
+      border-width: ${({ size }) => size / 10}px;
+      border-color: ${({ color }) => color};
       opacity: 0.4;
       border-radius: 100%;
       position: absolute;
