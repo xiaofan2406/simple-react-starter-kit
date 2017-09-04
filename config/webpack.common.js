@@ -17,26 +17,26 @@ module.exports = {
     {
       test: /\.js$/,
       enforce: 'pre',
-      include: paths.srcPath,
-      loader: require.resolve('eslint-loader')
+      loader: 'eslint-loader',
+      include: paths.srcPath
     },
     {
       test: /\.(eot|otf|ttf|woff|woff2)(\?.*)?$/,
-      loader: require.resolve('file-loader'),
+      loader: 'file-loader',
       options: {
         name: 'fonts/[name].[hash:8].[ext]'
       }
     },
     {
       test: /\.(jpg|jpeg|png|gif|svg|ico|webp)(\?.*)?$/,
-      loader: require.resolve('file-loader'),
+      loader: 'file-loader',
       options: {
         name: 'media/[name].[hash:8].[ext]'
       }
     },
     {
       test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
-      loader: require.resolve('url-loader'),
+      loader: 'url-loader',
       options: {
         limit: 10000,
         name: 'media/[name].[hash:8].[ext]'
@@ -47,6 +47,7 @@ module.exports = {
     dgram: 'empty',
     fs: 'empty',
     net: 'empty',
-    tls: 'empty'
+    tls: 'empty',
+    child_process: 'empty'
   }
 };
