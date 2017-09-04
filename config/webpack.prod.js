@@ -24,7 +24,9 @@ module.exports = {
     publicPath: '/',
     // Point sourcemap entries to original disk location
     devtoolModuleFilenameTemplate: info =>
-      path.relative(paths.srcPath, info.absoluteResourcePath)
+      path
+        .relative(paths.srcPath, info.absoluteResourcePath)
+        .replace(/\\/g, '/')
   },
   module: {
     strictExportPresence: true,
@@ -33,15 +35,16 @@ module.exports = {
       {
         test: /\.js$/,
         include: paths.srcPath,
-        loader: require.resolve('babel-loader')
+        loader: 'babel-loader',
+        options: { compact: true }
       },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
-          fallback: require.resolve('style-loader'),
+          fallback: 'style-loader',
           use: [
             {
-              loader: require.resolve('css-loader'),
+              loader: 'css-loader',
               options: {
                 minimize: true,
                 sourceMap: true

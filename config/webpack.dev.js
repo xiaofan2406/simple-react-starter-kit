@@ -33,14 +33,14 @@ module.exports = {
       {
         test: /\.js$/,
         include: paths.srcPath,
-        loader: require.resolve('babel-loader'),
+        loader: 'babel-loader',
         options: {
           cacheDirectory: true
         }
       },
       {
         test: /\.css$/,
-        use: [require.resolve('style-loader'), require.resolve('css-loader')]
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
@@ -66,8 +66,8 @@ module.exports = {
       ignored: /node_modules/
     },
     https: process.env.HTTPS === 'true',
-    host: process.env.HOST || devServerIp,
-    port: process.env.PORT || devServerPort,
+    host: devServerIp,
+    port: devServerPort,
     setup(app) {
       app.use((req, res, next) => {
         if (req.url === '/service-worker.js') {

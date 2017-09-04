@@ -1,33 +1,26 @@
 const path = require('path');
 
 let plugins = [
-  require.resolve('babel-plugin-transform-class-properties'),
+  'babel-plugin-transform-class-properties',
+  ['babel-plugin-transform-object-rest-spread', { useBuiltIns: true }],
+  ['babel-plugin-transform-react-jsx', { useBuiltIns: true }],
   [
-    require.resolve('babel-plugin-transform-object-rest-spread'),
-    { useBuiltIns: true }
+    'babel-plugin-transform-runtime',
+    { helpers: false, polyfill: false, regenerator: true }
   ],
-  [require.resolve('babel-plugin-transform-react-jsx'), { useBuiltIns: true }],
-  [
-    require.resolve('babel-plugin-transform-runtime'),
-    {
-      helpers: false,
-      polyfill: false,
-      regenerator: true
-    }
-  ],
-  require.resolve('babel-plugin-transform-export-extensions'),
-  [require.resolve('emotion/babel'), { extractStatic: true }]
+  'babel-plugin-transform-export-extensions',
+  ['emotion/babel', { extractStatic: true }]
 ];
 
 if (process.env.NODE_ENV === 'development') {
-  plugins = [...plugins, require.resolve('react-hot-loader/babel')];
+  plugins = [...plugins, 'react-hot-loader/babel'];
 }
 
 if (process.env.NODE_ENV === 'production') {
   plugins = [
     [
       // this plugin has to be the first or else it will not work
-      require.resolve('babel-plugin-transform-react-remove-prop-types'),
+      'babel-plugin-transform-react-remove-prop-types',
       { removeImport: true }
     ],
     ...plugins
@@ -35,32 +28,29 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   plugins = [
     ...plugins,
-    require.resolve('babel-plugin-transform-react-jsx-source'),
-    require.resolve('babel-plugin-transform-react-jsx-self')
+    'babel-plugin-transform-react-jsx-source',
+    'babel-plugin-transform-react-jsx-self'
   ];
 }
 
 if (process.env.NODE_ENV === 'test') {
   module.exports = {
     presets: [
-      [require('babel-preset-env').default, { targets: { node: 'current' } }],
-      require.resolve('babel-preset-react')
+      ['babel-preset-env', { targets: { node: 'current' } }],
+      'babel-preset-react'
     ],
-    plugins: [...plugins, require.resolve('babel-plugin-dynamic-import-node')]
+    plugins: [...plugins, 'babel-plugin-dynamic-import-node']
   };
 } else {
   module.exports = {
     presets: [
-      [
-        require.resolve('babel-preset-env'),
-        { useBuiltIns: false, modules: false }
-      ],
-      require.resolve('babel-preset-react')
+      ['babel-preset-env', { useBuiltIns: false, modules: false }],
+      'babel-preset-react'
     ],
     plugins: [
       ...plugins,
-      [require.resolve('babel-plugin-transform-regenerator'), { async: false }],
-      require.resolve('babel-plugin-syntax-dynamic-import')
+      ['babel-plugin-transform-regenerator', { async: false }],
+      'babel-plugin-syntax-dynamic-import'
     ]
   };
 }
