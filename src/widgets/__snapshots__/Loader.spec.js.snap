@@ -10,7 +10,7 @@ exports[`should match snapshot 1`] = `
     size={60}
   >
     <div
-      className="css-1s4t88e0 css-urt01t"
+      className="css-LoaderContainer-1s4t88e0 css-urt01t"
       color="#e8e8e8"
       size={60}
     >
