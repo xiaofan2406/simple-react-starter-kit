@@ -9,9 +9,7 @@ function asyncLoad({ importer }) {
     componentWillMount() {
       importer()
         .then(({ default: Component }) => {
-          this.setState({
-            Component
-          });
+          this.setState({ Component });
         })
         .catch(console.error);
     }

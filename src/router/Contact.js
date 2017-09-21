@@ -2,7 +2,7 @@ import React from 'react';
 import { Loader } from 'widgets';
 
 function Contact() {
-  return <Loader color="green" />;
+  return <Loader />;
 }
 
 export default Contact;

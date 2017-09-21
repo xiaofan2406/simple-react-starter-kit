@@ -27,9 +27,7 @@ class Brand extends React.Component {
     return (
       <div className={brand}>
         <img src={logo} alt="logo" />
-        <span>
-          {APP_TITLE}
-        </span>
+        <span>{APP_TITLE}</span>
       </div>
     );
   }

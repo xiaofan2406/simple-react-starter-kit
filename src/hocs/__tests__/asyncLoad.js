@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import asyncLoad from './asyncLoad';
+import asyncLoad from '../asyncLoad';
 
 it('should call the importer function', () => {
   const MockComponent = () => <div>mock component</div>;

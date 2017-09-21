@@ -25,7 +25,7 @@ yarn dev
 
 ##### CSS
   - No PostCSS, SASS or CSS Module setup
-  - Using [emotion](https://github.com/tkh44/emotion) in extract mode
+  - Using [`emotion`](https://github.com/tkh44/emotion) in extract mode
   - Includes a Semantic UI [`reset.css`](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
 
 ##### Code Splitting
@@ -39,7 +39,7 @@ yarn dev
   - Using [`jest`](https://facebook.github.io/jest) with setup based on [create-react-app](https://github.com/facebookincubator/create-react-app)
 
 ##### Progressive Web App
-  - Based on [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
+  - Based on [`create-react-app`](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
   - Using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) as a baseline measurement
 
 ##### [React Router v4](https://reacttraining.com/react-router)

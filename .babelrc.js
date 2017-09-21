@@ -1,5 +1,3 @@
-const path = require('path');
-
 let plugins = [
   'babel-plugin-transform-class-properties',
   ['babel-plugin-transform-object-rest-spread', { useBuiltIns: true }],
@@ -44,7 +42,10 @@ if (process.env.NODE_ENV === 'test') {
 } else {
   module.exports = {
     presets: [
-      ['babel-preset-env', { useBuiltIns: false, modules: false }],
+      [
+        'babel-preset-env',
+        { targets: { uglify: true }, useBuiltIns: false, modules: false }
+      ],
       'babel-preset-react'
     ],
     plugins: [

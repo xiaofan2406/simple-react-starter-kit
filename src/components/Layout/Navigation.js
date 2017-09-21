@@ -11,19 +11,17 @@ const navLink = css`
   display: inline-block;
   line-height: ${variables.Layout.headerHeight}px;
   height: ${variables.Layout.headerHeight}px;
-  :hover {
+  &:hover {
     background-color: ${theme.bgAccentColor};
   }
 `;
 
-const navLinkActive = css`
-  border-bottom: 2px solid ${theme.primaryColor};
-`;
+const navLinkActive = css`border-bottom: 2px solid ${theme.primaryColor};`;
 
 function Navigation() {
   return (
     <div>
-      {Object.values(ROUTES).map(route =>
+      {Object.values(ROUTES).map(route => (
         <NavLink
           className={navLink}
           activeClassName={navLinkActive}
@@ -33,7 +31,7 @@ function Navigation() {
         >
           {route.name}
         </NavLink>
-      )}
+      ))}
     </div>
   );
 }
