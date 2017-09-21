@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { Component } from './Layout';
+import { Component } from '../Layout';
 
 it('should match snapshot', () => {
   const props = { classes: {}, children: '' };

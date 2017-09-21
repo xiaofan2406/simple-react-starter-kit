@@ -60,14 +60,11 @@ module.exports = {
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.NamedChunksPlugin(chunk => {
-      if (chunk.name) {
-        return chunk.name;
-      }
-      return chunk
-        .mapModules(m => path.relative(m.context, m.request))
-        .join('_');
-    }),
+    new webpack.NamedChunksPlugin(
+      chunk =>
+        chunk.name ||
+        chunk.mapModules(m => path.relative(m.context, m.request)).join('_')
+    ),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: Infinity

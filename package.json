@@ -34,14 +34,15 @@
     "prod": "NODE_ENV=production node ./config/test-prod-server"
   },
   "dependencies": {
+    "emotion": "^7.3.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-eslint": "^7.2.3",
-    "babel-jest": "^20.0.3",
+    "babel-eslint": "^8.0.0",
+    "babel-jest": "^21.0.2",
     "babel-loader": "^7.1.2",
     "babel-plugin-dynamic-import-node": "^1.0.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -57,9 +58,8 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
-    "emotion": "^7.2.0",
     "enzyme": "^2.9.1",
-    "enzyme-to-json": "^1.5.1",
+    "enzyme-to-json": "^2.0.0",
     "eslint": "^4.6.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-import-resolver-webpack": "^0.8.3",
@@ -70,7 +70,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.30.0",
-    "jest": "^20.0.4",
+    "jest": "^21.1.0",
     "json-loader": "^0.5.7",
     "object-assign": "^4.1.1",
     "promise": "^8.0.1",
@@ -89,10 +89,7 @@
   "jest": {
     "collectCoverageFrom": ["src/**/*.js"],
     "setupFiles": ["<rootDir>/config/polyfills.js"],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.js",
-      "<rootDir>/src/**/?(*.)spec.js"
-    ],
+    "testMatch": ["<rootDir>/src/**/__tests__/**/*.js"],
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {

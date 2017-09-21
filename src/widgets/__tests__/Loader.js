@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import Home from './Home';
+import Loader from '../Loader';
 
 it('should match snapshot', () => {
-  const component = shallow(<Home />);
+  const component = mount(<Loader />);
 
   expect(toJson(component)).toMatchSnapshot();
 });

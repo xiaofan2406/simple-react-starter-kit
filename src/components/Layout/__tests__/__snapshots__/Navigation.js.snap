@@ -7,6 +7,7 @@ exports[`should match snapshot 1`] = `
     ariaCurrent="true"
     className="css-1xa38ke"
     exact={true}
+    key="/"
     to="/"
   >
     Home
@@ -15,6 +16,7 @@ exports[`should match snapshot 1`] = `
     activeClassName="css-rg4nls"
     ariaCurrent="true"
     className="css-1xa38ke"
+    key="/about"
     to="/about"
   >
     About
@@ -23,6 +25,7 @@ exports[`should match snapshot 1`] = `
     activeClassName="css-rg4nls"
     ariaCurrent="true"
     className="css-1xa38ke"
+    key="/contact"
     to="/contact"
   >
     Contact
