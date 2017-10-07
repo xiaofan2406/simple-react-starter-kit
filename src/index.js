@@ -7,7 +7,7 @@ import Router from './router';
 const rootElement = document.getElementById('root');
 
 if (process.env.NODE_ENV === 'development') {
-  const AppContainer = require('react-hot-loader').AppContainer;
+  const { AppContainer } = require('react-hot-loader');
 
   const render = () => {
     ReactDOM.render(

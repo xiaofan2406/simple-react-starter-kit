@@ -1,12 +1,10 @@
 sudo: false
 language: node_js
-cache:
-  directories:
-  - node_modules
+cache: yarn
 node_js:
   - "8"
 before_script:
-  - rm -r -f ./coverage
+  - rm -rf ./coverage
 install:
   - yarn global add codecov
   - yarn
