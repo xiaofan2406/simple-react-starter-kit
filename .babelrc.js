@@ -1,4 +1,5 @@
 let plugins = [
+  ['babel-plugin-emotion', { extractStatic: true }],
   'babel-plugin-transform-class-properties',
   ['babel-plugin-transform-object-rest-spread', { useBuiltIns: true }],
   ['babel-plugin-transform-react-jsx', { useBuiltIns: true }],
@@ -6,8 +7,7 @@ let plugins = [
     'babel-plugin-transform-runtime',
     { helpers: false, polyfill: false, regenerator: true }
   ],
-  'babel-plugin-transform-export-extensions',
-  ['emotion/babel', { extractStatic: true }]
+  'babel-plugin-transform-export-extensions'
 ];
 
 if (process.env.NODE_ENV === 'development') {

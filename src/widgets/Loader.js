@@ -2,21 +2,20 @@
  * @see https://github.com/yuanyan/halogen/blob/master/src/RingLoader.js
  */
 import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'emotion/react';
+import { css } from 'emotion';
 
-const LoaderContainer = styled.div`
+const loaderStyle = css`
   display: inline-block;
   & > div {
-    width: ${({ size }) => size}px;
-    height: ${({ size }) => size}px;
+    width: 60px;
+    height: 60px;
     position: relative;
     & div {
-      width: ${({ size }) => size}px;
-      height: ${({ size }) => size}px;
+      width: 60px;
+      height: 60px;
       border-style: solid;
-      border-width: ${({ size }) => size / 10}px;
-      border-color: ${({ color }) => color};
+      border-width: 6px;
+      border-color: #00bcd4;
       opacity: 0.4;
       border-radius: 100%;
       position: absolute;
@@ -34,26 +33,16 @@ const LoaderContainer = styled.div`
   }
 `;
 
-function Loader(props) {
+function Loader() {
   return (
-    <LoaderContainer {...props}>
+    <div className={loaderStyle}>
       <div>
         <div />
         <div />
       </div>
-    </LoaderContainer>
+    </div>
   );
 }
-
-Loader.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.number
-};
-
-Loader.defaultProps = {
-  color: '#e8e8e8',
-  size: 60
-};
 
 export { Loader as Component };
 

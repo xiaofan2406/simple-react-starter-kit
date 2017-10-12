@@ -1,24 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot 1`] = `
-<Loader
-  color="#e8e8e8"
-  size={60}
->
-  <styled(Component)
-    color="#e8e8e8"
-    size={60}
+<Loader>
+  <div
+    className="css-loaderStyle-12gr8ap"
   >
-    <div
-      className="css-LoaderContainer-1s4t88e0 css-urt01t"
-      color="#e8e8e8"
-      size={60}
-    >
-      <div>
-        <div />
-        <div />
-      </div>
+    <div>
+      <div />
+      <div />
     </div>
-  </styled(Component)>
+  </div>
 </Loader>
 `;
