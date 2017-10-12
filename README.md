@@ -73,7 +73,7 @@ yarn test
   ```
 - Start a local server to test production build
   ```
-  yarn prod
+  yarn start
   ```
 
 

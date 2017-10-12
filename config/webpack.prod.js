@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 const common = require('./webpack.common');
 const { paths } = require('./configs');
 const pkg = require('../package');
@@ -127,6 +128,18 @@ module.exports = {
       navigateFallbackWhitelist: [/^(?!\/__).*/],
       // Don't precache sourcemaps (they're large) and build asset manifest:
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
+    }),
+    // For surge.sh
+    // https://surge.sh/help/adding-a-200-page-for-client-side-routing
+    new FileManagerPlugin({
+      onEnd: {
+        copy: [
+          {
+            source: `${paths.distPath}/index.html`,
+            destination: `${paths.distPath}/200.html`
+          }
+        ]
+      }
     })
   ]
 };
