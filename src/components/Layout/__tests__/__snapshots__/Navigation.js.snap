@@ -3,9 +3,9 @@
 exports[`should match snapshot 1`] = `
 <div>
   <NavLink
-    activeClassName="css-rg4nls"
+    activeClassName="css-xh7v1v"
     ariaCurrent="true"
-    className="css-1xa38ke"
+    className="css-1ly8sff"
     exact={true}
     key="/"
     to="/"
@@ -13,18 +13,18 @@ exports[`should match snapshot 1`] = `
     Home
   </NavLink>
   <NavLink
-    activeClassName="css-rg4nls"
+    activeClassName="css-xh7v1v"
     ariaCurrent="true"
-    className="css-1xa38ke"
+    className="css-1ly8sff"
     key="/about"
     to="/about"
   >
     About
   </NavLink>
   <NavLink
-    activeClassName="css-rg4nls"
+    activeClassName="css-xh7v1v"
     ariaCurrent="true"
-    className="css-1xa38ke"
+    className="css-1ly8sff"
     key="/contact"
     to="/contact"
   >

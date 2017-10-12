@@ -1,8 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match snapshot 1`] = `
-<Loader
-  color="#e8e8e8"
-  size={60}
-/>
-`;
+exports[`should match snapshot 1`] = `<Loader />`;
