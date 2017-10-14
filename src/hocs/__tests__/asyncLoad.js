@@ -26,7 +26,7 @@ it('should return a stateful component', () => {
   expect(component.state()).toBeDefined();
 });
 
-it.skip('should render the component in its state', () => {
+it('should render the component in its state', () => {
   const MockComponent = () => <div>mock component</div>;
   const params = {
     importer: () => Promise.resolve({ default: MockComponent })
@@ -39,7 +39,7 @@ it.skip('should render the component in its state', () => {
   expect(component.find(MockComponent).text()).toBe('mock component');
 });
 
-it.skip('should pass on its props to the wrapped component', () => {
+it('should pass on its props to the wrapped component', () => {
   const MockComponent = () => <div>mock component</div>;
   const params = {
     importer: () => Promise.resolve({ default: MockComponent })

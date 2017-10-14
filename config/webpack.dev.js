@@ -7,10 +7,10 @@ const { devServerPort, devServerIp, paths } = require('./configs');
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: [
+    require.resolve('./polyfills'),
     'react-hot-loader/patch',
     `webpack-dev-server/client?http://${devServerIp}:${devServerPort}`,
     'webpack/hot/only-dev-server',
-    require.resolve('./polyfills'),
     `${paths.srcPath}/index.js`
   ],
   resolve: common.resolve,
