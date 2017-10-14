@@ -16,7 +16,9 @@ const navLink = css`
   }
 `;
 
-const navLinkActive = css`border-bottom: 2px solid ${theme.primaryColor};`;
+const navLinkActive = css`
+  border-bottom: 2px solid ${theme.primaryColor};
+`;
 
 function Navigation() {
   return (
