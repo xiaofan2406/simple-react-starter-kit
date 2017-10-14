@@ -24,12 +24,12 @@
     "precommit": "lint-staged",
     "lint:eslint": "eslint -c .eslintrc.js src",
     "lint:prettier": "prettier-check src/**/*.js",
-    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
     "dev":
       "NODE_ENV=development webpack-dev-server --config ./config/webpack.dev.js",
     "test": "NODE_ENV=test jest --watch --updateSnapshot",
     "coverage": "NODE_ENV=test jest --coverage",
-    "prebuild": "yarn lint && rm -rf ./dist",
+    "prebuild": "npm run lint && rm -rf ./dist",
     "build": "NODE_ENV=production webpack --config ./config/webpack.prod.js",
     "start": "NODE_ENV=production node ./config/test-prod-server"
   },
@@ -100,7 +100,7 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-react-jsx-self": "^6.22.0",
     "babel-plugin-transform-react-jsx-source": "^6.22.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.9",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.10",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
