@@ -14,16 +14,7 @@ if (process.env.NODE_ENV === 'development') {
   plugins = [...plugins, 'react-hot-loader/babel'];
 }
 
-if (process.env.NODE_ENV === 'production') {
-  plugins = [
-    [
-      // this plugin has to be the first or else it will not work
-      'babel-plugin-transform-react-remove-prop-types',
-      { removeImport: true }
-    ],
-    ...plugins
-  ];
-} else {
+if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
   plugins = [
     ...plugins,
     'babel-plugin-transform-react-jsx-source',
