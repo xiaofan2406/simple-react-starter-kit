@@ -129,14 +129,18 @@ module.exports = {
       // Don't precache sourcemaps (they're large) and build asset manifest:
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
     }),
-    // For surge.sh
-    // https://surge.sh/help/adding-a-200-page-for-client-side-routing
     new FileManagerPlugin({
       onEnd: {
         copy: [
+          // For surge.sh
+          // https://surge.sh/help/adding-a-200-page-for-client-side-routing
           {
             source: `${paths.distPath}/index.html`,
             destination: `${paths.distPath}/200.html`
+          },
+          {
+            source: `${paths.srcPath}/assets/manifest.json`,
+            destination: `${paths.distPath}/manifest.json`
           }
         ]
       }
