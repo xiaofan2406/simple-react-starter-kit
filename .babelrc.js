@@ -3,10 +3,6 @@ let plugins = [
   'babel-plugin-transform-class-properties',
   ['babel-plugin-transform-object-rest-spread', { useBuiltIns: true }],
   ['babel-plugin-transform-react-jsx', { useBuiltIns: true }],
-  [
-    'babel-plugin-transform-runtime',
-    { helpers: false, polyfill: false, regenerator: true }
-  ],
   'babel-plugin-transform-export-extensions'
 ];
 
@@ -35,14 +31,23 @@ if (process.env.NODE_ENV === 'test') {
     presets: [
       [
         'babel-preset-env',
-        { targets: { uglify: true }, useBuiltIns: false, modules: false }
+        {
+          targets: {
+            browsers: [
+              'Chrome >= 60',
+              'Safari >= 10.1',
+              'iOS >= 10.3',
+              'Firefox >= 54',
+              'Edge >= 15'
+            ],
+            uglify: true
+          },
+          useBuiltIns: false,
+          modules: false
+        }
       ],
       'babel-preset-react'
     ],
-    plugins: [
-      ...plugins,
-      ['babel-plugin-transform-regenerator', { async: false }],
-      'babel-plugin-syntax-dynamic-import'
-    ]
+    plugins: [...plugins, 'babel-plugin-syntax-dynamic-import']
   };
 }

@@ -81,11 +81,11 @@
   },
   "dependencies": {
     "emotion": "^8.0.9",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-emotion": "^8.0.9",
-    "react-router-dom": "^4.2.2",
-    "prop-types": "^15.6.0"
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -101,8 +101,6 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-react-jsx-self": "^6.22.0",
     "babel-plugin-transform-react-jsx-source": "^6.22.0",
-    "babel-plugin-transform-regenerator": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
@@ -125,10 +123,8 @@
     "jest": "^21.2.1",
     "json-loader": "^0.5.7",
     "lint-staged": "^4.3.0",
-    "object-assign": "^4.1.1",
     "prettier": "^1.7.4",
     "prettier-check": "^2.0.0",
-    "promise": "^8.0.1",
     "react-hot-loader": "^3.1.1",
     "react-test-renderer": "^16.0.0",
     "serve": "^6.3.1",
