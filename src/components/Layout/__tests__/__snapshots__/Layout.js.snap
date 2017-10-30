@@ -2,31 +2,34 @@
 
 exports[`should match snapshot 1`] = `
 <div
-  className="css-i3qk50"
+  className="css-k0jtqr"
 >
   <div
-    className="css-1sol7qu"
+    className="header"
   >
     <Brand />
-    <Navigation
-      height={100}
-    />
+    <Navigation />
   </div>
+  <div
+    className="main"
+  />
 </div>
 `;
 
 exports[`should render children 1`] = `
 <div
-  className="css-i3qk50"
+  className="css-k0jtqr"
 >
   <div
-    className="css-1sol7qu"
+    className="header"
   >
     <Brand />
-    <Navigation
-      height={100}
-    />
+    <Navigation />
   </div>
-  <Child />
+  <div
+    className="main"
+  >
+    <Child />
+  </div>
 </div>
 `;

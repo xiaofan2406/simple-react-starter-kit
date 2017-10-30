@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot 1`] = `
-<div>
-  Hello world
+<div
+  className="css-11o64f7"
+>
+  Hello world!
 </div>
 `;

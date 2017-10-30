@@ -20,12 +20,7 @@ export const spacing = {
 };
 
 export const variables = {
-  Layout: {
-    headerHeight: 42
-  },
-  Brand: {
-    logoHeight: 34
-  }
+  headerHeight: 48
 };
 
 export const theme = {

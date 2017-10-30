@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot 1`] = `
-<div>
+<div
+  className="css-uzeaaf"
+>
   <NavLink
-    activeClassName="css-xh7v1v"
+    activeClassName="active"
     ariaCurrent="true"
-    className="css-1ly8sff"
+    className="link"
     exact={true}
     key="/"
     to="/"
@@ -13,18 +15,18 @@ exports[`should match snapshot 1`] = `
     Home
   </NavLink>
   <NavLink
-    activeClassName="css-xh7v1v"
+    activeClassName="active"
     ariaCurrent="true"
-    className="css-1ly8sff"
+    className="link"
     key="/about"
     to="/about"
   >
     About
   </NavLink>
   <NavLink
-    activeClassName="css-xh7v1v"
+    activeClassName="active"
     ariaCurrent="true"
-    className="css-1ly8sff"
+    className="link"
     key="/contact"
     to="/contact"
   >

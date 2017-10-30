@@ -4,7 +4,7 @@
 import React from 'react';
 import { css } from 'emotion';
 
-const loaderStyle = css`
+const cssClass = css`
   display: inline-block;
   & > div {
     width: 60px;
@@ -35,7 +35,7 @@ const loaderStyle = css`
 
 function Loader() {
   return (
-    <div className={loaderStyle}>
+    <div className={cssClass}>
       <div>
         <div />
         <div />
