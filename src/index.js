@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { serviceWorker } from 'utils';
 
 import Router from './router';
 
@@ -25,5 +24,4 @@ if (process.env.NODE_ENV === 'development') {
   }
 } else {
   ReactDOM.render(<Router />, rootElement);
-  serviceWorker();
 }

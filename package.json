@@ -3,15 +3,7 @@
   "version": "0.0.0",
   "author": "Xiaofan Wu (https://github.com/xiaofan2406)",
   "description": "A simple boilerplate for starting new React projects.",
-  "keywords": [
-    "react",
-    "react-router",
-    "babel",
-    "webpack",
-    "eslint",
-    "prettier",
-    "progressive web app"
-  ],
+  "keywords": ["react", "react-router", "boilerplate"],
   "repository": "xiaofan2406/react-starter-kit",
   "bugs": {
     "url": "https://github.com/xiaofan2406/react-starter-kit/issues"
@@ -73,11 +65,7 @@
         "statements": 80
       }
     },
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/src/utils/compose.js",
-      "<rootDir>/src/utils/serviceWorker.js",
-      "index.js"
-    ]
+    "coveragePathIgnorePatterns": ["<rootDir>/src/utils/compose.js", "index.js"]
   },
   "dependencies": {
     "emotion": "^8.0.9",
@@ -129,7 +117,6 @@
     "react-test-renderer": "^16.0.0",
     "serve": "^6.3.1",
     "style-loader": "^0.19.0",
-    "sw-precache-webpack-plugin": "^0.11.4",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3",

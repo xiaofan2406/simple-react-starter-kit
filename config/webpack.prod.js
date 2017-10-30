@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const common = require('./webpack.common');
 const { paths } = require('./configs');
@@ -46,10 +45,7 @@ module.exports = {
           use: [
             {
               loader: 'css-loader',
-              options: {
-                minimize: true,
-                sourceMap: true
-              }
+              options: { minimize: true, sourceMap: true }
             }
           ]
         })
@@ -70,9 +66,7 @@ module.exports = {
       name: 'vendor',
       minChunks: Infinity
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'runtime'
-    }),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'runtime' }),
     new HtmlWebpackPlugin({
       inject: true,
       template: `${paths.srcPath}/assets/index.html`,
@@ -91,44 +85,13 @@ module.exports = {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        comparisons: false
-      },
-      output: {
-        comments: false,
-        ascii_only: true
-      },
+      compress: { warnings: false, comparisons: false },
+      output: { comments: false, ascii_only: true },
+      mangle: { safari10: true },
       sourceMap: true
     }),
     new ExtractTextPlugin('css/[name].[contenthash:8].css'),
-    new ManifestPlugin({
-      fileName: 'asset-manifest.json'
-    }),
-    // From create-react-app
-    // Generate a service worker script that will precache, and keep up to date,
-    // the HTML & assets that are part of the Webpack build.
-    new SWPrecacheWebpackPlugin({
-      // By default, a cache-busting query parameter is appended to requests
-      // used to populate the caches, to ensure the responses are fresh.
-      // If a URL is already hashed by Webpack, then there is no concern
-      // about it being stale, and the cache-busting can be skipped.
-      dontCacheBustUrlsMatching: /\.\w{8}\./,
-      filename: 'service-worker.js',
-      logger(message) {
-        if (message.indexOf('Total precache size is') === 0) return;
-        if (message.indexOf('Skipping static resource') === 0) return;
-        console.log(message);
-      },
-      minify: true,
-      // For unknown URLs, fallback to the index page
-      navigateFallback: '/index.html',
-      // Ignores URLs starting from /__ (useful for Firebase):
-      // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
-      navigateFallbackWhitelist: [/^(?!\/__).*/],
-      // Don't precache sourcemaps (they're large) and build asset manifest:
-      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
-    }),
+    new ManifestPlugin({ fileName: 'asset-manifest.json' }),
     new FileManagerPlugin({
       onEnd: {
         copy: [
