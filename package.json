@@ -38,6 +38,7 @@
       "<rootDir>/config/jest/enzymeAdapter.js",
       "<rootDir>/config/polyfills.js"
     ],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "testMatch": ["<rootDir>/src/**/__tests__/**/*.js"],
     "testEnvironment": "jsdom",
     "testURL": "http://localhost",
