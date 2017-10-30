@@ -9,14 +9,12 @@ module.exports = {
   entry: [
     require.resolve('./polyfills'),
     'react-hot-loader/patch',
-    `webpack-dev-server/client?http://${devServerIp}:${devServerPort}`,
-    'webpack/hot/only-dev-server',
-    `${paths.srcPath}/index.js`
+    `${paths.appSrc}/index.js`
   ],
   resolve: common.resolve,
   output: {
     // For dev, `path` and `filename` are not important because of using webpack-dev-server
-    path: paths.distPath,
+    path: paths.appDist,
     filename: 'bundle.js',
     chunkFilename: 'js/[name].chunk.js',
     // Necessary for HMR to know where to load the hot update chunks
@@ -32,16 +30,11 @@ module.exports = {
       ...common.rules,
       {
         test: /\.js$/,
-        include: paths.srcPath,
+        include: paths.appSrc,
         loader: 'babel-loader',
-        options: {
-          cacheDirectory: true
-        }
+        options: { cacheDirectory: true }
       },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
     ]
   },
   node: common.node,
@@ -49,8 +42,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${paths.srcPath}/assets/index.html`,
-      favicon: `${paths.srcPath}/assets/favicon.ico`
+      template: `${paths.appSrc}/assets/index.html`,
+      favicon: `${paths.appSrc}/assets/favicon.ico`
     }),
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }),
     new webpack.HotModuleReplacementPlugin(),
@@ -62,9 +55,7 @@ module.exports = {
     hot: true,
     publicPath: '/',
     stats: 'errors-only',
-    watchOptions: {
-      ignored: /node_modules/
-    },
+    watchOptions: { ignored: /node_modules/ },
     https: process.env.HTTPS === 'true',
     host: devServerIp,
     port: devServerPort

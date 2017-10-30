@@ -1,7 +1,7 @@
 const server = require('serve');
 const configs = require('./configs');
 
-server(configs.paths.distPath, {
+server(configs.paths.appDist, {
   port: configs.testProdPort,
   single: true
 });

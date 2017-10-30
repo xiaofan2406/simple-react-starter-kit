@@ -13,20 +13,18 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     polyfill: require.resolve('./polyfills'),
-    main: `${paths.srcPath}/index.js`,
+    main: `${paths.appSrc}/index.js`,
     vendor: Object.keys(pkg.dependencies)
   },
   resolve: common.resolve,
   output: {
-    path: paths.distPath,
+    path: paths.appDist,
     filename: 'js/[name].[chunkhash:8].js',
     chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
     publicPath: '/',
     // Point sourcemap entries to original disk location
     devtoolModuleFilenameTemplate: info =>
-      path
-        .relative(paths.srcPath, info.absoluteResourcePath)
-        .replace(/\\/g, '/')
+      path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/')
   },
   module: {
     strictExportPresence: true,
@@ -34,7 +32,7 @@ module.exports = {
       ...common.rules,
       {
         test: /\.js$/,
-        include: paths.srcPath,
+        include: paths.appSrc,
         loader: 'babel-loader',
         options: { compact: true }
       },
@@ -69,8 +67,8 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({ name: 'runtime' }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${paths.srcPath}/assets/index.html`,
-      favicon: `${paths.srcPath}/assets/favicon.ico`,
+      template: `${paths.appSrc}/assets/index.html`,
+      favicon: `${paths.appSrc}/assets/favicon.ico`,
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -98,12 +96,12 @@ module.exports = {
           // For surge.sh
           // https://surge.sh/help/adding-a-200-page-for-client-side-routing
           {
-            source: `${paths.distPath}/index.html`,
-            destination: `${paths.distPath}/200.html`
+            source: `${paths.appDist}/index.html`,
+            destination: `${paths.appDist}/200.html`
           },
           {
-            source: `${paths.srcPath}/assets/manifest.json`,
-            destination: `${paths.distPath}/manifest.json`
+            source: `${paths.appSrc}/assets/manifest.json`,
+            destination: `${paths.appDist}/manifest.json`
           }
         ]
       }

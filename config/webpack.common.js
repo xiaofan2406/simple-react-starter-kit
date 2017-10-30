@@ -4,13 +4,13 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
-      assets: `${paths.srcPath}/assets`,
-      components: `${paths.srcPath}/components`,
-      configs: `${paths.srcPath}/configs`,
-      hocs: `${paths.srcPath}/hocs`,
-      styles: `${paths.srcPath}/styles`,
-      utils: `${paths.srcPath}/utils`,
-      widgets: `${paths.srcPath}/widgets`
+      assets: `${paths.appSrc}/assets`,
+      components: `${paths.appSrc}/components`,
+      configs: `${paths.appSrc}/configs`,
+      hocs: `${paths.appSrc}/hocs`,
+      styles: `${paths.appSrc}/styles`,
+      utils: `${paths.appSrc}/utils`,
+      widgets: `${paths.appSrc}/widgets`
     }
   },
   rules: [
@@ -18,7 +18,7 @@ module.exports = {
       test: /\.js$/,
       enforce: 'pre',
       loader: 'eslint-loader',
-      include: paths.srcPath
+      include: paths.appSrc
     },
     {
       test: /\.(eot|otf|ttf|woff|woff2)(\?.*)?$/,
