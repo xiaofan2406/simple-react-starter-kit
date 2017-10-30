@@ -49,7 +49,6 @@
     "moduleNameMapper": {
       "^assets(.*)$": "<rootDir>/src/assets$1",
       "^components(.*)$": "<rootDir>/src/components$1",
-      "^configs(.*)$": "<rootDir>/src/configs$1",
       "^hocs(.*)$": "<rootDir>/src/hocs$1",
       "^styles(.*)$": "<rootDir>/src/styles$1",
       "^utils(.*)$": "<rootDir>/src/utils$1",

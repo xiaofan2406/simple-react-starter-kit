@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Layout } from 'components';
 import { asyncLoad } from 'hocs';
-import { ROUTES } from 'configs';
+import { ROUTES } from 'utils/constants';
 
 import Home from './Home';
 

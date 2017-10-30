@@ -33,14 +33,10 @@ yarn dev
   - Includes a solution for dynamic import that helps async loading
 
 ##### Hot Module Replacement
-  - Using [`react-hot-loader@next`](https://github.com/gaearon/react-hot-loader/tree/next) to include functional components hot reload during development
+  - Using [`react-hot-loader`](https://github.com/gaearon/react-hot-loader/)
 
 ##### Component Testing
   - Using [`jest`](https://facebook.github.io/jest) with setup based on [create-react-app](https://github.com/facebookincubator/create-react-app)
-
-##### Progressive Web App
-  - Based on [`create-react-app`](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
-  - Using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) as a baseline measurement
 
 ##### [React Router v4](https://reacttraining.com/react-router)
 
@@ -84,7 +80,6 @@ Path                | Import Alias | Description
 **src/**            | `src`        | Project source files directory
 src/**assets/**     | `assets`     | Common static assets directory
 src/**components/** | `components` | Components directory
-src/**configs/**    | `configs`    | App config values directory
 src/**hocs/**       | `hocs`       | Higher-order components directory
 src/**router/**     |              | React Router setup and route-level components directory
 src/**styles/**     | `styles`     | Global CSS directory

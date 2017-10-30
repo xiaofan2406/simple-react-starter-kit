@@ -6,7 +6,6 @@ module.exports = {
     alias: {
       assets: `${paths.appSrc}/assets`,
       components: `${paths.appSrc}/components`,
-      configs: `${paths.appSrc}/configs`,
       hocs: `${paths.appSrc}/hocs`,
       styles: `${paths.appSrc}/styles`,
       utils: `${paths.appSrc}/utils`,

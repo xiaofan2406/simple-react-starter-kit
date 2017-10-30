@@ -1,8 +1,8 @@
 import React from 'react';
 import { css } from 'emotion';
 import { NavLink } from 'react-router-dom';
-import { ROUTES } from 'configs';
 import { theme, variables } from 'styles';
+import { ROUTES } from 'utils/constants';
 
 const navLink = css`
   color: ${theme.inverseColor};

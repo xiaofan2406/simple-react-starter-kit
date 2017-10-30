@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import { variables, fontSizes, theme } from 'styles';
-import { APP_TITLE } from 'configs';
+import { APP_TITLE } from 'utils/constants';
 import logo from 'assets/logo.svg';
 
 const brand = css`
