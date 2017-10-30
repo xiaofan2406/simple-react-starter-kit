@@ -25,7 +25,7 @@ yarn dev
 
 ##### CSS
   - No PostCSS, SASS or CSS Module setup
-  - Using [`emotion`](https://github.com/tkh44/emotion) in extract mode
+  - Using [`emotion`](https://github.com/tkh44/emotion)
   - Includes a Semantic UI [`reset.css`](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
 
 ##### Code Splitting
