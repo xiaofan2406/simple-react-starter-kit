@@ -38,10 +38,8 @@ if (process.env.NODE_ENV === 'test') {
               'iOS >= 10.3',
               'Firefox >= 54',
               'Edge >= 15'
-            ],
-            uglify: true
+            ]
           },
-          useBuiltIns: false,
           modules: false
         }
       ],

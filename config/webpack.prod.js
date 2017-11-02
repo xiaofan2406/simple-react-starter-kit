@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
@@ -82,20 +83,23 @@ module.exports = {
         minifyURLs: true
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false, comparisons: false },
-      output: { comments: false, ascii_only: true },
-      mangle: { safari10: true },
-      sourceMap: true
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        ecma: 6,
+        compress: { comparisons: false },
+        output: { ascii_only: true, ecma: 6 },
+        mangle: { safari10: true },
+        sourceMap: true
+      }
     }),
     new ExtractTextPlugin('css/[name].[contenthash:8].css'),
     new ManifestPlugin({ fileName: 'asset-manifest.json' }),
     new FileManagerPlugin({
       onEnd: {
         copy: [
-          // For surge.sh
-          // https://surge.sh/help/adding-a-200-page-for-client-side-routing
           {
+            // For surge.sh
+            // https://surge.sh/help/adding-a-200-page-for-client-side-routing
             source: `${paths.appDist}/index.html`,
             destination: `${paths.appDist}/200.html`
           },
