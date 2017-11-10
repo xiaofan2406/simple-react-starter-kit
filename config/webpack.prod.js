@@ -102,10 +102,6 @@ module.exports = {
             // https://surge.sh/help/adding-a-200-page-for-client-side-routing
             source: `${paths.appDist}/index.html`,
             destination: `${paths.appDist}/200.html`
-          },
-          {
-            source: `${paths.appSrc}/assets/manifest.json`,
-            destination: `${paths.appDist}/manifest.json`
           }
         ]
       }
