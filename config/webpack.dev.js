@@ -4,13 +4,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common');
 const { devServerPort, devServerIp, paths } = require('./configs');
 
+// https://github.com/facebookincubator/create-react-app/blob/master/packages/react-dev-utils/ignoredFiles.js
+const ignoredFiles = appSrc =>
+  new RegExp(
+    `^(?!${path
+      .normalize(`${appSrc}/`)
+      .replace(/[\\]+/g, '/')}).+/node_modules/`,
+    'g'
+  );
+
 module.exports = {
   devtool: 'cheap-module-source-map',
-  entry: [
-    require.resolve('./polyfills'),
-    'react-hot-loader/patch',
-    `${paths.appSrc}/index.js`
-  ],
+  entry: ['react-hot-loader/patch', `${paths.appSrc}/index.js`],
   resolve: common.resolve,
   output: {
     // For dev, `path` and `filename` are not important because of using webpack-dev-server
@@ -29,7 +34,7 @@ module.exports = {
     rules: [
       ...common.rules,
       {
-        test: /\.js$/,
+        test: /\.(js|mjs)$/,
         include: paths.appSrc,
         loader: 'babel-loader',
         options: { cacheDirectory: true }
@@ -55,7 +60,7 @@ module.exports = {
     hot: true,
     publicPath: '/',
     stats: 'errors-only',
-    watchOptions: { ignored: /node_modules/ },
+    watchOptions: { ignored: ignoredFiles(paths.appSrc) },
     https: process.env.HTTPS === 'true',
     host: devServerIp,
     port: devServerPort

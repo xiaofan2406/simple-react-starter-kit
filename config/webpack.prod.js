@@ -13,7 +13,6 @@ module.exports = {
   bail: true,
   devtool: 'source-map',
   entry: {
-    polyfill: require.resolve('./polyfills'),
     main: `${paths.appSrc}/index.js`,
     vendor: Object.keys(pkg.dependencies)
   },
@@ -32,7 +31,7 @@ module.exports = {
     rules: [
       ...common.rules,
       {
-        test: /\.js$/,
+        test: /\.(js|mjs)$/,
         include: paths.appSrc,
         loader: 'babel-loader',
         options: { compact: true }
