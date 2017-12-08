@@ -1,3 +1,11 @@
+const env = process.env.NODE_ENV;
+
+if (env !== 'development' && env !== 'test' && env !== 'production') {
+  throw new Error(
+    `Invalid NODE_ENV "${env}". Use only from ["development", "test", "production"]`
+  );
+}
+
 let plugins = [
   'babel-plugin-emotion',
   'babel-plugin-transform-class-properties',
@@ -6,11 +14,11 @@ let plugins = [
   'babel-plugin-transform-export-extensions'
 ];
 
-if (process.env.NODE_ENV === 'development') {
+if (env === 'development') {
   plugins = [...plugins, 'react-hot-loader/babel'];
 }
 
-if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
+if (env === 'development' || env === 'test') {
   plugins = [
     ...plugins,
     'babel-plugin-transform-react-jsx-source',
@@ -18,7 +26,7 @@ if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
   ];
 }
 
-if (process.env.NODE_ENV === 'test') {
+if (env === 'test') {
   module.exports = {
     presets: [
       ['babel-preset-env', { targets: { node: 'current' } }],
@@ -28,24 +36,7 @@ if (process.env.NODE_ENV === 'test') {
   };
 } else {
   module.exports = {
-    presets: [
-      [
-        'babel-preset-env',
-        {
-          targets: {
-            browsers: [
-              'Chrome >= 60',
-              'Safari >= 10.1',
-              'iOS >= 10.3',
-              'Firefox >= 54',
-              'Edge >= 15'
-            ]
-          },
-          modules: false
-        }
-      ],
-      'babel-preset-react'
-    ],
+    presets: [['babel-preset-env', { modules: false }], 'babel-preset-react'],
     plugins: [...plugins, 'babel-plugin-syntax-dynamic-import']
   };
 }

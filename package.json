@@ -32,40 +32,14 @@
   "prettier": {
     "singleQuote": true
   },
-  "jest": {
-    "collectCoverageFrom": ["src/**/*.js"],
-    "setupFiles": [
-      "<rootDir>/config/jest/rafPolyfill.js",
-      "<rootDir>/config/jest/enzymeAdapter.js"
-    ],
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "testMatch": ["<rootDir>/src/**/__tests__/**/*.js"],
-    "testEnvironment": "jsdom",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "moduleNameMapper": {
-      "^assets(.*)$": "<rootDir>/src/assets$1",
-      "^components(.*)$": "<rootDir>/src/components$1",
-      "^hocs(.*)$": "<rootDir>/src/hocs$1",
-      "^styles(.*)$": "<rootDir>/src/styles$1",
-      "^utils(.*)$": "<rootDir>/src/utils$1",
-      "^widgets(.*)$": "<rootDir>/src/widgets$1"
-    },
-    "moduleFileExtensions": ["js", "json"],
-    "coverageThreshold": {
-      "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
-        "statements": 80
-      }
-    },
-    "coveragePathIgnorePatterns": ["<rootDir>/src/utils/compose.js", "index.js"]
-  },
+  "jest": { "preset": "<rootDir>/config/jest/jest.config.json" },
+  "browserslist": [
+    "Chrome >= 60",
+    "Safari >= 10.1",
+    "iOS >= 10.3",
+    "Firefox >= 54",
+    "Edge >= 15"
+  ],
   "dependencies": {
     "emotion": "^8.0.12",
     "prop-types": "^15.6.0",

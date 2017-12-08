@@ -22,16 +22,15 @@ module.exports = {
     filename: 'js/[name].[chunkhash:8].js',
     chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
     publicPath: '/',
-    // Point sourcemap entries to original disk location
-    devtoolModuleFilenameTemplate: info =>
-      path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/')
+    devtoolModuleFilenameTemplate: ({ absoluteResourcePath }) =>
+      path.relative(paths.appSrc, absoluteResourcePath)
   },
   module: {
     strictExportPresence: true,
     rules: [
       ...common.rules,
       {
-        test: /\.(js|mjs)$/,
+        test: /\.js$/,
         include: paths.appSrc,
         loader: 'babel-loader',
         options: { compact: true }
@@ -50,7 +49,6 @@ module.exports = {
       }
     ]
   },
-  node: common.node,
   plugins: [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -97,13 +95,13 @@ module.exports = {
       onEnd: {
         copy: [
           {
-            // For surge.sh
-            // https://surge.sh/help/adding-a-200-page-for-client-side-routing
+            // surge.sh https://surge.sh/help/adding-a-200-page-for-client-side-routing
             source: `${paths.appDist}/index.html`,
             destination: `${paths.appDist}/200.html`
           }
         ]
       }
     })
-  ]
+  ],
+  node: common.node
 };

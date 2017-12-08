@@ -23,7 +23,7 @@ const testProdPort = process.env.PORT || 9000;
 
 module.exports = {
   devServerPort,
-  devServerIp: process.env.HOST || getLocalIp(),
+  lanIP: process.env.HOST || getLocalIp(),
   testProdPort,
   paths: {
     appRoot,

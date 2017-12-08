@@ -8,4 +8,4 @@ server(configs.paths.appDist, {
 
 console.log('Production server listening...');
 console.log(`http://localhost:${configs.testProdPort}`);
-console.log(`http://${configs.devServerIp}:${configs.testProdPort}`);
+console.log(`http://${configs.lanIP}:${configs.testProdPort}`);

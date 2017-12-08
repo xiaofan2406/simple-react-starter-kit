@@ -91,14 +91,14 @@ yarn test
 
 ## Project Structure
 
-| Path                | Import Alias | Description                                             |
-| ------------------- | ------------ | ------------------------------------------------------- |
-| **config/**         |              | Project tooling configuration files                     |
-| **src/**            | `src`        | Project source files directory                          |
-| src/**assets/**     | `assets`     | Common static assets directory                          |
-| src/**components/** | `components` | Components directory                                    |
-| src/**hocs/**       | `hocs`       | Higher-order components directory                       |
-| src/**router/**     |              | React Router setup and route-level components directory |
-| src/**styles/**     | `styles`     | Global CSS directory                                    |
-| src/**utils/**      | `utils`      | Utility functions directory                             |
-| src/**widgets/**    | `widgets`    | Small non business logic related components directory   |
+| Path                | Import Alias | Description                                               |
+| ------------------- | ------------ | --------------------------------------------------------- |
+| **config/**         |              | Project tooling configurations                            |
+| **src/**            | `src`        | Project source files                                      |
+| src/**assets/**     | `assets`     | Common static file assets                                 |
+| src/**components/** | `components` | Appp components                                           |
+| src/**factories/**  | `factories`  | Utility components that help create/render new components |
+| src/**router/**     |              | React Router setup and route-level components             |
+| src/**styles/**     | `styles`     | Global CSS files and css-in-jss setup/configs             |
+| src/**utils/**      | `utils`      | Utility helper functions                                  |
+| src/**widgets/**    | `widgets`    | Share pure presentational UI components                   |

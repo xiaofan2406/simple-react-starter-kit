@@ -2,11 +2,11 @@ const { paths } = require('./configs');
 
 module.exports = {
   resolve: {
-    extensions: ['.mjs', '.js', '.json'],
+    extensions: ['.js', '.json'],
     alias: {
       assets: `${paths.appSrc}/assets`,
       components: `${paths.appSrc}/components`,
-      hocs: `${paths.appSrc}/hocs`,
+      factories: `${paths.appSrc}/factories`,
       styles: `${paths.appSrc}/styles`,
       utils: `${paths.appSrc}/utils`,
       widgets: `${paths.appSrc}/widgets`
@@ -14,7 +14,7 @@ module.exports = {
   },
   rules: [
     {
-      test: /\.(js|mjs)$/,
+      test: /\.js$/,
       enforce: 'pre',
       loader: 'eslint-loader',
       include: paths.appSrc
