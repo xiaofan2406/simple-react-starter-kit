@@ -2,7 +2,7 @@
 
 exports[`should match snapshot 1`] = `
 <div
-  className="css-uzeaaf"
+  className="css-pwczqn"
 >
   <NavLink
     activeClassName="active"
