@@ -29,14 +29,36 @@ if (env === 'development' || env === 'test') {
 if (env === 'test') {
   module.exports = {
     presets: [
-      ['babel-preset-env', { targets: { node: 'current' } }],
+      [
+        'babel-preset-env',
+        {
+          targets: { node: 'current' }
+        }
+      ],
       'babel-preset-react'
     ],
     plugins: [...plugins, 'babel-plugin-dynamic-import-node']
   };
 } else {
   module.exports = {
-    presets: [['babel-preset-env', { modules: false }], 'babel-preset-react'],
+    presets: [
+      [
+        'babel-preset-env',
+        {
+          targets: {
+            browsers: [
+              'Chrome >= 60',
+              'Safari >= 10.1',
+              'iOS >= 10.3',
+              'Firefox >= 54',
+              'Edge >= 15'
+            ]
+          },
+          modules: false
+        }
+      ],
+      'babel-preset-react'
+    ],
     plugins: [...plugins, 'babel-plugin-syntax-dynamic-import']
   };
 }

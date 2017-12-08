@@ -14,10 +14,10 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "lint:eslint": "eslint -c .eslintrc.js src config",
-    "lint:prettier": "prettier-check 'src/**/*.js'",
+    "lint:eslint": "eslint src config",
+    "lint:prettier": "prettier-check '{src,config}/**/*.{js,json,css,md}'",
     "lint": "npm run lint:eslint && npm run lint:prettier",
-    "format": "prettier '{src,config}/**/*.js' --write",
+    "format": "prettier '{src,config}/**/*.{js,json,css,md}' --write",
     "dev":
       "NODE_ENV=development webpack-dev-server --config ./config/webpack.dev.js",
     "test": "NODE_ENV=test jest --watch --updateSnapshot",
@@ -33,13 +33,6 @@
     "singleQuote": true
   },
   "jest": { "preset": "<rootDir>/config/jest/jest.config.json" },
-  "browserslist": [
-    "Chrome >= 60",
-    "Safari >= 10.1",
-    "iOS >= 10.3",
-    "Firefox >= 54",
-    "Edge >= 15"
-  ],
   "dependencies": {
     "emotion": "^8.0.12",
     "prop-types": "^15.6.0",
@@ -68,7 +61,7 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.2.2",
-    "eslint": "^4.12.1",
+    "eslint": "^4.13.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-import-resolver-webpack": "^0.8.3",
