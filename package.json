@@ -33,19 +33,19 @@
     "singleQuote": true
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,mjs}"],
+    "collectCoverageFrom": ["src/**/*.js"],
     "setupFiles": [
       "<rootDir>/config/jest/rafPolyfill.js",
       "<rootDir>/config/jest/enzymeAdapter.js"
     ],
     "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "testMatch": ["<rootDir>/src/**/__tests__/**/*.{js,mjs}"],
+    "testMatch": ["<rootDir>/src/**/__tests__/**/*.js"],
     "testEnvironment": "jsdom",
     "testURL": "http://localhost",
     "transform": {
-      "^.+\\.(js|mjs)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
     "moduleNameMapper": {
       "^assets(.*)$": "<rootDir>/src/assets$1",
@@ -55,7 +55,7 @@
       "^utils(.*)$": "<rootDir>/src/utils$1",
       "^widgets(.*)$": "<rootDir>/src/widgets$1"
     },
-    "moduleFileExtensions": ["js", "mjs", "json"],
+    "moduleFileExtensions": ["js", "json"],
     "coverageThreshold": {
       "global": {
         "branches": 80,
