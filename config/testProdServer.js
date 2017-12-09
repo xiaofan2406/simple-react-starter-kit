@@ -3,9 +3,9 @@ const configs = require('./configs');
 
 server(configs.paths.appDist, {
   port: configs.testProdPort,
-  single: true
+  single: true,
 });
 
 console.log('Production server listening...');
 console.log(`http://localhost:${configs.testProdPort}`);
-console.log(`http://${configs.lanIP}:${configs.testProdPort}`);
+console.log(`http://${configs.localIp}:${configs.testProdPort}`);

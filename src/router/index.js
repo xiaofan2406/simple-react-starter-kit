@@ -20,7 +20,7 @@ function Router() {
             path={ROUTES.ABOUT.path}
             exact={ROUTES.ABOUT.exact}
             component={asyncLoad({
-              importer: () => import(/* webpackChunkName: "About" */ './About')
+              importer: () => import(/* webpackChunkName: "About" */ './About'),
             })}
           />
           <Route
@@ -28,7 +28,7 @@ function Router() {
             exact={ROUTES.CONTACT.exact}
             component={asyncLoad({
               importer: () =>
-                import(/* webpackChunkName: "Contact" */ './Contact')
+                import(/* webpackChunkName: "Contact" */ './Contact'),
             })}
           />
         </Switch>

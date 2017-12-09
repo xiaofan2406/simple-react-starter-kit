@@ -11,7 +11,7 @@ let plugins = [
   'babel-plugin-transform-class-properties',
   ['babel-plugin-transform-object-rest-spread', { useBuiltIns: true }],
   ['babel-plugin-transform-react-jsx', { useBuiltIns: true }],
-  'babel-plugin-transform-export-extensions'
+  'babel-plugin-transform-export-extensions',
 ];
 
 if (env === 'development') {
@@ -22,7 +22,7 @@ if (env === 'development' || env === 'test') {
   plugins = [
     ...plugins,
     'babel-plugin-transform-react-jsx-source',
-    'babel-plugin-transform-react-jsx-self'
+    'babel-plugin-transform-react-jsx-self',
   ];
 }
 
@@ -32,12 +32,12 @@ if (env === 'test') {
       [
         'babel-preset-env',
         {
-          targets: { node: 'current' }
-        }
+          targets: { node: 'current' },
+        },
       ],
-      'babel-preset-react'
+      'babel-preset-react',
     ],
-    plugins: [...plugins, 'babel-plugin-dynamic-import-node']
+    plugins: [...plugins, 'babel-plugin-dynamic-import-node'],
   };
 } else {
   module.exports = {
@@ -51,14 +51,14 @@ if (env === 'test') {
               'Safari >= 10.1',
               'iOS >= 10.3',
               'Firefox >= 54',
-              'Edge >= 15'
-            ]
+              'Edge >= 15',
+            ],
           },
-          modules: false
-        }
+          modules: false,
+        },
       ],
-      'babel-preset-react'
+      'babel-preset-react',
     ],
-    plugins: [...plugins, 'babel-plugin-syntax-dynamic-import']
+    plugins: [...plugins, 'babel-plugin-syntax-dynamic-import'],
   };
 }

@@ -3,7 +3,7 @@ import React from 'react';
 function asyncLoad({ importer }) {
   class AsyncLoad extends React.Component {
     state = {
-      Component: null
+      Component: null,
     };
 
     componentWillMount() {

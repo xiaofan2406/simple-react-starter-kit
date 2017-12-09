@@ -14,7 +14,7 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     main: `${paths.appSrc}/index.js`,
-    vendor: Object.keys(pkg.dependencies)
+    vendor: Object.keys(pkg.dependencies),
   },
   resolve: common.resolve,
   output: {
@@ -23,7 +23,7 @@ module.exports = {
     chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
     publicPath: '/',
     devtoolModuleFilenameTemplate: ({ absoluteResourcePath }) =>
-      path.relative(paths.appSrc, absoluteResourcePath)
+      path.relative(paths.appSrc, absoluteResourcePath),
   },
   module: {
     strictExportPresence: true,
@@ -33,7 +33,9 @@ module.exports = {
         test: /\.js$/,
         include: paths.appSrc,
         loader: 'babel-loader',
-        options: { compact: true }
+        options: {
+          compact: true,
+        },
       },
       {
         test: /\.css$/,
@@ -42,12 +44,15 @@ module.exports = {
           use: [
             {
               loader: 'css-loader',
-              options: { minimize: true, sourceMap: true }
-            }
-          ]
-        })
-      }
-    ]
+              options: {
+                minimize: true,
+                sourceMap: true,
+              },
+            },
+          ],
+        }),
+      },
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
@@ -60,7 +65,7 @@ module.exports = {
     ),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: Infinity
+      minChunks: Infinity,
     }),
     new webpack.optimize.CommonsChunkPlugin({ name: 'runtime' }),
     new HtmlWebpackPlugin({
@@ -77,17 +82,25 @@ module.exports = {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true
-      }
+        minifyURLs: true,
+      },
     }),
     new UglifyJsPlugin({
+      sourceMap: true,
+      cache: true,
       uglifyOptions: {
         ecma: 6,
-        compress: { comparisons: false },
-        output: { ascii_only: true, ecma: 6 },
-        mangle: { safari10: true },
-        sourceMap: true
-      }
+        compress: {
+          comparisons: false,
+        },
+        output: {
+          ascii_only: true,
+          ecma: 6,
+        },
+        mangle: {
+          safari10: true,
+        },
+      },
     }),
     new ExtractTextPlugin('css/[name].[contenthash:8].css'),
     new ManifestPlugin({ fileName: 'asset-manifest.json' }),
@@ -95,13 +108,13 @@ module.exports = {
       onEnd: {
         copy: [
           {
-            // surge.sh https://surge.sh/help/adding-a-200-page-for-client-side-routing
+            // https://surge.sh/help/adding-a-200-page-for-client-side-routing
             source: `${paths.appDist}/index.html`,
-            destination: `${paths.appDist}/200.html`
-          }
-        ]
-      }
-    })
+            destination: `${paths.appDist}/200.html`,
+          },
+        ],
+      },
+    }),
   ],
-  node: common.node
+  node: common.node,
 };

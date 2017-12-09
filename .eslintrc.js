@@ -5,14 +5,14 @@ module.exports = {
     commonjs: true,
     es6: true,
     node: true,
-    jest: true
+    jest: true,
   },
   settings: {
     'import/resolver': {
       webpack: {
-        config: './config/webpack.common.js'
-      }
-    }
+        config: './config/webpack.common.js',
+      },
+    },
   },
   parser: 'babel-eslint',
   parserOptions: {
@@ -21,8 +21,8 @@ module.exports = {
     ecmaFeatures: {
       impliedStrict: true,
       jsx: true,
-      experimentalObjectRestSpread: true
-    }
+      experimentalObjectRestSpread: true,
+    },
   },
   plugins: ['react'],
   extends: ['airbnb', 'prettier'],
@@ -32,6 +32,6 @@ module.exports = {
     'no-param-reassign': [2, { props: false }],
     'import/no-extraneous-dependencies': 0, // allow import devDependencies
     'react/forbid-prop-types': 0, // allow all types of PropTypes
-    'react/jsx-filename-extension': 0 // enfore all .js extension
-  }
+    'react/jsx-filename-extension': 0, // enfore all .js extension
+  },
 };

@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common');
-const { devServerPort, lanIP, paths } = require('./configs');
+const { devServerPort, localIp, paths } = require('./configs');
 
 // https://github.com/facebookincubator/create-react-app/blob/master/packages/react-dev-utils/ignoredFiles.js
 const ignoredFiles = new RegExp(
@@ -24,7 +24,7 @@ module.exports = {
     // Add /* filename */ comments to generated require()s in the output.
     pathinfo: true,
     devtoolModuleFilenameTemplate: ({ absoluteResourcePath }) =>
-      path.resolve(absoluteResourcePath)
+      path.resolve(absoluteResourcePath),
   },
   module: {
     strictExportPresence: true,
@@ -34,33 +34,43 @@ module.exports = {
         test: /\.js$/,
         include: paths.appSrc,
         loader: 'babel-loader',
-        options: { cacheDirectory: true }
+        options: { cacheDirectory: true },
       },
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
-    ]
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
       template: `${paths.appSrc}/assets/index.html`,
-      favicon: `${paths.appSrc}/assets/favicon.ico`
+      favicon: `${paths.appSrc}/assets/favicon.ico`,
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"development"',
+    }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
   ],
   node: common.node,
-  performance: { hints: false },
+  performance: {
+    hints: false,
+  },
   devServer: {
     compress: true,
-    historyApiFallback: { disableDotRule: true },
+    historyApiFallback: {
+      disableDotRule: true,
+    },
     hot: true,
     publicPath: '/',
     stats: 'errors-only',
-    watchOptions: { ignored: ignoredFiles },
+    watchOptions: {
+      ignored: ignoredFiles,
+    },
     https: process.env.HTTPS === 'true',
-    host: lanIP,
-    port: devServerPort
-  }
+    host: localIp,
+    port: devServerPort,
+  },
 };

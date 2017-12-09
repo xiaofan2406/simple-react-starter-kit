@@ -18,7 +18,7 @@ it('should not update on props changes', () => {
   expect(renderSpy).toHaveBeenCalledTimes(1);
 
   component.setProps({
-    classes: { someClass: {} }
+    classes: { someClass: {} },
   });
 
   expect(renderSpy).toHaveBeenCalledTimes(1);

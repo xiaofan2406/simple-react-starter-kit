@@ -6,7 +6,7 @@ import asyncLoad from '../asyncLoad';
 it('should call the importer function', () => {
   const MockComponent = () => <div>mock component</div>;
   const params = {
-    importer: () => Promise.resolve({ default: MockComponent })
+    importer: () => Promise.resolve({ default: MockComponent }),
   };
   const importerSpy = jest.spyOn(params, 'importer');
   const AsyncComponent = asyncLoad(params);
@@ -18,7 +18,7 @@ it('should call the importer function', () => {
 it('should return a stateful component', () => {
   const MockComponent = () => <div>mock component</div>;
   const params = {
-    importer: () => Promise.resolve({ default: MockComponent })
+    importer: () => Promise.resolve({ default: MockComponent }),
   };
   const AsyncComponent = asyncLoad(params);
   const component = mount(<AsyncComponent />);
@@ -29,7 +29,7 @@ it('should return a stateful component', () => {
 it('should render the component in its state', () => {
   const MockComponent = () => <div>mock component</div>;
   const params = {
-    importer: () => Promise.resolve({ default: MockComponent })
+    importer: () => Promise.resolve({ default: MockComponent }),
   };
   const AsyncComponent = asyncLoad(params);
   const component = mount(<AsyncComponent />);
@@ -42,7 +42,7 @@ it('should render the component in its state', () => {
 it('should pass on its props to the wrapped component', () => {
   const MockComponent = () => <div>mock component</div>;
   const params = {
-    importer: () => Promise.resolve({ default: MockComponent })
+    importer: () => Promise.resolve({ default: MockComponent }),
   };
   const AsyncComponent = asyncLoad(params);
   const component = mount(<AsyncComponent someProp="someProp" />);
