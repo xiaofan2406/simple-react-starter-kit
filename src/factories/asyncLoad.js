@@ -1,6 +1,6 @@
 import React from 'react';
 
-function asyncLoad({ importer }) {
+const asyncLoad = ({ importer }) =>
   class AsyncLoad extends React.Component {
     state = {
       Component: null,
@@ -18,9 +18,6 @@ function asyncLoad({ importer }) {
       const { Component } = this.state;
       return Component ? <Component {...this.props} /> : null;
     }
-  }
-
-  return AsyncLoad;
-}
+  };
 
 export default asyncLoad;

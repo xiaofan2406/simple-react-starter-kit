@@ -33,16 +33,14 @@ const cssClass = css`
   }
 `;
 
-function Loader() {
-  return (
-    <div className={cssClass}>
-      <div>
-        <div />
-        <div />
-      </div>
+const Loader = () => (
+  <div className={cssClass}>
+    <div>
+      <div />
+      <div />
     </div>
-  );
-}
+  </div>
+);
 
 export { Loader as Component };
 

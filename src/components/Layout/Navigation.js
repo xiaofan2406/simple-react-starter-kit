@@ -21,23 +21,21 @@ const cssClass = css`
   }
 `;
 
-function Navigation() {
-  return (
-    <div className={cssClass}>
-      {Object.values(ROUTES).map(route => (
-        <NavLink
-          className="link"
-          activeClassName="active"
-          key={route.path}
-          exact={route.exact}
-          to={route.path}
-        >
-          {route.name}
-        </NavLink>
-      ))}
-    </div>
-  );
-}
+const Navigation = () => (
+  <div className={cssClass}>
+    {Object.values(ROUTES).map(route => (
+      <NavLink
+        className="link"
+        activeClassName="active"
+        key={route.path}
+        exact={route.exact}
+        to={route.path}
+      >
+        {route.name}
+      </NavLink>
+    ))}
+  </div>
+);
 
 export { Navigation as Component };
 

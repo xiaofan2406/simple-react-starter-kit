@@ -34,7 +34,9 @@ module.exports = {
         test: /\.js$/,
         include: paths.appSrc,
         loader: 'babel-loader',
-        options: { cacheDirectory: true },
+        options: {
+          cacheDirectory: true,
+        },
       },
       {
         test: /\.css$/,

@@ -7,14 +7,19 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const common = require('./webpack.common');
 const { paths } = require('./configs');
-const pkg = require('../package');
+
+const vendorEntries = {
+  'vendor-react': ['react', 'react-dom', 'prop-types'],
+  'vendor-emotion': ['emotion', 'react-emotion'],
+  'vendor-other': ['react-router-dom'],
+};
 
 module.exports = {
   bail: true,
   devtool: 'source-map',
   entry: {
     main: `${paths.appSrc}/index.js`,
-    vendor: Object.keys(pkg.dependencies),
+    ...vendorEntries,
   },
   resolve: common.resolve,
   output: {
@@ -55,7 +60,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"',
+    }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NamedChunksPlugin(
@@ -64,10 +71,12 @@ module.exports = {
         chunk.mapModules(m => path.relative(m.context, m.request)).join('_')
     ),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
+      name: Object.keys(vendorEntries),
       minChunks: Infinity,
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'runtime' }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime',
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: `${paths.appSrc}/assets/index.html`,

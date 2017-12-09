@@ -5,8 +5,6 @@ const cssClass = css`
   font-size: 48px;
 `;
 
-function Home() {
-  return <div className={cssClass}>Hello world!</div>;
-}
+const Home = () => <div className={cssClass}>Hello world!</div>;
 
 export default Home;

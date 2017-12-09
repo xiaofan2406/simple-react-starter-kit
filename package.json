@@ -24,7 +24,7 @@
     "coverage": "NODE_ENV=test jest --coverage",
     "prebuild": "npm run lint && rm -rf ./dist",
     "build": "NODE_ENV=production webpack --config ./config/webpack.prod.js",
-    "start": "NODE_ENV=production node ./config/testProdServer"
+    "start": "NODE_ENV=production node ./config/testProdServer.js"
   },
   "lint-staged": {
     "*.{js,json,css,md}": ["prettier --write", "git add"]

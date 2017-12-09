@@ -28,17 +28,15 @@ const cssClass = css`
   }
 `;
 
-function Layout({ children }) {
-  return (
-    <div className={cssClass}>
-      <div className="header">
-        <Brand />
-        <Navigation />
-      </div>
-      <div className="main">{children}</div>
+const Layout = ({ children }) => (
+  <div className={cssClass}>
+    <div className="header">
+      <Brand />
+      <Navigation />
     </div>
-  );
-}
+    <div className="main">{children}</div>
+  </div>
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
