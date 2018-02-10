@@ -18,7 +18,7 @@ const appRoot = path.join(__dirname, '..');
 const appSrc = path.join(appRoot, 'src');
 const appDist = path.join(appRoot, 'dist');
 
-const devServerPort = process.env.PORT || 8080;
+const devServerPort = process.env.PORT || 8000;
 const testProdPort = process.env.PORT || 9000;
 
 module.exports = {
