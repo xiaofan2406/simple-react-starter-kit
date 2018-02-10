@@ -7,9 +7,7 @@ if (env !== 'development' && env !== 'test' && env !== 'production') {
 }
 
 const emotionConfig =
-  env === 'production'
-    ? { hoist: true }
-    : { sourceMap: true, autoLabel: false };
+  env === 'production' ? { hoist: true } : { sourceMap: true, autoLabel: true };
 
 let plugins = [
   ['babel-plugin-emotion', emotionConfig],

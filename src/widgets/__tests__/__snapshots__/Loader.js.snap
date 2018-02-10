@@ -1,9 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot 1`] = `
+.emotion-0 {
+  display: inline-block;
+}
+
+.emotion-0 > div {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.emotion-0 > div div {
+  width: 60px;
+  height: 60px;
+  border-style: solid;
+  border-width: 6px;
+  border-color: #00bcd4;
+  opacity: 0.4;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -ms-perspective: 800px;
+  perspective: 800px;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.emotion-0 > div div:first-child {
+  -webkit-animation: loaderRigthRotate 2s 0s infinite linear;
+  animation: loaderRigthRotate 2s 0s infinite linear;
+}
+
+.emotion-0 > div div:nth-child(2) {
+  -webkit-animation: loaderLeftRotate 2s 0s infinite linear;
+  animation: loaderLeftRotate 2s 0s infinite linear;
+}
+
 <Loader>
   <div
-    className="css-nsl2u4-cssClass"
+    className="emotion-0"
   >
     <div>
       <div />

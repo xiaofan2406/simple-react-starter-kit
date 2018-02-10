@@ -1,8 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot 1`] = `
+.emotion-0 .link {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 0 0.5em;
+  display: inline-block;
+  line-height: 48px;
+  height: 48px;
+}
+
+.emotion-0 .link:hover {
+  background-color: #3B4045;
+}
+
+.emotion-0 .link.active {
+  border-bottom: 2px solid #00BCD4;
+}
+
 <div
-  className="css-vg826r-cssClass"
+  className="emotion-0"
 >
   <NavLink
     activeClassName="active"
