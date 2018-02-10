@@ -2,7 +2,7 @@
 
 exports[`should match snapshot 1`] = `
 <div
-  className="css-w79bb7"
+  className="css-10q3nrk-cssClass"
 >
   <img
     alt="logo"

@@ -6,8 +6,13 @@ if (env !== 'development' && env !== 'test' && env !== 'production') {
   );
 }
 
+const emotionConfig =
+  env === 'production'
+    ? { hoist: true }
+    : { sourceMap: true, autoLabel: false };
+
 let plugins = [
-  'babel-plugin-emotion',
+  ['babel-plugin-emotion', emotionConfig],
   'babel-plugin-transform-class-properties',
   ['babel-plugin-transform-object-rest-spread', { useBuiltIns: true }],
   ['babel-plugin-transform-react-jsx', { useBuiltIns: true }],
