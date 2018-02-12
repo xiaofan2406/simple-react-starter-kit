@@ -1,15 +1,15 @@
 {
-  "collectCoverageFrom": ["src/**/*.js"],
+  "collectCoverageFrom": ["src/**/*.{js,mjs}"],
   "setupFiles": ["<rootDir>/config/jest/enzymeAdapter.js"],
-  "setupTestFrameworkScriptFile": "<rootDir>/config/jest/jestSetup.js",
+  "setupTestFrameworkScriptFile": "<rootDir>/config/jest/frameworkSetup.js",
   "snapshotSerializers": ["enzyme-to-json/serializer"],
-  "testMatch": ["<rootDir>/src/**/__tests__/**/*.js"],
+  "testMatch": ["<rootDir>/src/**/__tests__/**/*.{js,mjs}"],
   "testEnvironment": "jsdom",
   "testURL": "http://localhost",
   "transform": {
-    "^.+\\.js$": "babel-jest",
+    "^.+\\.(js|mjs)$": "babel-jest",
     "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-    "^(?!.*\\.(js|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    "^(?!.*\\.(js|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
   },
   "moduleNameMapper": {
     "^assets(.*)$": "<rootDir>/src/assets$1",
@@ -19,7 +19,7 @@
     "^utils(.*)$": "<rootDir>/src/utils$1",
     "^widgets(.*)$": "<rootDir>/src/widgets$1"
   },
-  "moduleFileExtensions": ["js", "json"],
+  "moduleFileExtensions": ["js", "mjs", "json"],
   "coveragePathIgnorePatterns": ["<rootDir>/src/utils/compose.js", "index.js"],
   "coverageThreshold": {
     "global": {

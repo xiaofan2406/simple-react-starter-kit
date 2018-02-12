@@ -1,14 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const escape = require('escape-string-regexp');
 const common = require('./webpack.common');
 const { devServerPort, localIp, paths } = require('./configs');
 
 // https://github.com/facebookincubator/create-react-app/blob/master/packages/react-dev-utils/ignoredFiles.js
 const ignoredFiles = new RegExp(
-  `^(?!${path
-    .normalize(`${paths.appSrc}/`)
-    .replace(/[\\]+/g, '/')}).+/node_modules/`,
+  `^(?!${escape(
+    path.normalize(`${paths.appSrc}/`).replace(/[\\]+/g, '/')
+  )}).+/node_modules/`,
   'g'
 );
 
@@ -31,7 +32,7 @@ module.exports = {
     rules: [
       ...common.rules,
       {
-        test: /\.js$/,
+        test: /\.(js|mjs)$/,
         include: paths.appSrc,
         loader: 'babel-loader',
         options: {

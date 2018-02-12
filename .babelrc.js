@@ -32,12 +32,7 @@ if (env === 'development' || env === 'test') {
 if (env === 'test') {
   module.exports = {
     presets: [
-      [
-        'babel-preset-env',
-        {
-          targets: { node: 'current' },
-        },
-      ],
+      ['babel-preset-env', { targets: { node: 'current' } }],
       'babel-preset-react',
     ],
     plugins: [...plugins, 'babel-plugin-dynamic-import-node'],

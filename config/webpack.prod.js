@@ -35,7 +35,7 @@ module.exports = {
     rules: [
       ...common.rules,
       {
-        test: /\.js$/,
+        test: /\.(js|mjs)$/,
         include: paths.appSrc,
         loader: 'babel-loader',
         options: {
