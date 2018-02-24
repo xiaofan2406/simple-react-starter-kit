@@ -15,7 +15,7 @@ const ignoredFiles = new RegExp(
 
 module.exports = {
   devtool: 'cheap-module-source-map',
-  entry: ['react-hot-loader/patch', `${paths.appSrc}/index.js`],
+  entry: `${paths.appSrc}/index.js`,
   resolve: common.resolve,
   output: {
     filename: 'bundle.js',
