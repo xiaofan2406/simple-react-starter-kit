@@ -1,62 +1,50 @@
 const env = process.env.NODE_ENV;
 
-if (env !== 'development' && env !== 'test' && env !== 'production') {
+const isTest = env === 'test';
+const isDevelopment = env === 'development';
+const isProduction = env === 'production';
+
+if (!isTest && !isDevelopment && !isProduction) {
   throw new Error(
-    `Invalid NODE_ENV "${env}". Use only from ["development", "test", "production"]`
+    `Invalid NODE_ENV "${env}". Use only from ["test", "development", "production"]`
   );
 }
 
-const emotionConfig =
-  env === 'production' ? { hoist: true } : { sourceMap: true, autoLabel: true };
+const emotionConfig = isProduction
+  ? { hoist: true }
+  : { sourceMap: true, autoLabel: true };
 
-let plugins = [
-  ['babel-plugin-emotion', emotionConfig],
-  'babel-plugin-transform-class-properties',
-  ['babel-plugin-transform-object-rest-spread', { useBuiltIns: true }],
-  ['babel-plugin-transform-react-jsx', { useBuiltIns: true }],
-  'babel-plugin-transform-export-extensions',
-];
-
-if (env === 'development') {
-  plugins = [...plugins, 'react-hot-loader/babel'];
-}
-
-if (env === 'development' || env === 'test') {
-  plugins = [
-    ...plugins,
-    'babel-plugin-transform-react-jsx-source',
-    'babel-plugin-transform-react-jsx-self',
-  ];
-}
-
-if (env === 'test') {
-  module.exports = {
-    presets: [
-      ['babel-preset-env', { targets: { node: 'current' } }],
-      'babel-preset-react',
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: { node: 'current' },
+        useBuiltIns: 'usage',
+        modules: isTest ? 'commonjs' : false,
+      },
     ],
-    plugins: [...plugins, 'babel-plugin-dynamic-import-node'],
-  };
-} else {
-  module.exports = {
-    presets: [
-      [
-        'babel-preset-env',
-        {
-          targets: {
-            browsers: [
-              'Chrome >= 60',
-              'Safari >= 10.1',
-              'iOS >= 10.3',
-              'Firefox >= 54',
-              'Edge >= 15',
-            ],
-          },
-          modules: false,
-        },
-      ],
-      'babel-preset-react',
+    ['@babel/preset-react', { development: !isProduction, useBuiltIns: true }],
+  ],
+  plugins: [
+    ['babel-plugin-emotion', emotionConfig],
+
+    '@babel/plugin-proposal-class-properties',
+
+    [
+      '@babel/plugin-proposal-object-rest-spread',
+      { loose: true, useBuiltIns: true },
     ],
-    plugins: [...plugins, 'babel-plugin-syntax-dynamic-import'],
-  };
-}
+
+    // Enable `export default from` and `export * as ns from`
+    '@babel/plugin-proposal-export-default-from',
+    '@babel/plugin-proposal-export-namespace-from',
+
+    // Enable `import()` syntax and transform to `require` for testing
+    isTest
+      ? 'babel-plugin-transform-dynamic-import'
+      : '@babel/plugin-syntax-dynamic-import',
+
+    isDevelopment && 'react-hot-loader/babel',
+  ].filter(Boolean),
+};

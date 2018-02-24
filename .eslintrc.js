@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
   root: true,
   env: {
@@ -10,14 +8,14 @@ module.exports = {
   settings: {
     'import/resolver': {
       webpack: {
-        config: path.join(__dirname, './config/webpack.common.js'),
+        config: './config/webpack.common.js',
       },
     },
   },
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 8,
+    ecmaVersion: 9,
     ecmaFeatures: {
       impliedStrict: true,
       jsx: true,
