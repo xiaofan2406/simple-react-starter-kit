@@ -1,16 +1,16 @@
+const path = require('path');
+
 module.exports = {
   root: true,
   env: {
     browser: true,
-    commonjs: true,
-    es6: true,
     node: true,
     jest: true,
   },
   settings: {
     'import/resolver': {
       webpack: {
-        config: './config/webpack.common.js',
+        config: path.join(__dirname, './config/webpack.common.js'),
       },
     },
   },
@@ -21,7 +21,6 @@ module.exports = {
     ecmaFeatures: {
       impliedStrict: true,
       jsx: true,
-      experimentalObjectRestSpread: true,
     },
   },
   plugins: ['react'],
