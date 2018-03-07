@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'emotion';
 import { theme, variables } from 'styles';
-import 'styles/reset.css';
-import 'styles/animation.css';
 
 import Brand from './Brand';
 import Navigation from './Navigation';
