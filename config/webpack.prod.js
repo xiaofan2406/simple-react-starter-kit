@@ -8,19 +8,17 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 const common = require('./webpack.common');
 const { paths } = require('./configs');
 
-const vendorEntries = {
-  'vendor-react': ['react', 'react-dom', 'prop-types'],
-  'vendor-emotion': ['emotion', 'react-emotion'],
-  'vendor-other': ['react-router-dom'],
-};
+// const vendorEntries = {
+//   'vendor-react': ['react', 'react-dom', 'prop-types'],
+//   'vendor-emotion': ['emotion', 'react-emotion'],
+//   'vendor-other': ['react-router-dom'],
+// };
 
 module.exports = {
+  mode: 'production',
   bail: true,
   devtool: 'source-map',
-  entry: {
-    main: `${paths.appSrc}/index.js`,
-    ...vendorEntries,
-  },
+  entry: `${paths.appSrc}/index.js`,
   resolve: common.resolve,
   output: {
     path: paths.appDist,
@@ -59,24 +57,48 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        sourceMap: true,
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          ecma: 8,
+          compress: {
+            warnings: false,
+            comparisons: false,
+          },
+          output: {
+            comments: false,
+            ascii_only: true,
+            ecma: 6,
+          },
+          mangle: {
+            safari10: true,
+          },
+        },
+      }),
+    ],
+    splitChunks: {
+      chunks: 'all',
+    },
+    runtimeChunk: true,
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"',
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.NamedChunksPlugin(
-      chunk =>
-        chunk.name ||
-        chunk.mapModules(m => path.relative(m.context, m.request)).join('_')
-    ),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: Object.keys(vendorEntries),
-      minChunks: Infinity,
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'runtime',
-    }),
+    // TODO re-visit
+    // new webpack.NamedChunksPlugin(
+    //   chunk =>
+    //     chunk.name ||
+    //     Array.from(chunk.modulesIterable, m =>
+    //       path.basename(m.request, '.js')
+    //     ).join('_')
+    // ),
     new HtmlWebpackPlugin({
       inject: true,
       template: `${paths.appSrc}/assets/index.html`,
@@ -94,24 +116,10 @@ module.exports = {
         minifyURLs: true,
       },
     }),
-    new UglifyJsPlugin({
-      sourceMap: true,
-      cache: true,
-      uglifyOptions: {
-        ecma: 6,
-        compress: {
-          comparisons: false,
-        },
-        output: {
-          ascii_only: true,
-          ecma: 6,
-        },
-        mangle: {
-          safari10: true,
-        },
-      },
+    new ExtractTextPlugin({
+      filename: 'css/[name].[contenthash:8].css',
+      allChunks: true,
     }),
-    new ExtractTextPlugin('css/[name].[contenthash:8].css'),
     new ManifestPlugin({ fileName: 'asset-manifest.json' }),
     new FileManagerPlugin({
       onEnd: {

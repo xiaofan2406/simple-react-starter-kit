@@ -14,6 +14,7 @@ const ignoredFiles = new RegExp(
 );
 
 module.exports = {
+  mode: 'development',
   devtool: 'cheap-module-source-map',
   entry: `${paths.appSrc}/index.js`,
   resolve: common.resolve,
@@ -44,6 +45,12 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
     ],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+    runtimeChunk: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
