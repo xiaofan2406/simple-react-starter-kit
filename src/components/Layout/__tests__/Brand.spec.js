@@ -3,6 +3,10 @@ import { shallow } from 'enzyme';
 
 import { Component } from '../Brand';
 
+afterEach(() => {
+  jest.restoreAllMocks();
+});
+
 it('should match snapshot', () => {
   const props = { classes: {} };
   const component = shallow(<Component {...props} />);
