@@ -20,7 +20,11 @@
     "^widgets(.*)$": "<rootDir>/src/widgets$1"
   },
   "moduleFileExtensions": ["js", "mjs", "json"],
-  "coveragePathIgnorePatterns": ["<rootDir>/src/utils/compose.js", "index.js"],
+  "coveragePathIgnorePatterns": [
+    "<rootDir>/src/utils/compose.js",
+    "index.js",
+    "App.js"
+  ],
   "coverageThreshold": {
     "global": {
       "branches": 80,
