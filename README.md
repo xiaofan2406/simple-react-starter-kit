@@ -98,7 +98,6 @@ yarn test
 | src/**assets/**     | `assets`     | Common static file assets                                 |
 | src/**components/** | `components` | Appp components                                           |
 | src/**factories/**  | `factories`  | Utility components that help create/render new components |
-| src/**router/**     |              | React Router setup and route-level components             |
 | src/**styles/**     | `styles`     | Global CSS files and css-in-jss setup/configs             |
 | src/**utils/**      | `utils`      | Utility helper functions                                  |
 | src/**widgets/**    | `widgets`    | Share pure presentational UI components                   |
