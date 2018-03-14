@@ -27,8 +27,11 @@ module.exports = {
     'no-console': 0,
     'global-require': 0,
     'no-param-reassign': [2, { props: false }],
+    'no-underscore-dangle': [2, { allowAfterThis: true }],
+    'no-nested-ternary': 0,
     'import/no-extraneous-dependencies': 0, // allow import devDependencies
     'react/forbid-prop-types': 0, // allow all types of PropTypes
     'react/jsx-filename-extension': 0, // enfore all .js extension
+    'react/prefer-stateless-function': 0,
   },
 };

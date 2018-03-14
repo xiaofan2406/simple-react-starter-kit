@@ -49,7 +49,7 @@ Loader.propTypes = {
 };
 
 Loader.defaultProps = {
-  color: '#ffffff',
+  color: '#00bcd4',
   size: 60,
 };
 

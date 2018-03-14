@@ -36,10 +36,6 @@ module.exports = {
       { loose: true, useBuiltIns: true },
     ],
 
-    // Enable `export default from` and `export * as ns from`
-    '@babel/plugin-proposal-export-default-from',
-    '@babel/plugin-proposal-export-namespace-from',
-
     // Enable `import()` syntax and transform to `require` for testing
     isTest
       ? 'babel-plugin-transform-dynamic-import'
