@@ -31,6 +31,12 @@ module.exports = {
   module: {
     strictExportPresence: true,
     rules: [
+      {
+        test: /\.(js|mjs)$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        include: paths.appSrc,
+      },
       ...common.rules,
       {
         test: /\.(js|mjs)$/,

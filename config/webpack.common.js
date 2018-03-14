@@ -14,12 +14,6 @@ module.exports = {
   },
   rules: [
     {
-      test: /\.(js|mjs)$/,
-      enforce: 'pre',
-      loader: 'eslint-loader',
-      include: paths.appSrc,
-    },
-    {
       test: /\.(eot|otf|ttf|woff|woff2)(\?.*)?$/,
       loader: 'file-loader',
       options: {
