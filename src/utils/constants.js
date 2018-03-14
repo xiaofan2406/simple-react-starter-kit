@@ -1,17 +1,17 @@
 export const APP_TITLE = 'React Starter Kit';
 
-export const ROUTES = {
+export const NAV_LINKS = {
   HOME: {
-    path: '/',
+    to: '/',
     name: 'Home',
     exact: true,
   },
   ABOUT: {
-    path: '/about',
+    to: '/about',
     name: 'About',
   },
   CONTACT: {
-    path: '/contact',
+    to: '/contact',
     name: 'Contact',
   },
 };

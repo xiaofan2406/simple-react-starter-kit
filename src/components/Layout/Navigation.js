@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'emotion';
 import { NavLink } from 'react-router-dom';
 import { theme, variables } from 'styles';
-import { ROUTES } from 'utils/constants';
+import { NAV_LINKS } from 'utils/constants';
 
 const cssClass = css`
   & .link {
@@ -23,13 +23,13 @@ const cssClass = css`
 
 const Navigation = () => (
   <div className={cssClass}>
-    {Object.values(ROUTES).map(route => (
+    {Object.values(NAV_LINKS).map(route => (
       <NavLink
         className="link"
         activeClassName="active"
-        key={route.path}
+        key={route.to}
         exact={route.exact}
-        to={route.path}
+        to={route.to}
       >
         {route.name}
       </NavLink>
