@@ -4,6 +4,8 @@ import { hot } from 'react-hot-loader';
 import { Layout, Home } from 'components';
 import { asyncLoad } from 'factories';
 import { ROUTES } from 'utils/constants';
+import 'styles/reset.css';
+import 'styles/animation.css';
 
 const App = () => (
   <BrowserRouter>
