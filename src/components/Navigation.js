@@ -1,28 +1,31 @@
 import React from 'react';
-import { css } from 'emotion';
+import { css } from 'react-emotion';
 import { NavLink } from 'react-router-dom';
-import { theme, variables } from 'styles';
+import { theme, spacing } from 'styles';
 import { NAV_LINKS } from 'utils/constants';
 
-const cssClass = css`
-  & .link {
-    color: ${theme.inverseColor};
+const cssNavigation = css`
+  position: fixed;
+  left: ${spacing.unit}px;
+  bottom: ${spacing.unit}px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid ${theme.borderColor};
+  & > .link {
     text-decoration: none;
-    padding: 0 0.5em;
+    padding: 0.5em;
     display: inline-block;
-    line-height: ${variables.headerHeight}px;
-    height: ${variables.headerHeight}px;
     &:hover {
-      background-color: ${theme.bgAccentColor};
+      background-color: ${theme.borderColor};
     }
     &.active {
-      border-bottom: 2px solid ${theme.primaryColor};
+      border-right: 2px solid ${theme.primaryColor};
     }
   }
 `;
 
 const Navigation = () => (
-  <div className={cssClass}>
+  <div className={cssNavigation}>
     {Object.values(NAV_LINKS).map(route => (
       <NavLink
         className="link"

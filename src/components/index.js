@@ -1,6 +1,7 @@
 import Layout from './Layout';
 import Home from './Home';
+import Navigation from './Navigation';
 
-export { Layout, Home };
+export { Layout, Home, Navigation };
 
-export default { Layout, Home };
+export default { Layout, Home, Navigation };

@@ -1,37 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'emotion';
-import { theme, variables } from 'styles';
-
+import { css } from 'react-emotion';
+import { theme, spacing } from 'styles';
 import Brand from './Brand';
-import Navigation from './Navigation';
 
-const cssClass = css`
+const cssLayout = css`
   font-family: ${theme.fontFamily};
   font-size: ${theme.fontSize}px;
-
-  & .header {
-    height: ${variables.headerHeight}px;
-    background-color: ${theme.bgColor};
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  color: ${theme.textColor};
+  & p {
+    margin: 0px 0px 1em 0px;
   }
-
-  & .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - ${variables.headerHeight}px);
+  & > .main {
+    width: 780px;
+    padding: 0px ${spacing.internal}px;
+    margin: ${spacing.break}px auto;
   }
 `;
 
 const Layout = ({ children }) => (
-  <div className={cssClass}>
-    <div className="header">
-      <Brand />
-      <Navigation />
-    </div>
+  <div className={cssLayout}>
+    <Brand />
     <div className="main">{children}</div>
   </div>
 );

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match snapshot 1`] = `
+exports[`Brand component matches snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10,19 +10,19 @@ exports[`should match snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding: 12px;
 }
 
-.emotion-0 .logo {
+.emotion-0 > .logo {
   -webkit-animation: spin infinite 10s linear;
   animation: spin infinite 10s linear;
   height: 36px;
 }
 
-.emotion-0 .title {
+.emotion-0 > .title {
   -webkit-animation: fadeIn 2s ease;
   animation: fadeIn 2s ease;
   font-size: 18px;
-  color: #FFFFFF;
 }
 
 <div

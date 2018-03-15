@@ -1,29 +1,30 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import { Component } from '../Brand';
 
-afterEach(() => {
-  jest.restoreAllMocks();
-});
-
-it('should match snapshot', () => {
-  const props = { classes: {} };
-  const component = shallow(<Component {...props} />);
-
-  expect(component).toMatchSnapshot();
-});
-
-it('should not update on props changes', () => {
-  const renderSpy = jest.spyOn(Component.prototype, 'render');
-  const props = { classes: {} };
-  const component = shallow(<Component {...props} />);
-
-  expect(renderSpy).toHaveBeenCalledTimes(1);
-
-  component.setProps({
-    classes: { someClass: {} },
+describe('Brand component', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
   });
 
-  expect(renderSpy).toHaveBeenCalledTimes(1);
+  it('matches snapshot', () => {
+    const props = { classes: {} };
+    const component = shallow(<Component {...props} />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it('does not update on props changes', () => {
+    const renderSpy = jest.spyOn(Component.prototype, 'render');
+    const props = { classes: {} };
+    const component = shallow(<Component {...props} />);
+
+    expect(renderSpy).toHaveBeenCalledTimes(1);
+
+    component.setProps({
+      classes: { someClass: {} },
+    });
+
+    expect(renderSpy).toHaveBeenCalledTimes(1);
+  });
 });

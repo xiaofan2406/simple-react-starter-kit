@@ -1,22 +1,20 @@
 import React from 'react';
-import { css } from 'emotion';
-import { fontSizes, theme } from 'styles';
+import { css } from 'react-emotion';
+import { fontSizes, spacing } from 'styles';
 import { APP_TITLE } from 'utils/constants';
 import logo from 'assets/logo.svg';
 
-const cssClass = css`
+const cssBrand = css`
   display: flex;
   align-items: center;
-
-  & .logo {
+  padding: ${spacing.internal}px;
+  & > .logo {
     animation: spin infinite 10s linear;
     height: 36px;
   }
-
-  & .title {
+  & > .title {
     animation: fadeIn 2s ease;
     font-size: ${fontSizes.large}px;
-    color: ${theme.inverseColor};
   }
 `;
 
@@ -27,7 +25,7 @@ class Brand extends React.Component {
 
   render() {
     return (
-      <div className={cssClass}>
+      <div className={cssBrand}>
         <img src={logo} alt="logo" className="logo" />
         <span className="title">{APP_TITLE}</span>
       </div>
