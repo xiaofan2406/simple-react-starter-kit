@@ -3,7 +3,15 @@
   "version": "0.0.0",
   "author": "Xiaofan Wu (https://github.com/xiaofan2406)",
   "description": "A simple boilerplate for starting new React projects.",
-  "keywords": ["react", "react-router", "boilerplate"],
+  "keywords": [
+    "react",
+    "react-router",
+    "redux",
+    "mobx",
+    "emotion",
+    "flow",
+    "boilerplate"
+  ],
   "repository": "xiaofan2406/react-starter-kit",
   "bugs": {
     "url": "https://github.com/xiaofan2406/react-starter-kit/issues"
@@ -15,9 +23,9 @@
   "scripts": {
     "precommit": "lint-staged",
     "lint:eslint": "eslint src config",
-    "lint:prettier": "prettier-check '{src,config}/**/*.{js,json,css,md}'",
+    "lint:prettier": "prettier-check '{src,config}/**/*.{js,mjs,json,css,md}'",
     "lint": "yarn lint:eslint && yarn lint:prettier",
-    "format": "prettier '{src,config}/**/*.{js,json,css,md}' --write",
+    "format": "prettier '{src,config}/**/*.{js,mjs,json,css,md}' --write",
     "dev":
       "NODE_ENV=development webpack-dev-server --config ./config/webpack.dev.js",
     "test": "NODE_ENV=test jest --watch --updateSnapshot",
@@ -27,7 +35,7 @@
     "start": "NODE_ENV=production node ./config/testProdServer.js"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "*.{js,mjs,json,css,md}": ["prettier --write", "git add"]
   },
   "prettier": {
     "singleQuote": true,
