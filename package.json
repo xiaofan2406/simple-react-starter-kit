@@ -16,13 +16,13 @@
     "precommit": "lint-staged",
     "lint:eslint": "eslint src config",
     "lint:prettier": "prettier-check '{src,config}/**/*.{js,json,css,md}'",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint": "yarn lint:eslint && yarn lint:prettier",
     "format": "prettier '{src,config}/**/*.{js,json,css,md}' --write",
     "dev":
       "NODE_ENV=development webpack-dev-server --config ./config/webpack.dev.js",
     "test": "NODE_ENV=test jest --watch --updateSnapshot",
     "coverage": "NODE_ENV=test jest --coverage",
-    "prebuild": "npm run lint && rm -rf ./dist",
+    "prebuild": "yarn lint && rm -rf ./dist",
     "build": "NODE_ENV=production webpack --config ./config/webpack.prod.js",
     "start": "NODE_ENV=production node ./config/testProdServer.js"
   },
