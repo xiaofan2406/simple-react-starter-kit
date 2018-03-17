@@ -26,47 +26,19 @@ yarn dev
 
 ## Features
 
-##### Static Type Checker
+* [Flow](https://flow.org/en/)
+* [Emotion](https://github.com/tkh44/emotion)
+* [React Router v4](https://reacttraining.com/react-router)
+* [Jest](https://facebook.github.io/jest)
+* [CSS reset](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
+* [Predictable long term caching with webpack](https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31)
+* [React Hot Loader](https://github.com/gaearon/react-hot-loader/)
 
-* Using [flow](https://flow.org/en/)
+## Branches
 
-##### CSS
-
-* No PostCSS, SASS or CSS Module setup
-* Using [emotion](https://github.com/tkh44/emotion)
-* Includes a Semantic UI
-  [reset.css](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
-
-##### Code Splitting
-
-* Base on
-  [Predictable long term caching with webpack](https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31)
-* Includes a solution for dynamic import that helps async loading
-
-##### Hot Module Replacement
-
-* Using [react-hot-loader](https://github.com/gaearon/react-hot-loader/)
-
-##### Component Testing
-
-* Using [jest](https://facebook.github.io/jest) with setup based on
-  [create-react-app](https://github.com/facebookincubator/create-react-app)
-
-##### [React Router v4](https://reacttraining.com/react-router)
-
-##### Redux
-
-* See
-  [redux branch](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
-
-##### Mobx
-
-* See [mobx branch](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
-
-##### Electron
-
-* See
-  [electron branch](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
+* [Redux Integration](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
+* [Mobx Integration](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
+* [Electron Integration](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
 
 ## Commands
 
@@ -84,11 +56,11 @@ yarn test
 
 ##### Production
 
-* Build the project for production
+* Create minified production build
   ```
   yarn build
   ```
-* Start a local server to test production build
+* Start a local server to test the production build
   ```
   yarn start
   ```
