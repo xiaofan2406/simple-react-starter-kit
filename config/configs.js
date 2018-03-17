@@ -1,30 +1,17 @@
 const path = require('path');
-const ifconfig = require('os').networkInterfaces();
-
-function getLocalIp() {
-  const detail = Object.keys(ifconfig)
-    .filter(ifaceName => ifaceName.indexOf('lo') === -1)
-    .map(
-      ifaceName =>
-        ifconfig[ifaceName].filter(
-          protocol => protocol.family === 'IPv4' && protocol.internal === false
-        )[0]
-    )[0];
-
-  return detail ? detail.address : 'localhost';
-}
+const ip = require('ip');
 
 const appRoot = path.join(__dirname, '..');
 const appSrc = path.join(appRoot, 'src');
 const appDist = path.join(appRoot, 'dist');
 
 const devServerPort = process.env.PORT || 8000;
-const testProdPort = process.env.PORT || 9000;
+const servePort = process.env.PORT || 9000;
 
 module.exports = {
   devServerPort,
-  localIp: process.env.HOST || getLocalIp(),
-  testProdPort,
+  ipAddress: process.env.HOST || ip.address(),
+  servePort,
   paths: {
     appRoot,
     appSrc,

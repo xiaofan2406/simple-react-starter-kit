@@ -1,12 +1,12 @@
 # React Starter Kit
 
-[![Build Status][build-badge]][build]
+[![CI Status][ci-badge]][ci]
 [![Coverage Status][coverage-badge]][coverage]
 [![Dependencies Status][dependencies-badge]][dependencies]
 [![Styled with prettier][prettier-badge]][prettier]
 
-[build-badge]: https://img.shields.io/travis/xiaofan2406/react-starter-kit.svg?style=flat-square
-[build]: https://travis-ci.org/xiaofan2406/react-starter-kit
+[ci-badge]: https://img.shields.io/travis/xiaofan2406/react-starter-kit.svg?style=flat-square
+[ci]: https://travis-ci.org/xiaofan2406/react-starter-kit
 [coverage-badge]: https://img.shields.io/codecov/c/github/xiaofan2406/react-starter-kit.svg?style=flat-square
 [coverage]: https://codecov.io/gh/xiaofan2406/react-starter-kit
 [dependencies-badge]: https://img.shields.io/david/xiaofan2406/react-starter-kit.svg?style=flat-square
@@ -67,9 +67,9 @@ yarn coverage # report coverage
 ##### Production
 
 ```shell
-yarn build # create a minified production build
+yarn dist # create a minified production build
 
-yarn start # start a localhost server serving the product build
+yarn start # start a localhost server serving the production build
 ```
 
 ## Branches

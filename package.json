@@ -30,9 +30,9 @@
       "NODE_ENV=development webpack-dev-server --config ./config/webpack.dev.js",
     "test": "NODE_ENV=test jest --watch --updateSnapshot",
     "coverage": "NODE_ENV=test jest --coverage",
-    "prebuild": "yarn lint && yarn flow && rm -rf ./dist",
-    "build": "NODE_ENV=production webpack --config ./config/webpack.prod.js",
-    "start": "NODE_ENV=production node ./config/testProdServer.js"
+    "predist": "yarn lint && yarn flow && rm -rf ./dist",
+    "dist": "NODE_ENV=production webpack --config ./config/webpack.prod.js",
+    "start": "node ./config/serve.js"
   },
   "lint-staged": {
     "*.{js,mjs,json,css,md}": ["prettier --write", "git add"]
