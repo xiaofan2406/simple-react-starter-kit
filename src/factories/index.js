@@ -1,3 +1,4 @@
+/* @flow */
 import asyncLoad from './asyncLoad';
 
 export { asyncLoad };

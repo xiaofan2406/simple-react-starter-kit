@@ -1,3 +1,4 @@
+/* @flow */
 import React from 'react';
 import { css } from 'react-emotion';
 import { fontSizes, spacing } from 'styles';
@@ -18,7 +19,7 @@ const cssBrand = css`
   }
 `;
 
-class Brand extends React.Component {
+class Brand extends React.Component<{}> {
   shouldComponentUpdate() {
     return false;
   }
