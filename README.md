@@ -5,26 +5,29 @@
 [![Dependencies Status][dependencies-badge]][dependencies]
 [![Styled with prettier][prettier-badge]][prettier]
 
-[prettier-badge]: https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square
-[prettier]: https://github.com/prettier/prettier
-[dependencies-badge]: https://img.shields.io/david/xiaofan2406/react-starter-kit.svg?style=flat-square
-[dependencies]: https://david-dm.org/xiaofan2406/react-starter-kit
 [build-badge]: https://img.shields.io/travis/xiaofan2406/react-starter-kit.svg?style=flat-square
 [build]: https://travis-ci.org/xiaofan2406/react-starter-kit
 [coverage-badge]: https://img.shields.io/codecov/c/github/xiaofan2406/react-starter-kit.svg?style=flat-square
 [coverage]: https://codecov.io/gh/xiaofan2406/react-starter-kit
+[dependencies-badge]: https://img.shields.io/david/xiaofan2406/react-starter-kit.svg?style=flat-square
+[dependencies]: https://david-dm.org/xiaofan2406/react-starter-kit
+[prettier-badge]: https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square
+[prettier]: https://github.com/prettier/prettier
 
 A simple boilerplate for starting new React projects.
 
-## Get Started
+## Installing / Getting started
 
-```
+```shell
 git clone https://github.com/xiaofan2406/react-starter-kit.git
+cd react-starter-kit
 yarn
 yarn dev
 ```
 
-## Features
+## Developing
+
+### Built With
 
 * [Flow](https://flow.org/en/)
 * [Emotion](https://github.com/tkh44/emotion)
@@ -34,36 +37,46 @@ yarn dev
 * [Predictable long term caching with webpack](https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31)
 * [React Hot Loader](https://github.com/gaearon/react-hot-loader/)
 
-## Branches
+### Prerequisites
 
-* [Redux Integration](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
-* [Mobx Integration](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
-* [Electron Integration](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
+* [Install `yarn`](https://yarnpkg.com/lang/en/docs/install/)
+
+* Add `flow-typed`
+  ```shell
+  yarn global add flow-typed
+  ```
 
 ## Commands
 
 ##### Development
 
-```
-yarn dev
+```shell
+yarn dev # start webpack-dev-server with hot reload enabled
+
+yarn format # format all source code with prettier
 ```
 
 ##### Testing
 
-```
-yarn test
+```shell
+yarn test # start jest in watch mode
+
+yarn coverage # report coverage
 ```
 
 ##### Production
 
-* Create minified production build
-  ```
-  yarn build
-  ```
-* Start a local server to test the production build
-  ```
-  yarn start
-  ```
+```shell
+yarn build # create a minified production build
+
+yarn start # start a localhost server serving the product build
+```
+
+## Branches
+
+* [Redux Integration](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
+* [Mobx Integration](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
+* [Electron Integration](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
 
 ## Project Structure
 
