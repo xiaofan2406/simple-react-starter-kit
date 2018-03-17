@@ -21,8 +21,8 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react'],
-  extends: ['airbnb', 'prettier'],
+  plugins: ['react', 'flowtype'],
+  extends: ['plugin:flowtype/recommended', 'airbnb', 'prettier'],
   rules: {
     'no-console': 0,
     'global-require': 0,

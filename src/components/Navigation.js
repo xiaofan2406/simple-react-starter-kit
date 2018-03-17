@@ -1,3 +1,4 @@
+/* @flow */
 import React from 'react';
 import { css } from 'react-emotion';
 import { NavLink } from 'react-router-dom';
@@ -26,15 +27,15 @@ const cssNavigation = css`
 
 const Navigation = () => (
   <div className={cssNavigation}>
-    {Object.values(NAV_LINKS).map(route => (
+    {Object.keys(NAV_LINKS).map(routeName => (
       <NavLink
         className="link"
         activeClassName="active"
-        key={route.to}
-        exact={route.exact}
-        to={route.to}
+        key={NAV_LINKS[routeName].to}
+        exact={NAV_LINKS[routeName].exact}
+        to={NAV_LINKS[routeName].to}
       >
-        {route.name}
+        {NAV_LINKS[routeName].name}
       </NavLink>
     ))}
   </div>

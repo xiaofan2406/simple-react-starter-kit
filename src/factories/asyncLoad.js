@@ -1,7 +1,16 @@
-import React from 'react';
+/* @flow */
+import * as React from 'react';
 
-const asyncLoad = ({ importer }) =>
-  class AsyncLoad extends React.Component {
+type AsyncLoadState = {
+  Component: React.ComponentType<any> | null,
+};
+
+type AsyncLoadOptions = {
+  importer: () => Promise<{ default: React.ComponentType<any> }>,
+};
+
+const asyncLoad = ({ importer }: AsyncLoadOptions): React.ComponentType<any> =>
+  class AsyncLoad extends React.Component<{}, AsyncLoadState> {
     state = {
       Component: null,
     };

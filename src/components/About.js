@@ -1,3 +1,4 @@
+/* @flow */
 import React from 'react';
 import { css } from 'react-emotion';
 import { verticalScroll, spacing, fontSizes } from 'styles';

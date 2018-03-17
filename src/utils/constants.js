@@ -1,6 +1,13 @@
+/* @flow */
 export const APP_TITLE = 'React Starter Kit';
 
-export const NAV_LINKS = {
+type NavLinkName = 'HOME' | 'ABOUT' | 'CONTACT';
+type NavLinkConfig = {
+  to: string,
+  name: string,
+  exact?: boolean,
+};
+export const NAV_LINKS: { [key: NavLinkName]: NavLinkConfig } = {
   HOME: {
     to: '/',
     name: 'Home',

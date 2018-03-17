@@ -1,8 +1,8 @@
+/* @flow */
 /**
  * @see https://github.com/yuanyan/halogen/blob/master/src/RingLoader.js
  */
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
 const Container = styled.div`
@@ -34,7 +34,12 @@ const Container = styled.div`
   }
 `;
 
-const Loader = props => (
+type LoaderProps = {
+  color?: string,
+  size?: number,
+};
+
+const Loader = (props: LoaderProps) => (
   <Container {...props}>
     <div>
       <div />
@@ -42,11 +47,6 @@ const Loader = props => (
     </div>
   </Container>
 );
-
-Loader.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.number,
-};
 
 Loader.defaultProps = {
   color: '#00bcd4',

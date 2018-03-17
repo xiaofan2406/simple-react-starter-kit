@@ -26,6 +26,10 @@ yarn dev
 
 ## Features
 
+##### Static Type Checker
+
+* Using [flow](https://flow.org/en/)
+
 ##### CSS
 
 * No PostCSS, SASS or CSS Module setup

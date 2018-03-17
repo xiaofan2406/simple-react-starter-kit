@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/* @flow */
+import * as React from 'react';
 import { css } from 'react-emotion';
 import { theme, spacing } from 'styles';
 import Brand from './Brand';
@@ -18,16 +18,16 @@ const cssLayout = css`
   }
 `;
 
-const Layout = ({ children }) => (
+type LayoutProps = {
+  children: React.Node,
+};
+
+const Layout = (props: LayoutProps) => (
   <div className={cssLayout}>
     <Brand />
-    <div className="main">{children}</div>
+    <div className="main">{props.children}</div>
   </div>
 );
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export { Layout as Component };
 
