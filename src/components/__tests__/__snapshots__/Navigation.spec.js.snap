@@ -16,6 +16,7 @@ exports[`Navigation component matches snapshot 1`] = `
 }
 
 .emotion-0 > .link {
+  -webkit-text-decoration: none;
   text-decoration: none;
   padding: 0.5em;
   display: inline-block;
