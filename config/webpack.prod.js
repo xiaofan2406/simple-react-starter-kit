@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const common = require('./webpack.common');
 const { paths } = require('./configs');
@@ -124,7 +123,6 @@ module.exports = {
       filename: 'css/[name].[chunkhash:8].css',
       chunkFilename: 'css/[name].[chunkhash:8].chunk.css',
     }),
-    new ManifestPlugin({ fileName: 'asset-manifest.json' }),
     new FileManagerPlugin({
       onEnd: {
         copy: [
