@@ -9,6 +9,6 @@ install:
   - yarn global add codecov
   - yarn
 script:
-  - yarn dist
+  - yarn build
   - yarn coverage
   - codecov

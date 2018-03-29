@@ -1,5 +1,7 @@
 # React Starter Kit
 
+A simple boilerplate for starting new React projects.
+
 [![CI Status][ci-badge]][ci]
 [![Coverage Status][coverage-badge]][coverage]
 [![Dependencies Status][dependencies-badge]][dependencies]
@@ -13,8 +15,6 @@
 [dependencies]: https://david-dm.org/xiaofan2406/react-starter-kit
 [prettier-badge]: https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square
 [prettier]: https://github.com/prettier/prettier
-
-A simple boilerplate for starting new React projects.
 
 ## Installing / Getting started
 
@@ -67,7 +67,7 @@ yarn coverage # report coverage
 ##### Production
 
 ```shell
-yarn dist # create a minified production build
+yarn build # create a minified production build
 
 yarn start # start a localhost server serving the production build
 ```
