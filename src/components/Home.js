@@ -23,59 +23,125 @@ const Home = () => (
       <tr>
         <td>React</td>
         <td>
-          <a href="https://reactjs.org/docs/thinking-in-react.html">Docs</a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://reactjs.org/docs/thinking-in-react.html"
+          >
+            Docs
+          </a>
         </td>
         <td>
-          <a href="https://github.com/facebook/react/">Github</a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/facebook/react/"
+          >
+            Github
+          </a>
         </td>
       </tr>
       <tr>
         <td>React Router v4</td>
         <td>
-          <a href="https://reacttraining.com/react-router/web/example/basic">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://reacttraining.com/react-router/web/example/basic"
+          >
             Docs
           </a>
         </td>
         <td>
-          <a href="https://github.com/ReactTraining/react-router">Github</a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/ReactTraining/react-router"
+          >
+            Github
+          </a>
         </td>
       </tr>
       <tr>
         <td>Redux</td>
         <td>
-          <a href="https://redux.js.org/introduction/three-principles">Docs</a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://redux.js.org/introduction/three-principles"
+          >
+            Docs
+          </a>
         </td>
         <td>
-          <a href="https://github.com/reactjs/redux">Github</a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/reactjs/redux"
+          >
+            Github
+          </a>
         </td>
       </tr>
       <tr>
         <td>Mobx</td>
         <td>
-          <a href="https://mobx.js.org/best/react-performance.html">Docs</a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://mobx.js.org/best/react-performance.html"
+          >
+            Docs
+          </a>
         </td>
         <td>
-          <a href="https://github.com/mobxjs/mobx">Github</a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/mobxjs/mobx"
+          >
+            Github
+          </a>
         </td>
       </tr>
       <tr>
         <td>Emotion</td>
         <td>
-          <a href="https://emotion.sh/docs/composition">Docs</a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://emotion.sh/docs/composition"
+          >
+            Docs
+          </a>
         </td>
         <td>
-          <a href="https://github.com/emotion-js/emotion">Github</a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/emotion-js/emotion"
+          >
+            Github
+          </a>
         </td>
       </tr>
       <tr>
         <td>Create React App</td>
         <td>
-          <a href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents"
+          >
             Docs
           </a>
         </td>
         <td>
-          <a href="https://github.com/facebook/create-react-app/tree/next/packages/react-scripts">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/facebook/create-react-app/tree/next/packages/react-scripts"
+          >
             Github
           </a>
         </td>
