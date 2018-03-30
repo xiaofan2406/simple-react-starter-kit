@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import Home from '../Home';
 
 test('Home component matches snapshot', () => {
-  const component = shallow(<Home />);
+  const wrapper = shallow(<Home />);
 
-  expect(component).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
