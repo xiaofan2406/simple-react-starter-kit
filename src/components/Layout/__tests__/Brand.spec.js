@@ -10,19 +10,19 @@ describe('Brand component', () => {
 
   it('matches snapshot', () => {
     const props = { classes: {} };
-    const component = shallow(<Component {...props} />);
+    const wrapper = shallow(<Component {...props} />);
 
-    expect(component).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('does not update on props changes', () => {
     const renderSpy = jest.spyOn(Component.prototype, 'render');
     const props = { classes: {} };
-    const component = shallow(<Component {...props} />);
+    const wrapper = shallow(<Component {...props} />);
 
     expect(renderSpy).toHaveBeenCalledTimes(1);
 
-    component.setProps({
+    wrapper.setProps({
       classes: { someClass: {} },
     });
 

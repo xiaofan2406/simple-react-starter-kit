@@ -25,9 +25,9 @@ it('should return a stateful component', () => {
     importer: () => Promise.resolve({ default: MockComponent }),
   };
   const AsyncComponent = asyncLoad(params);
-  const component = mount(<AsyncComponent />);
+  const wrapper = mount(<AsyncComponent />);
 
-  expect(component.state()).toBeDefined();
+  expect(wrapper.state()).toBeDefined();
 });
 
 it('should render the component in its state', () => {
@@ -36,11 +36,11 @@ it('should render the component in its state', () => {
     importer: () => Promise.resolve({ default: MockComponent }),
   };
   const AsyncComponent = asyncLoad(params);
-  const component = mount(<AsyncComponent />);
+  const wrapper = mount(<AsyncComponent />);
   // // enzyme doesn't call setState in lifecycles hooks?
-  component.setState({ Component: MockComponent });
+  wrapper.setState({ Component: MockComponent });
 
-  expect(component.find(MockComponent).text()).toBe('mock component');
+  expect(wrapper.find(MockComponent).text()).toBe('mock component');
 });
 
 it('should pass on its props to the wrapped component', () => {
@@ -49,8 +49,8 @@ it('should pass on its props to the wrapped component', () => {
     importer: () => Promise.resolve({ default: MockComponent }),
   };
   const AsyncComponent = asyncLoad(params);
-  const component = mount(<AsyncComponent someProp="someProp" />);
-  component.setState({ Component: MockComponent });
+  const wrapper = mount(<AsyncComponent someProp="someProp" />);
+  wrapper.setState({ Component: MockComponent });
 
-  expect(component.find(MockComponent).prop('someProp')).toBe('someProp');
+  expect(wrapper.find(MockComponent).prop('someProp')).toBe('someProp');
 });

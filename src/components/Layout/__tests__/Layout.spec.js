@@ -4,11 +4,11 @@ import { shallow } from 'enzyme';
 import { Component } from '../Layout';
 
 test('Layout component matches snapshot', () => {
-  const component = shallow(
+  const wrapper = shallow(
     <Component>
       <div>child</div>
     </Component>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });

@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import Loader from '../Loader';
 
 it('should match snapshot', () => {
-  const component = mount(<Loader />);
+  const wrapper = mount(<Loader />);
 
-  expect(component).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });

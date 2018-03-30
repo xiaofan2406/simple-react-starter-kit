@@ -5,7 +5,7 @@ import { Component } from '../Navigation';
 
 test('Navigation component matches snapshot', () => {
   const props = { classes: {} };
-  const component = shallow(<Component {...props} />);
+  const wrapper = shallow(<Component {...props} />);
 
-  expect(component).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
