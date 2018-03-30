@@ -7,7 +7,7 @@ afterEach(() => {
   jest.restoreAllMocks();
 });
 
-it('should call the importer function', () => {
+it('calls the importer function', () => {
   const MockComponent = () => <div>mock component</div>;
   const params = {
     importer: () => Promise.resolve({ default: MockComponent }),
@@ -19,38 +19,40 @@ it('should call the importer function', () => {
   expect(importerSpy).toHaveBeenCalledTimes(1);
 });
 
-it('should return a stateful component', () => {
+it('renders the imported component', async () => {
   const MockComponent = () => <div>mock component</div>;
   const params = {
-    importer: () => Promise.resolve({ default: MockComponent }),
+    importer: jest.fn().mockResolvedValue({ default: MockComponent }),
   };
   const AsyncComponent = asyncLoad(params);
   const wrapper = mount(<AsyncComponent />);
-
-  expect(wrapper.state()).toBeDefined();
-});
-
-it('should render the component in its state', () => {
-  const MockComponent = () => <div>mock component</div>;
-  const params = {
-    importer: () => Promise.resolve({ default: MockComponent }),
-  };
-  const AsyncComponent = asyncLoad(params);
-  const wrapper = mount(<AsyncComponent />);
-  // // enzyme doesn't call setState in lifecycles hooks?
-  wrapper.setState({ Component: MockComponent });
-
+  await params.importer();
+  wrapper.update();
   expect(wrapper.find(MockComponent).text()).toBe('mock component');
 });
 
-it('should pass on its props to the wrapped component', () => {
+it('cancels the request if component is unmounted', async () => {
   const MockComponent = () => <div>mock component</div>;
   const params = {
-    importer: () => Promise.resolve({ default: MockComponent }),
+    importer: jest.fn().mockResolvedValue({ default: MockComponent }),
+  };
+  const AsyncComponent = asyncLoad(params);
+  const wrapper = mount(<AsyncComponent />);
+  wrapper.instance().componentWillUnmount();
+  await params.importer();
+  wrapper.update();
+
+  expect(wrapper.find(MockComponent)).toHaveLength(0);
+});
+
+it('passes on its props to the wrapped component', async () => {
+  const MockComponent = () => <div>mock component</div>;
+  const params = {
+    importer: jest.fn().mockResolvedValue({ default: MockComponent }),
   };
   const AsyncComponent = asyncLoad(params);
   const wrapper = mount(<AsyncComponent someProp="someProp" />);
-  wrapper.setState({ Component: MockComponent });
-
+  await params.importer();
+  wrapper.update();
   expect(wrapper.find(MockComponent).prop('someProp')).toBe('someProp');
 });
