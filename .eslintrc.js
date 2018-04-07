@@ -30,9 +30,9 @@ module.exports = {
     'no-underscore-dangle': [2, { allowAfterThis: true }],
     'no-nested-ternary': 0,
     'import/no-extraneous-dependencies': 0, // allow import devDependencies
-    'react/forbid-prop-types': 0, // allow all types of PropTypes
     'react/jsx-filename-extension': 0, // enfore all .js extension
     'react/prefer-stateless-function': 0,
+    'react/default-props-match-prop-types': 0, // flows got it
     'jsx-a11y/anchor-is-valid': 0,
   },
 };
