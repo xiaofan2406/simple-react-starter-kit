@@ -8,21 +8,19 @@ afterEach(() => {
 });
 
 it('matches snapshot', () => {
-  const props = { classes: {} };
-  const wrapper = shallow(<Component {...props} />);
+  const wrapper = shallow(<Component />);
 
   expect(wrapper).toMatchSnapshot();
 });
 
 it('does not update on props changes', () => {
   const renderSpy = jest.spyOn(Component.prototype, 'render');
-  const props = { classes: {} };
-  const wrapper = shallow(<Component {...props} />);
+  const wrapper = shallow(<Component />);
 
   expect(renderSpy).toHaveBeenCalledTimes(1);
 
   wrapper.setProps({
-    classes: { someClass: {} },
+    someProp: true,
   });
 
   expect(renderSpy).toHaveBeenCalledTimes(1);

@@ -33,5 +33,6 @@ module.exports = {
     'react/forbid-prop-types': 0, // allow all types of PropTypes
     'react/jsx-filename-extension': 0, // enfore all .js extension
     'react/prefer-stateless-function': 0,
+    'jsx-a11y/anchor-is-valid': 0,
   },
 };

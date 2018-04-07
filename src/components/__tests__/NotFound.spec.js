@@ -1,9 +1,9 @@
 /* @flow */
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Component } from '../Navigation';
+import { Component } from '../NotFound';
 
-test('Navigation component matches snapshot', () => {
+test('NotFound component matches snapshot', () => {
   const wrapper = shallow(<Component />);
 
   expect(wrapper).toMatchSnapshot();
