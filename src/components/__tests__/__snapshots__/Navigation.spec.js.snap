@@ -35,7 +35,7 @@ exports[`Navigation component matches snapshot 1`] = `
 >
   <NavLink
     activeClassName="active"
-    ariaCurrent="true"
+    aria-current="page"
     className="link"
     exact={true}
     key="/"
@@ -45,7 +45,7 @@ exports[`Navigation component matches snapshot 1`] = `
   </NavLink>
   <NavLink
     activeClassName="active"
-    ariaCurrent="true"
+    aria-current="page"
     className="link"
     key="/about"
     to="/about"
@@ -54,7 +54,7 @@ exports[`Navigation component matches snapshot 1`] = `
   </NavLink>
   <NavLink
     activeClassName="active"
-    ariaCurrent="true"
+    aria-current="page"
     className="link"
     key="/contact"
     to="/contact"

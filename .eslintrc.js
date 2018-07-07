@@ -41,6 +41,7 @@ module.exports = {
     'react/jsx-filename-extension': 0, // enfore all .js extension
     'react/prefer-stateless-function': 0,
     'react/default-props-match-prop-types': 0, // flows got it
+    'react/jsx-one-expression-per-line': 0, // stupid
     'jsx-a11y/anchor-is-valid': 0,
   },
 };

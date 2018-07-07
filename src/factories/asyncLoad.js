@@ -11,6 +11,8 @@ type AsyncLoadOptions = {
 
 const asyncLoad = ({ importer }: AsyncLoadOptions): React.ComponentType<any> =>
   class AsyncLoad extends React.Component<{}, AsyncLoadState> {
+    unmounted: boolean = false;
+
     state = {
       Component: null,
     };
@@ -28,8 +30,6 @@ const asyncLoad = ({ importer }: AsyncLoadOptions): React.ComponentType<any> =>
     componentWillUnmount() {
       this.unmounted = true;
     }
-
-    unmounted: boolean = false;
 
     render() {
       const { Component } = this.state;

@@ -29,19 +29,19 @@ yarn dev
 
 ### Built With
 
-* [Flow](https://flow.org/en/)
-* [Emotion](https://github.com/tkh44/emotion)
-* [React Router v4](https://reacttraining.com/react-router)
-* [Jest](https://facebook.github.io/jest)
-* [CSS reset](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
-* [Predictable long term caching with webpack](https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31)
-* [React Hot Loader](https://github.com/gaearon/react-hot-loader/)
+- [Flow](https://flow.org/en/)
+- [Emotion](https://github.com/tkh44/emotion)
+- [React Router v4](https://reacttraining.com/react-router)
+- [Jest](https://facebook.github.io/jest)
+- [CSS reset](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
+- [Predictable long term caching with webpack](https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31)
+- [React Hot Loader](https://github.com/gaearon/react-hot-loader/)
 
 ### Prerequisites
 
-* [Install `yarn`](https://yarnpkg.com/lang/en/docs/install/)
+- [Install `yarn`](https://yarnpkg.com/lang/en/docs/install/)
 
-* Add `flow-typed`
+- Add `flow-typed`
   ```shell
   yarn global add flow-typed
   ```
@@ -74,9 +74,9 @@ yarn start # start a localhost server serving the production build
 
 ## Branches
 
-* [Redux Integration](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
-* [Mobx Integration](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
-* [Electron Integration](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
+- [Redux Integration](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
+- [Mobx Integration](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
+- [Electron Integration](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
 
 ## Project Structure
 

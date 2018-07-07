@@ -22,10 +22,10 @@ type LayoutProps = {
   children: React.Node,
 };
 
-const Layout = (props: LayoutProps) => (
+const Layout = ({ children }: LayoutProps) => (
   <div className={cssLayout}>
     <Brand />
-    <div className="main">{props.children}</div>
+    <div className="main">{children}</div>
   </div>
 );
 
