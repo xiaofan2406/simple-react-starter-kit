@@ -76,7 +76,6 @@ yarn start # start a localhost server serving the production build
 
 - [Redux Integration](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
 - [Mobx Integration](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
-- [Electron Integration](https://github.com/xiaofan2406/react-starter-kit/tree/electron)
 
 ## Project Structure
 
