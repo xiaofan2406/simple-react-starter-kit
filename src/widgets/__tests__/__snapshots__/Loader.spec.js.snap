@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match snapshot 1`] = `
+exports[`Loader matches snapshot 1`] = `
 .emotion-0 {
   display: inline-block;
 }
@@ -40,24 +40,14 @@ exports[`should match snapshot 1`] = `
   animation: loaderLeftRotate 2s 0s infinite linear;
 }
 
-<Loader
+<div
+  class="emotion-0 emotion-1"
   color="#00bcd4"
-  size={60}
+  size="60"
 >
-  <Container
-    color="#00bcd4"
-    size={60}
-  >
-    <div
-      className="emotion-0 emotion-1"
-      color="#00bcd4"
-      size={60}
-    >
-      <div>
-        <div />
-        <div />
-      </div>
-    </div>
-  </Container>
-</Loader>
+  <div>
+    <div />
+    <div />
+  </div>
+</div>
 `;

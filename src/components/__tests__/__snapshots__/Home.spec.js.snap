@@ -12,10 +12,10 @@ exports[`Home component matches snapshot 1`] = `
 }
 
 <div
-  className="emotion-0"
+  class="emotion-0"
 >
   <div
-    className="title"
+    class="title"
   >
     Hello world!
   </div>
@@ -26,18 +26,22 @@ exports[`Home component matches snapshot 1`] = `
           React
         </td>
         <td>
-          <Anchor
+          <a
             href="https://reactjs.org/docs/thinking-in-react.html"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Docs
-          </Anchor>
+          </a>
         </td>
         <td>
-          <Anchor
+          <a
             href="https://github.com/facebook/react/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Github
-          </Anchor>
+          </a>
         </td>
       </tr>
       <tr>
@@ -45,18 +49,22 @@ exports[`Home component matches snapshot 1`] = `
           React Router v4
         </td>
         <td>
-          <Anchor
+          <a
             href="https://reacttraining.com/react-router/web/example/basic"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Docs
-          </Anchor>
+          </a>
         </td>
         <td>
-          <Anchor
+          <a
             href="https://github.com/ReactTraining/react-router"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Github
-          </Anchor>
+          </a>
         </td>
       </tr>
       <tr>
@@ -64,18 +72,22 @@ exports[`Home component matches snapshot 1`] = `
           Redux
         </td>
         <td>
-          <Anchor
+          <a
             href="https://redux.js.org/introduction/three-principles"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Docs
-          </Anchor>
+          </a>
         </td>
         <td>
-          <Anchor
+          <a
             href="https://github.com/reactjs/redux"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Github
-          </Anchor>
+          </a>
         </td>
       </tr>
       <tr>
@@ -83,18 +95,22 @@ exports[`Home component matches snapshot 1`] = `
           Mobx
         </td>
         <td>
-          <Anchor
+          <a
             href="https://mobx.js.org/best/react-performance.html"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Docs
-          </Anchor>
+          </a>
         </td>
         <td>
-          <Anchor
+          <a
             href="https://github.com/mobxjs/mobx"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Github
-          </Anchor>
+          </a>
         </td>
       </tr>
       <tr>
@@ -102,18 +118,22 @@ exports[`Home component matches snapshot 1`] = `
           Emotion
         </td>
         <td>
-          <Anchor
+          <a
             href="https://emotion.sh/docs/composition"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Docs
-          </Anchor>
+          </a>
         </td>
         <td>
-          <Anchor
+          <a
             href="https://github.com/emotion-js/emotion"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Github
-          </Anchor>
+          </a>
         </td>
       </tr>
       <tr>
@@ -121,18 +141,22 @@ exports[`Home component matches snapshot 1`] = `
           Create React App
         </td>
         <td>
-          <Anchor
+          <a
             href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Docs
-          </Anchor>
+          </a>
         </td>
         <td>
-          <Anchor
+          <a
             href="https://github.com/facebook/create-react-app/tree/next/packages/react-scripts"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Github
-          </Anchor>
+          </a>
         </td>
       </tr>
     </tbody>

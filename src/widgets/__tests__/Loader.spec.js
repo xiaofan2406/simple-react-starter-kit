@@ -1,10 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
-
+import { render } from 'react-testing-library';
 import Loader from '../Loader';
 
-it('should match snapshot', () => {
-  const wrapper = mount(<Loader />);
+test('Loader matches snapshot', () => {
+  const { container } = render(<Loader />);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

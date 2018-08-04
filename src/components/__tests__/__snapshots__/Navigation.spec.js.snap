@@ -31,35 +31,26 @@ exports[`Navigation component matches snapshot 1`] = `
 }
 
 <div
-  className="emotion-0"
+  class="emotion-0"
 >
-  <NavLink
-    activeClassName="active"
+  <a
     aria-current="page"
-    className="link"
-    exact={true}
-    key="/"
-    to="/"
+    class="link active"
+    href="/"
   >
     Home
-  </NavLink>
-  <NavLink
-    activeClassName="active"
-    aria-current="page"
-    className="link"
-    key="/about"
-    to="/about"
+  </a>
+  <a
+    class="link"
+    href="/about"
   >
     About
-  </NavLink>
-  <NavLink
-    activeClassName="active"
-    aria-current="page"
-    className="link"
-    key="/contact"
-    to="/contact"
+  </a>
+  <a
+    class="link"
+    href="/contact"
   >
     Contact
-  </NavLink>
+  </a>
 </div>
 `;

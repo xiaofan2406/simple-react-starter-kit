@@ -1,6 +1,6 @@
 /* @flow */
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'react-testing-library';
 import { Component } from '../Brand';
 
 afterEach(() => {
@@ -8,20 +8,18 @@ afterEach(() => {
 });
 
 it('matches snapshot', () => {
-  const wrapper = shallow(<Component />);
+  const { container } = render(<Component />);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('does not update on props changes', () => {
   const renderSpy = jest.spyOn(Component.prototype, 'render');
-  const wrapper = shallow(<Component />);
+  const { rerender } = render(<Component />);
 
   expect(renderSpy).toHaveBeenCalledTimes(1);
 
-  wrapper.setProps({
-    someProp: true,
-  });
+  rerender(<Component />);
 
   expect(renderSpy).toHaveBeenCalledTimes(1);
 });

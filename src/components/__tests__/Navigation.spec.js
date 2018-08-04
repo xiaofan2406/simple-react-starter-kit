@@ -1,10 +1,10 @@
 /* @flow */
 import React from 'react';
-import { shallow } from 'enzyme';
+import { renderWithRouter } from 'utils/testing';
 import { Component } from '../Navigation';
 
 test('Navigation component matches snapshot', () => {
-  const wrapper = shallow(<Component />);
+  const { container } = renderWithRouter(<Component />);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

@@ -3,11 +3,10 @@
 exports[`NotFound component matches snapshot 1`] = `
 <div>
   404 Nothing here. Go to 
-  <Link
-    replace={false}
-    to="/"
+  <a
+    href="/"
   >
     homepage
-  </Link>
+  </a>
 </div>
 `;

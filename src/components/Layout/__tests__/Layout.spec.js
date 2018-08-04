@@ -1,14 +1,14 @@
 /* @flow */
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'react-testing-library';
 import { Component } from '../Layout';
 
 test('Layout component matches snapshot', () => {
-  const wrapper = shallow(
+  const { container } = render(
     <Component>
       <div>child</div>
     </Component>
   );
 
-  expect(wrapper).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

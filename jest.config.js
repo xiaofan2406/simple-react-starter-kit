@@ -1,8 +1,6 @@
 module.exports = {
   collectCoverageFrom: ['src/**/*.{js,mjs}'],
-  setupFiles: ['<rootDir>/config/jest/enzymeAdapter.js'],
   setupTestFrameworkScriptFile: '<rootDir>/config/jest/frameworkSetup.js',
-  snapshotSerializers: ['enzyme-to-json/serializer'],
   testMatch: ['<rootDir>/src/**/__tests__/**/*.spec.{js,mjs}'],
   testEnvironment: 'jsdom',
   testURL: 'http://localhost',

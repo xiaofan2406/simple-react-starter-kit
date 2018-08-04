@@ -2,27 +2,64 @@
 
 exports[`Layout component matches snapshot 1`] = `
 .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.emotion-0 > .logo {
+  -webkit-animation: spin infinite 10s linear;
+  animation: spin infinite 10s linear;
+  height: 36px;
+}
+
+.emotion-0 > .title {
+  -webkit-animation: fadeIn 2s ease;
+  animation: fadeIn 2s ease;
+  font-size: 18px;
+}
+
+.emotion-1 {
   font-family: "Segoe UI",Helvetica,Arial,sans-serif;
   font-size: 14px;
   color: #242729;
 }
 
-.emotion-0 p {
+.emotion-1 p {
   margin: 0px 0px 1em 0px;
 }
 
-.emotion-0 > .main {
+.emotion-1 > .main {
   width: 780px;
   padding: 0px 12px;
   margin: 36px auto;
 }
 
 <div
-  className="emotion-0"
+  class="emotion-1"
 >
-  <Brand />
   <div
-    className="main"
+    class="emotion-0"
+  >
+    <img
+      alt="logo"
+      class="logo"
+      src="logo.svg"
+    />
+    <span
+      class="title"
+    >
+      React Starter Kit
+    </span>
+  </div>
+  <div
+    class="main"
   >
     <div>
       child

@@ -26,15 +26,15 @@ exports[`matches snapshot 1`] = `
 }
 
 <div
-  className="emotion-0"
+  class="emotion-0"
 >
   <img
     alt="logo"
-    className="logo"
+    class="logo"
     src="logo.svg"
   />
   <span
-    className="title"
+    class="title"
   >
     React Starter Kit
   </span>

@@ -1,16 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Contact component matches snapshot 1`] = `
-.emotion-0 {
+.emotion-2 {
   text-align: center;
 }
 
+.emotion-0 {
+  display: inline-block;
+}
+
+.emotion-0 > div {
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+.emotion-0 > div div {
+  width: 120px;
+  height: 120px;
+  border-style: solid;
+  border-width: 12px;
+  border-color: #00bcd4;
+  opacity: 0.4;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -ms-perspective: 800px;
+  perspective: 800px;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.emotion-0 > div div:first-child {
+  -webkit-animation: loaderRigthRotate 2s 0s infinite linear;
+  animation: loaderRigthRotate 2s 0s infinite linear;
+}
+
+.emotion-0 > div div:nth-child(2) {
+  -webkit-animation: loaderLeftRotate 2s 0s infinite linear;
+  animation: loaderLeftRotate 2s 0s infinite linear;
+}
+
 <div
-  className="emotion-0"
+  class="emotion-2"
 >
-  <Loader
+  <div
+    class="emotion-0 emotion-1"
     color="#00bcd4"
-    size={120}
-  />
+    size="120"
+  >
+    <div>
+      <div />
+      <div />
+    </div>
+  </div>
 </div>
 `;

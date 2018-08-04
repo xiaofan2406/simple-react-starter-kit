@@ -1,10 +1,10 @@
 /* @flow */
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'react-testing-library';
 import Contact from '../Contact';
 
 test('Contact component matches snapshot', () => {
-  const wrapper = shallow(<Contact />);
+  const { container } = render(<Contact />);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
