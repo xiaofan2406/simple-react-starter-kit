@@ -43,9 +43,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "jest": {
-    "preset": "./config/jest/jest.config.json"
-  },
   "browserslist": [
     "Chrome >= 60",
     "Safari >= 10.1",
