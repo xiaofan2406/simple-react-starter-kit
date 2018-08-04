@@ -71,9 +71,6 @@ module.exports = {
             comments: false,
             ascii_only: true,
           },
-          mangle: {
-            safari10: true,
-          },
         },
       }),
       new OptimizeCSSAssetsPlugin(),

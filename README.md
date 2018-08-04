@@ -74,6 +74,7 @@ yarn start # start a localhost server serving the production build
 
 ## Branches
 
+- [React only](https://github.com/xiaofan2406/react-starter-kit)
 - [Redux Integration](https://github.com/xiaofan2406/react-starter-kit/tree/redux)
 - [Mobx Integration](https://github.com/xiaofan2406/react-starter-kit/tree/mobx)
 

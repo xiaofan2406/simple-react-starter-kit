@@ -1,9 +1,5 @@
 /* @flow */
-import Layout from './Layout';
-import Home from './Home';
-import Navigation from './Navigation';
-import NotFound from './NotFound';
-
-export { Layout, Home, Navigation, NotFound };
-
-export default { Layout, Home, Navigation, NotFound };
+export { default as Layout } from './Layout';
+export { default as Home } from './Home';
+export { default as Navigation } from './Navigation';
+export { default as NotFound } from './NotFound';
