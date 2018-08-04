@@ -3,6 +3,7 @@ import React from 'react';
 import { css } from 'react-emotion';
 import { spacing } from 'styles';
 import { Anchor } from 'widgets';
+import Greet from './Greet';
 
 const cssHome = css`
   & > .title {
@@ -11,6 +12,7 @@ const cssHome = css`
     margin-bottom: ${spacing.breath}px;
   }
   & > table {
+    margin-top: ${spacing.breath}px;
     & td {
       padding: ${spacing.internal}px;
     }
@@ -20,6 +22,7 @@ const cssHome = css`
 const Home = () => (
   <div className={cssHome}>
     <div className="title">Hello world!</div>
+    <Greet />
     <table>
       <tbody>
         <tr>

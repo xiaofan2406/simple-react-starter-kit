@@ -1,23 +1,134 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home component matches snapshot 1`] = `
-.emotion-0 > .title {
+.emotion-0 {
+  margin: 0px auto;
+  width: 480px;
+}
+
+.emotion-0 > .controls {
+  text-align: center;
+}
+
+.emotion-0 > .controls input {
+  border: none;
+  border-bottom: 1px solid #f5f5f5;
+  outline: none;
+  width: 100px;
+  text-align: center;
+}
+
+.emotion-0 > .controls input:focus {
+  border-bottom: 1px solid #00bcd4;
+}
+
+.emotion-0 > .controls > button {
+  margin-left: 1em;
+  outline: none;
+  background: none;
+  border: 1px solid #f5f5f5;
+}
+
+.emotion-0 > .controls > button:hover {
+  border-color: #00bcd4;
+  color: #00bcd4;
+}
+
+.emotion-0 > .result {
+  height: 280px;
+  overflow-y: scroll;
+  margin-top: 16px;
+  font-size: 18px;
+  font-family: cursive;
+}
+
+.emotion-0 > .result::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(0,0,0,0);
+  border-radius: 40px;
+}
+
+.emotion-0 > .result::-webkit-scrollbar:hover {
+  background-color: rgba(0,0,0,0.09);
+}
+
+.emotion-0 > .result::-webkit-scrollbar-thumb:vertical {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 40px;
+  background-clip: padding-box;
+  border: 2px solid rgba(0,0,0,0);
+  min-height: 10px;
+}
+
+.emotion-0 > .result::-webkit-scrollbar-thumb:vertical:active {
+  background-color: rgba(0,0,0,0.61);
+}
+
+.emotion-0 > .result:before {
+  content: '"';
+}
+
+.emotion-0 > .result:after {
+  content: '"';
+}
+
+.emotion-1 > .title {
   font-size: 48px;
   text-align: center;
   margin-bottom: 24px;
 }
 
-.emotion-0 > table td {
+.emotion-1 > table {
+  margin-top: 24px;
+}
+
+.emotion-1 > table td {
   padding: 12px;
 }
 
 <div
-  class="emotion-0"
+  class="emotion-1"
 >
   <div
     class="title"
   >
     Hello world!
+  </div>
+  <div
+    class="emotion-0"
+  >
+    <div
+      class="controls"
+    >
+      <span>
+        Say 
+      </span>
+      <input
+        data-testid="messageInput"
+        type="text"
+        value="World"
+      />
+       
+      <input
+        data-testid="timesInput"
+        min="1"
+        type="number"
+        value="1"
+      />
+       
+      times
+      <button
+        type="button"
+      >
+        Clear
+      </button>
+    </div>
+    <div
+      class="result"
+    >
+      Hello 
+      World
+    </div>
   </div>
   <table>
     <tbody>
