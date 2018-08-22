@@ -203,29 +203,6 @@ exports[`Home component matches snapshot 1`] = `
       </tr>
       <tr>
         <td>
-          Mobx
-        </td>
-        <td>
-          <a
-            href="https://mobx.js.org/best/react-performance.html"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Docs
-          </a>
-        </td>
-        <td>
-          <a
-            href="https://github.com/mobxjs/mobx"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Github
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>
           Emotion
         </td>
         <td>

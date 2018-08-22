@@ -29,16 +29,17 @@ yarn dev
 
 ### Built With
 
-- [Flow](https://flow.org/en/)
+- [Flow](https://flow.org)
 - [Emotion](https://github.com/tkh44/emotion)
 - [React Router v4](https://reacttraining.com/react-router)
-- [Jest](https://facebook.github.io/jest)
 - [CSS reset](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
-- [React Hot Loader](https://github.com/gaearon/react-hot-loader/)
+- [React Hot Loader](https://github.com/gaearon/react-hot-loader)
+- [Create React App](https://github.com/facebook/create-react-app)
+- [Jest](https://facebook.github.io/jest)
 
 ### Prerequisites
 
-- [Install `yarn`](https://yarnpkg.com/lang/en/docs/install/)
+- [Install `yarn`](https://yarnpkg.com/lang/en/docs/install)
 
 - Add `flow-typed`
   ```shell

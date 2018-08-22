@@ -61,17 +61,6 @@ const Home = () => (
           </td>
         </tr>
         <tr>
-          <td>Mobx</td>
-          <td>
-            <Anchor href="https://mobx.js.org/best/react-performance.html">
-              Docs
-            </Anchor>
-          </td>
-          <td>
-            <Anchor href="https://github.com/mobxjs/mobx">Github</Anchor>
-          </td>
-        </tr>
-        <tr>
           <td>Emotion</td>
           <td>
             <Anchor href="https://emotion.sh/docs/composition">Docs</Anchor>

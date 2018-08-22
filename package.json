@@ -7,8 +7,6 @@
     "react",
     "react-router",
     "redux",
-    "mobx",
-    "emotion",
     "flow",
     "boilerplate"
   ],
