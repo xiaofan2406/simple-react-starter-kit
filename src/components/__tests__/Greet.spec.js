@@ -43,7 +43,7 @@ test('setMessage called on messageInput change', () => {
   expect(setMessage).toHaveBeenCalledWith('hey');
 });
 
-test('setTimes called on messageInput change', () => {
+test('setTimes called on timesInput change', () => {
   const { setTimes } = props;
   const { getByTestId } = render(<Component {...props} />);
 
@@ -54,4 +54,12 @@ test('setTimes called on messageInput change', () => {
 
   expect(setTimes).toHaveBeenCalledTimes(1);
   expect(setTimes).toHaveBeenCalledWith(3);
+});
+
+test('setTimes will default to 0 when input value is falsy', () => {
+  const { setTimes } = props;
+  const { getByTestId } = render(<Component {...props} />);
+  const timesInput = getByTestId('timesInput');
+  fireEvent.change(timesInput, { target: { value: '' } });
+  expect(setTimes).toHaveBeenCalledWith(0);
 });

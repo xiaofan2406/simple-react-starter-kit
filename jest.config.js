@@ -20,6 +20,7 @@ module.exports = {
   },
   moduleFileExtensions: ['js', 'mjs', 'json'],
   coveragePathIgnorePatterns: [
+    '<rootDir>/src/store/configureStore.js',
     '<rootDir>/src/store/reducer.js',
     'index.js',
     'App.js',
