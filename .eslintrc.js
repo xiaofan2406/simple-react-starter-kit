@@ -8,7 +8,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       webpack: {
-        config: './config/webpack.common.js',
+        config: './webpack.config.js',
       },
       node: {
         extensions: ['.js', '.mjs', '.json'],
