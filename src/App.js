@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
 import { Layout, Home, Navigation, NotFound } from 'components';
 import { asyncLoad } from 'factories';
 import 'styles/reset.css';
@@ -32,4 +31,4 @@ const App = () => (
   </BrowserRouter>
 );
 
-export default hot(module)(App);
+export default App;

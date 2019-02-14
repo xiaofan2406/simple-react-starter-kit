@@ -32,7 +32,6 @@ yarn dev
 - [Emotion](https://github.com/tkh44/emotion)
 - [React Router v4](https://reacttraining.com/react-router)
 - [CSS reset](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
-- [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 - [Create React App](https://github.com/facebook/create-react-app)
 - [Jest](https://facebook.github.io/jest)
 

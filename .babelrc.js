@@ -40,7 +40,5 @@ module.exports = {
     isTest
       ? 'babel-plugin-transform-dynamic-import'
       : '@babel/plugin-syntax-dynamic-import',
-
-    isDevelopment && 'react-hot-loader/babel',
   ].filter(Boolean),
 };
