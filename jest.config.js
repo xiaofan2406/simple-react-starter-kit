@@ -13,19 +13,12 @@ module.exports = {
     '^assets(.*)$': '<rootDir>/src/assets$1',
     '^components(.*)$': '<rootDir>/src/components$1',
     '^factories(.*)$': '<rootDir>/src/factories$1',
-    '^store(.*)$': '<rootDir>/src/store$1',
     '^styles(.*)$': '<rootDir>/src/styles$1',
     '^utils(.*)$': '<rootDir>/src/utils$1',
     '^widgets(.*)$': '<rootDir>/src/widgets$1',
   },
   moduleFileExtensions: ['js', 'mjs', 'json'],
-  coveragePathIgnorePatterns: [
-    '<rootDir>/src/store/configureStore.js',
-    '<rootDir>/src/store/reducer.js',
-    'index.js',
-    'App.js',
-    'ConnectedApp.js',
-  ],
+  coveragePathIgnorePatterns: ['index.js', 'App.js'],
   coverageThreshold: {
     global: {
       branches: 80,

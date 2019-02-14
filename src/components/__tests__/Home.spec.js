@@ -1,9 +1,9 @@
 import React from 'react';
-import { renderWithRedux } from 'utils/testing';
+import { render } from 'react-testing-library';
 import Home from '../Home';
 
 test('Home component matches snapshot', () => {
-  const { container } = renderWithRedux(<Home />);
+  const { container } = render(<Home />);
 
   expect(container.firstChild).toMatchSnapshot();
 });

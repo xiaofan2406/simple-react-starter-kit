@@ -2,7 +2,6 @@ import React from 'react';
 import { css } from 'react-emotion';
 import { spacing } from 'styles';
 import { Anchor } from 'widgets';
-import Greet from './Greet';
 
 const cssHome = css`
   & > .title {
@@ -21,7 +20,6 @@ const cssHome = css`
 const Home = () => (
   <div className={cssHome}>
     <div className="title">Hello world!</div>
-    <Greet />
     <table>
       <tbody>
         <tr>
@@ -46,17 +44,6 @@ const Home = () => (
             <Anchor href="https://github.com/ReactTraining/react-router">
               Github
             </Anchor>
-          </td>
-        </tr>
-        <tr>
-          <td>Redux</td>
-          <td>
-            <Anchor href="https://redux.js.org/introduction/three-principles">
-              Docs
-            </Anchor>
-          </td>
-          <td>
-            <Anchor href="https://github.com/reactjs/redux">Github</Anchor>
           </td>
         </tr>
         <tr>

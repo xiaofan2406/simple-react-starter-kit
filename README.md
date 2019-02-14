@@ -1,6 +1,6 @@
 # React Starter Kit
 
-A simple boilerplate for starting new react redux projects.
+A simple boilerplate for starting new react projects.
 
 [![CI Status][ci-badge]][ci]
 [![Coverage Status][coverage-badge]][coverage]
@@ -71,7 +71,6 @@ yarn start # start a localhost server serving the production build
 | src/**assets/**     | `assets`     | Common static file assets                                 |
 | src/**components/** | `components` | App components                                            |
 | src/**factories/**  | `factories`  | Utility components that help create/render new components |
-| src/**store**       | `store`      | Redux store and its _modules_                             |
 | src/**styles/**     | `styles`     | Global CSS files and css-in-jss setup/configs             |
 | src/**utils/**      | `utils`      | Utility helper functions                                  |
 | src/**widgets/**    | `widgets`    | Share pure presentational UI components                   |
