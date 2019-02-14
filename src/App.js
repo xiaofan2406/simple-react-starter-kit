@@ -1,34 +1,29 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Router } from '@reach/router';
 import { Layout, Home, Navigation, NotFound } from 'components';
-import { asyncLoad } from 'factories';
 import 'styles/reset.css';
 import 'styles/animation.css';
 
+const About = React.lazy(() =>
+  import(/* webpackChunkName: "About" */ './components/About')
+);
+
+const Contact = React.lazy(() =>
+  import(/* webpackChunkName: "Contact" */ './components/Contact')
+);
+
 const App = () => (
-  <BrowserRouter>
+  <React.Suspense fallback="loading...">
     <Layout>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route
-          path="/about"
-          component={asyncLoad({
-            importer: () =>
-              import(/* webpackChunkName: "About" */ './components/About'),
-          })}
-        />
-        <Route
-          path="/contact"
-          component={asyncLoad({
-            importer: () =>
-              import(/* webpackChunkName: "Contact" */ './components/Contact'),
-          })}
-        />
-        <Route component={NotFound} />
-      </Switch>
+      <Router>
+        <NotFound default />
+        <Home path="/" />
+        <About path="/about" />
+        <Contact path="/contact" />
+      </Router>
       <Navigation />
     </Layout>
-  </BrowserRouter>
+  </React.Suspense>
 );
 
 export default App;

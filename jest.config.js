@@ -13,7 +13,6 @@ module.exports = {
   moduleNameMapper: {
     '^assets(.*)$': '<rootDir>/src/assets$1',
     '^components(.*)$': '<rootDir>/src/components$1',
-    '^factories(.*)$': '<rootDir>/src/factories$1',
     '^styles(.*)$': '<rootDir>/src/styles$1',
     '^utils(.*)$': '<rootDir>/src/utils$1',
     '^widgets(.*)$': '<rootDir>/src/widgets$1',

@@ -5,7 +5,7 @@
   "description": "A simple boilerplate for starting new React projects.",
   "keywords": [
     "react",
-    "react-router",
+    "@reach/router",
     "boilerplate"
   ],
   "repository": "xiaofan2406/react-starter-kit",
@@ -55,9 +55,9 @@
   ],
   "dependencies": {
     "@emotion/core": "^10.0.7",
+    "@reach/router": "^1.2.1",
     "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "react-router-dom": "^4.3.1"
+    "react-dom": "^16.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

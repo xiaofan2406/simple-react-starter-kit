@@ -50,11 +50,11 @@ exports[`Home component matches snapshot 1`] = `
       </tr>
       <tr>
         <td>
-          React Router v4
+          Reach Router
         </td>
         <td>
           <a
-            href="https://reacttraining.com/react-router/web/example/basic"
+            href="https://reach.tech/router"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -63,7 +63,7 @@ exports[`Home component matches snapshot 1`] = `
         </td>
         <td>
           <a
-            href="https://github.com/ReactTraining/react-router"
+            href="https://github.com/reach/router"
             rel="noopener noreferrer"
             target="_blank"
           >

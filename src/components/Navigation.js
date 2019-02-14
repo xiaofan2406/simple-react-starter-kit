@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { NavLink } from 'react-router-dom';
+import { Link } from '@reach/router';
 import { theme, spacing } from 'styles';
 import { NAV_LINKS } from 'utils/constants';
 
@@ -11,31 +11,32 @@ const cssNavigation = css`
   display: flex;
   flex-direction: column;
   border: 1px solid ${theme.borderColor};
-  & > .link {
-    text-decoration: none;
-    padding: 0.5em;
-    display: inline-block;
-    &:hover {
-      background-color: ${theme.borderColor};
-    }
-    &.active {
-      border-right: 2px solid ${theme.primaryColor};
-    }
+`;
+
+const cssLink = css`
+  text-decoration: none;
+  padding: 0.5em;
+  display: inline-block;
+  &:hover {
+    background-color: ${theme.borderColor};
   }
 `;
 
 const Navigation = () => (
   <div css={cssNavigation}>
     {NAV_LINKS.map(link => (
-      <NavLink
-        className="link"
-        activeClassName="active"
+      <Link
         key={link.to}
-        exact={link.exact}
         to={link.to}
+        css={cssLink}
+        getProps={({ isCurrent }) =>
+          isCurrent
+            ? { style: { borderRight: `2px solid ${theme.primaryColor}` } }
+            : null
+        }
       >
         {link.name}
-      </NavLink>
+      </Link>
     ))}
   </div>
 );

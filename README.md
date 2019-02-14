@@ -29,8 +29,8 @@ yarn dev
 
 ### Built With
 
-- [Emotion](https://github.com/tkh44/emotion)
-- [React Router v4](https://reacttraining.com/react-router)
+- [Emotion](https://emotion.sh/docs/introduction)
+- [Reach Router](https://reach.tech/router)
 - [CSS reset](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
 - [Create React App](https://github.com/facebook/create-react-app)
 - [Jest](https://facebook.github.io/jest)
@@ -63,13 +63,12 @@ yarn start # start a localhost server serving the production build
 
 ## Project Structure
 
-| Path                | Import Alias | Description                                               |
-| ------------------- | ------------ | --------------------------------------------------------- |
-| **config/**         |              | Project tooling configurations                            |
-| **src/**            | `src`        | Project source files                                      |
-| src/**assets/**     | `assets`     | Common static file assets                                 |
-| src/**components/** | `components` | App components                                            |
-| src/**factories/**  | `factories`  | Utility components that help create/render new components |
-| src/**styles/**     | `styles`     | Global CSS files and css-in-jss setup/configs             |
-| src/**utils/**      | `utils`      | Utility helper functions                                  |
-| src/**widgets/**    | `widgets`    | Share pure presentational UI components                   |
+| Path                | Import Alias | Description                                   |
+| ------------------- | ------------ | --------------------------------------------- |
+| **config/**         |              | Project tooling configurations                |
+| **src/**            | `src`        | Project source files                          |
+| src/**assets/**     | `assets`     | Common static file assets                     |
+| src/**components/** | `components` | App components                                |
+| src/**styles/**     | `styles`     | Global CSS files and css-in-jss setup/configs |
+| src/**utils/**      | `utils`      | Utility helper functions                      |
+| src/**widgets/**    | `widgets`    | Share pure presentational UI components       |

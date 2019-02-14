@@ -35,16 +35,12 @@ const Home = () => (
           </td>
         </tr>
         <tr>
-          <td>React Router v4</td>
+          <td>Reach Router</td>
           <td>
-            <Anchor href="https://reacttraining.com/react-router/web/example/basic">
-              Docs
-            </Anchor>
+            <Anchor href="https://reach.tech/router">Docs</Anchor>
           </td>
           <td>
-            <Anchor href="https://github.com/ReactTraining/react-router">
-              Github
-            </Anchor>
+            <Anchor href="https://github.com/reach/router">Github</Anchor>
           </td>
         </tr>
         <tr>
