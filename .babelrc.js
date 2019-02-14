@@ -14,31 +14,32 @@ const emotionConfig = isProduction
   ? { hoist: true }
   : { sourceMap: true, autoLabel: true };
 
+const presetEnvConfig = isTest
+  ? {
+      targets: { node: 'current' },
+    }
+  : {
+      useBuiltIns: 'usage',
+      modules: false,
+    };
+
 module.exports = {
   presets: [
-    [
-      '@babel/preset-env',
-      {
-        targets: { node: 'current' },
-        useBuiltIns: 'usage',
-        modules: isTest ? 'commonjs' : false,
-      },
-    ],
+    ['@babel/preset-env', presetEnvConfig],
+
     ['@babel/preset-react', { development: !isProduction, useBuiltIns: true }],
   ],
   plugins: [
     ['babel-plugin-emotion', emotionConfig],
 
-    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-transform-destructuring',
 
-    [
-      '@babel/plugin-proposal-object-rest-spread',
-      { loose: true, useBuiltIns: true },
-    ],
+    ['@babel/plugin-proposal-class-properties', { loose: true }],
 
-    // Enable `import()` syntax and transform to `require` for testing
-    isTest
-      ? 'babel-plugin-transform-dynamic-import'
-      : '@babel/plugin-syntax-dynamic-import',
+    ['@babel/plugin-proposal-object-rest-spread', { useBuiltIns: true }],
+
+    '@babel/plugin-syntax-dynamic-import',
+
+    isTest && 'babel-plugin-dynamic-import-node',
   ].filter(Boolean),
 };
