@@ -7,11 +7,11 @@ import { Provider } from 'react-redux';
 import reducer from 'store/reducer';
 
 export const renderWithRouter = (
-  ui: React.Element<any>,
+  ui,
   {
     route = '/',
     history = createMemoryHistory({ initialEntries: [route] }),
-  }: any = {}
+  } = {}
 ) => ({
   ...render(<Router history={history}>{ui}</Router>),
   // adding `history` to the returned utilities to allow us
@@ -21,8 +21,8 @@ export const renderWithRouter = (
 });
 
 export const renderWithRedux = (
-  ui: React.Element<any>,
-  { initialState, store = createStore(reducer, initialState) }: any = {}
+  ui,
+  { initialState, store = createStore(reducer, initialState) } = {}
 ) => ({
   ...render(<Provider store={store}>{ui}</Provider>),
   // adding `store` to the returned utilities to allow us

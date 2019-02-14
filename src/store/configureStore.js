@@ -16,7 +16,7 @@ export default (initialState = {}) => {
     compose(
       applyMiddleware(...middlewares),
       typeof window === 'object' &&
-      typeof window.devToolsExtension !== 'undefined'
+        typeof window.devToolsExtension !== 'undefined'
         ? window.devToolsExtension()
         : f => f
     )
