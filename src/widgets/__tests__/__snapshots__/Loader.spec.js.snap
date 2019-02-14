@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Loader matches snapshot 1`] = `
-.emotion-0 {
+.emotion-3 {
   display: inline-block;
 }
 
-.emotion-0 > div {
+.emotion-2 {
   width: 60px;
   height: 60px;
   position: relative;
 }
 
-.emotion-0 > div div {
+.emotion-2 div {
   width: 60px;
   height: 60px;
   border-style: solid;
@@ -30,24 +30,28 @@ exports[`Loader matches snapshot 1`] = `
   animation-fill-mode: forwards;
 }
 
-.emotion-0 > div div:first-child {
+.emotion-0 {
   -webkit-animation: loaderRigthRotate 2s 0s infinite linear;
   animation: loaderRigthRotate 2s 0s infinite linear;
 }
 
-.emotion-0 > div div:nth-child(2) {
+.emotion-1 {
   -webkit-animation: loaderLeftRotate 2s 0s infinite linear;
   animation: loaderLeftRotate 2s 0s infinite linear;
 }
 
 <div
-  class="emotion-0 emotion-1"
-  color="#00bcd4"
-  size="60"
+  class="emotion-3"
 >
-  <div>
-    <div />
-    <div />
+  <div
+    class="emotion-2"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-1"
+    />
   </div>
 </div>
 `;

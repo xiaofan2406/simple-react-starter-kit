@@ -10,10 +10,6 @@ if (!isTest && !isDevelopment && !isProduction) {
   );
 }
 
-const emotionConfig = isProduction
-  ? { hoist: true }
-  : { sourceMap: true, autoLabel: true };
-
 const presetEnvConfig = isTest
   ? {
       targets: { node: 'current' },
@@ -28,10 +24,16 @@ module.exports = {
     ['@babel/preset-env', presetEnvConfig],
 
     ['@babel/preset-react', { development: !isProduction, useBuiltIns: true }],
+
+    [
+      '@emotion/babel-preset-css-prop',
+      {
+        autoLabel: true,
+        labelFormat: '[local]',
+      },
+    ],
   ],
   plugins: [
-    ['babel-plugin-emotion', emotionConfig],
-
     '@babel/plugin-transform-destructuring',
 
     ['@babel/plugin-proposal-class-properties', { loose: true }],

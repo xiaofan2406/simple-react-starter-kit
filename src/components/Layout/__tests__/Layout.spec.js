@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from 'react-testing-library';
-import { Component } from '../Layout';
+import Layout from '../Layout';
 
 test('Layout component matches snapshot', () => {
   const { container } = render(
-    <Component>
+    <Layout>
       <div>child</div>
-    </Component>
+    </Layout>
   );
 
   expect(container.firstChild).toMatchSnapshot();

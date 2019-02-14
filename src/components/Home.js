@@ -1,26 +1,27 @@
 import React from 'react';
-import { css } from 'react-emotion';
+import { css } from '@emotion/core';
 import { spacing } from 'styles';
 import { Anchor } from 'widgets';
 
-const cssHome = css`
-  & > .title {
-    font-size: 48px;
-    text-align: center;
-    margin-bottom: ${spacing.breath}px;
-  }
-  & > table {
-    margin-top: ${spacing.breath}px;
-    & td {
-      padding: ${spacing.internal}px;
-    }
-  }
-`;
-
 const Home = () => (
-  <div className={cssHome}>
-    <div className="title">Hello world!</div>
-    <table>
+  <div>
+    <div
+      css={css`
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: ${spacing.breath}px;
+      `}
+    >
+      Hello world!
+    </div>
+    <table
+      css={css`
+        margin-top: ${spacing.breath}px;
+        & td {
+          padding: ${spacing.internal}px;
+        }
+      `}
+    >
       <tbody>
         <tr>
           <td>React</td>

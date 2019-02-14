@@ -1,38 +1,34 @@
-import React from 'react';
-import { css } from 'react-emotion';
+import React, { memo } from 'react';
+import { css } from '@emotion/core';
 import { fontSizes, spacing } from 'styles';
 import { APP_TITLE } from 'utils/constants';
 import logo from 'assets/logo.svg';
 
-const cssBrand = css`
-  display: flex;
-  align-items: center;
-  padding: ${spacing.internal}px;
-  & > .logo {
-    animation: spin infinite 10s linear;
-    height: 36px;
-  }
-  & > .title {
-    animation: fadeIn 2s ease;
-    font-size: ${fontSizes.large}px;
-  }
-`;
+const Brand = () => (
+  <div
+    css={css`
+      display: flex;
+      align-items: center;
+      padding: ${spacing.internal}px;
+    `}
+  >
+    <img
+      src={logo}
+      alt="logo"
+      css={css`
+        animation: spin infinite 10s linear;
+        height: 36px;
+      `}
+    />
+    <span
+      css={css`
+        animation: fadeIn 2s ease;
+        font-size: ${fontSizes.large}px;
+      `}
+    >
+      {APP_TITLE}
+    </span>
+  </div>
+);
 
-class Brand extends React.Component {
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <div className={cssBrand}>
-        <img src={logo} alt="logo" className="logo" />
-        <span className="title">{APP_TITLE}</span>
-      </div>
-    );
-  }
-}
-
-export { Brand as Component };
-
-export default Brand;
+export default memo(Brand);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'react-emotion';
+import { css } from '@emotion/core';
 import { NavLink } from 'react-router-dom';
 import { theme, spacing } from 'styles';
 import { NAV_LINKS } from 'utils/constants';
@@ -25,7 +25,7 @@ const cssNavigation = css`
 `;
 
 const Navigation = () => (
-  <div className={cssNavigation}>
+  <div css={cssNavigation}>
     {NAV_LINKS.map(link => (
       <NavLink
         className="link"
@@ -39,7 +39,5 @@ const Navigation = () => (
     ))}
   </div>
 );
-
-export { Navigation as Component };
 
 export default Navigation;

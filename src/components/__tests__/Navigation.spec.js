@@ -1,9 +1,9 @@
 import React from 'react';
 import { renderWithRouter } from 'utils/testing';
-import { Component } from '../Navigation';
+import Navigation from '../Navigation';
 
 test('Navigation component matches snapshot', () => {
-  const { container } = renderWithRouter(<Component />);
+  const { container } = renderWithRouter(<Navigation />);
 
   expect(container.firstChild).toMatchSnapshot();
 });

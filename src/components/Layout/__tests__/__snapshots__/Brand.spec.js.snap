@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches snapshot 1`] = `
-.emotion-0 {
+.emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13,28 +13,28 @@ exports[`matches snapshot 1`] = `
   padding: 12px;
 }
 
-.emotion-0 > .logo {
+.emotion-0 {
   -webkit-animation: spin infinite 10s linear;
   animation: spin infinite 10s linear;
   height: 36px;
 }
 
-.emotion-0 > .title {
+.emotion-1 {
   -webkit-animation: fadeIn 2s ease;
   animation: fadeIn 2s ease;
   font-size: 18px;
 }
 
 <div
-  class="emotion-0"
+  class="emotion-2"
 >
   <img
     alt="logo"
-    class="logo"
+    class="emotion-0"
     src="logo.svg"
   />
   <span
-    class="title"
+    class="emotion-1"
   >
     React Starter Kit
   </span>

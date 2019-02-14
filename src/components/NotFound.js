@@ -7,6 +7,4 @@ const NotFound = () => (
   </div>
 );
 
-export { NotFound as Component };
-
 export default NotFound;

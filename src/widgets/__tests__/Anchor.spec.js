@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from 'react-testing-library';
-
 import Anchor from '../Anchor';
 
 test('Anchor matches snapshot', () => {

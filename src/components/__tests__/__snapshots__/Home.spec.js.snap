@@ -1,29 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home component matches snapshot 1`] = `
-.emotion-0 > .title {
+.emotion-0 {
   font-size: 48px;
   text-align: center;
   margin-bottom: 24px;
 }
 
-.emotion-0 > table {
+.emotion-1 {
   margin-top: 24px;
 }
 
-.emotion-0 > table td {
+.emotion-1 td {
   padding: 12px;
 }
 
-<div
-  class="emotion-0"
->
+<div>
   <div
-    class="title"
+    class="emotion-0"
   >
     Hello world!
   </div>
-  <table>
+  <table
+    class="emotion-1"
+  >
     <tbody>
       <tr>
         <td>

@@ -1,13 +1,13 @@
 import React from 'react';
-import { css } from 'react-emotion';
+import { css } from '@emotion/core';
 import { Loader } from 'widgets';
 
-const cssContact = css`
-  text-align: center;
-`;
-
 const Contact = () => (
-  <div className={cssContact}>
+  <div
+    css={css`
+      text-align: center;
+    `}
+  >
     <Loader size={120} />
   </div>
 );

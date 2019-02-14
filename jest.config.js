@@ -1,8 +1,9 @@
 module.exports = {
   collectCoverageFrom: ['src/**/*.{js,mjs}'],
-  setupFilesAfterEnv: ['<rootDir>/config/jest/testSetup.js'],
+  setupFilesAfterEnv: ['react-testing-library/cleanup-after-each'],
   testMatch: ['<rootDir>/src/**/__tests__/**/*.spec.{js,mjs}'],
   testEnvironment: 'jsdom',
+  snapshotSerializers: ['jest-emotion'],
   testURL: 'http://localhost',
   transform: {
     '^.+\\.(js|mjs)$': 'babel-jest',
