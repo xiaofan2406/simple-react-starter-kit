@@ -1,9 +1,8 @@
-/* @flow */
-export const getMessage = (state: StoreState) => state.greet.message;
+export const getMessage = state => state.greet.message;
 
-export const getTimes = (state: StoreState) => state.greet.times;
+export const getTimes = state => state.greet.times;
 
-export const getGreeting = (state: StoreState) =>
+export const getGreeting = state =>
   Array(getTimes(state))
     .fill(getMessage(state))
     .join(' ');

@@ -24,8 +24,8 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', 'flowtype'],
-  extends: ['plugin:flowtype/recommended', 'airbnb', 'prettier'],
+  plugins: ['react'],
+  extends: ['airbnb', 'prettier'],
   rules: {
     'no-console': 0,
     'global-require': 0,
@@ -39,9 +39,8 @@ module.exports = {
     ],
     'import/no-extraneous-dependencies': 0, // allow import devDependencies
     'import/prefer-default-export': 0,
-    'react/jsx-filename-extension': 0, // enfore all .js extension
+    'react/jsx-filename-extension': 0, // enforce all .js extension
     'react/prefer-stateless-function': 0,
-    'react/default-props-match-prop-types': 0, // flows should handle this
     'react/jsx-one-expression-per-line': 0, // prettier should handle this
     'jsx-a11y/anchor-is-valid': 0,
   },

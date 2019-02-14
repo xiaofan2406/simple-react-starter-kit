@@ -1,21 +1,14 @@
-/* @flow */
 export const APP_TITLE = 'React Starter Kit';
 
-type NavLinkName = 'About' | 'Contact';
-type NavLinkConfig = {
-  to: string,
-  name: string,
-  exact?: boolean,
-};
-const LINK_NAMES: NavLinkName[] = ['About', 'Contact'];
+const LINK_NAMES = ['About', 'Contact'];
 
-export const NAV_LINKS: NavLinkConfig[] = [
+export const NAV_LINKS = [
   {
     to: '/',
     name: 'Home',
     exact: true,
   },
-  ...LINK_NAMES.map((name: string) => ({
+  ...LINK_NAMES.map(name => ({
     to: `/${name.toLocaleLowerCase()}`,
     name,
   })),

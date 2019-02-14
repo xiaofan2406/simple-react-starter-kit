@@ -5,5 +5,7 @@ exports[`Anchor matches snapshot 1`] = `
   href="https://github.com/xiaofan2406/react-starter-kit"
   rel="noopener noreferrer"
   target="_blank"
-/>
+>
+  link
+</a>
 `;

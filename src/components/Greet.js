@@ -1,5 +1,5 @@
-/* @flow */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { css } from 'react-emotion';
 import { theme, fontSizes, spacing, verticalScroll } from 'styles';
@@ -46,23 +46,7 @@ const cssGreet = css`
   }
 `;
 
-type GreetProps = {
-  message: string,
-  setMessage: typeof actions.setMessage,
-  times: number,
-  setTimes: typeof actions.setTimes,
-  reset: typeof actions.reset,
-  greeting: string,
-};
-
-const Greet = ({
-  message,
-  setMessage,
-  times,
-  setTimes,
-  reset,
-  greeting,
-}: GreetProps) => {
+const Greet = ({ message, setMessage, times, setTimes, reset, greeting }) => {
   const handleTimesOnChange = event => {
     setTimes(+event.currentTarget.value || 0);
   };
@@ -98,7 +82,16 @@ const Greet = ({
   );
 };
 
-export const mapStateToProps = (state: StoreState) => ({
+Greet.propTypes = {
+  message: PropTypes.string.isRequired,
+  setMessage: PropTypes.func.isRequired,
+  times: PropTypes.number.isRequired,
+  setTimes: PropTypes.func.isRequired,
+  reset: PropTypes.func.isRequired,
+  greeting: PropTypes.string.isRequired,
+};
+
+export const mapStateToProps = state => ({
   message: selectors.getMessage(state),
   times: selectors.getTimes(state),
   greeting: selectors.getGreeting(state),

@@ -5,7 +5,9 @@ import Anchor from '../Anchor';
 
 test('Anchor matches snapshot', () => {
   const { container } = render(
-    <Anchor href="https://github.com/xiaofan2406/react-starter-kit" />
+    <Anchor href="https://github.com/xiaofan2406/react-starter-kit">
+      link
+    </Anchor>
   );
 
   expect(container.firstChild).toMatchSnapshot();

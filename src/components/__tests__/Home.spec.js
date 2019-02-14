@@ -1,4 +1,3 @@
-/* @flow */
 import React from 'react';
 import { renderWithRedux } from 'utils/testing';
 import Home from '../Home';

@@ -1,4 +1,3 @@
-/* @flow */
 /**
  * @see https://github.com/yuanyan/halogen/blob/master/src/RingLoader.js
  */
@@ -34,12 +33,7 @@ const Container = styled.div`
   }
 `;
 
-type LoaderProps = {
-  color?: string,
-  size?: number,
-};
-
-const Loader = (props: LoaderProps) => (
+const Loader = props => (
   <Container {...props}>
     <div>
       <div />

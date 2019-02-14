@@ -1,4 +1,3 @@
-/* @flow */
 import { css } from 'react-emotion';
 
 export const colors = {

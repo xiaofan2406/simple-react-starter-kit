@@ -29,22 +29,12 @@ yarn dev
 
 ### Built With
 
-- [Flow](https://flow.org)
 - [Emotion](https://github.com/tkh44/emotion)
 - [React Router v4](https://reacttraining.com/react-router)
 - [CSS reset](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 - [Create React App](https://github.com/facebook/create-react-app)
 - [Jest](https://facebook.github.io/jest)
-
-### Prerequisites
-
-- [Install `yarn`](https://yarnpkg.com/lang/en/docs/install)
-
-- Add `flow-typed`
-  ```shell
-  yarn global add flow-typed
-  ```
 
 ## Commands
 
@@ -79,7 +69,7 @@ yarn start # start a localhost server serving the production build
 | **config/**         |              | Project tooling configurations                            |
 | **src/**            | `src`        | Project source files                                      |
 | src/**assets/**     | `assets`     | Common static file assets                                 |
-| src/**components/** | `components` | Appp components                                           |
+| src/**components/** | `components` | App components                                            |
 | src/**factories/**  | `factories`  | Utility components that help create/render new components |
 | src/**store**       | `store`      | Redux store and its _modules_                             |
 | src/**styles/**     | `styles`     | Global CSS files and css-in-jss setup/configs             |

@@ -1,4 +1,3 @@
-/* @flow */
 import React from 'react';
 import { renderWithRouter } from 'utils/testing';
 import { Component } from '../NotFound';

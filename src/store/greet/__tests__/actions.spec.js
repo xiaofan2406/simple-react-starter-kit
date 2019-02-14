@@ -1,4 +1,3 @@
-/* @flow */
 import * as actions from '../actions';
 
 test('setMessage create a correct action', () => {

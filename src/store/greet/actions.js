@@ -1,14 +1,13 @@
-/* @flow */
-export const setMessage = (payload: string): GreetSetMessageAction => ({
+export const setMessage = payload => ({
   type: 'greet/SET_MESSAGE',
   payload,
 });
 
-export const setTimes = (payload: number): GreetSetTimesAction => ({
+export const setTimes = payload => ({
   type: 'greet/SET_TIMES',
   payload,
 });
 
-export const reset = (): GreetResetAction => ({
+export const reset = () => ({
   type: 'greet/RESET',
 });

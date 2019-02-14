@@ -1,5 +1,4 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import { render } from 'react-testing-library';
 import { Router } from 'react-router-dom';
 import createMemoryHistory from 'history/createMemoryHistory';

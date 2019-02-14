@@ -1,12 +1,8 @@
-/* @flow */
 import { combineReducers } from 'redux';
 
 export const initialMessage = 'World';
 
-export const messageReducer = (
-  state: string = initialMessage,
-  action: StoreAction
-) => {
+export const messageReducer = (state = initialMessage, action) => {
   switch (action.type) {
     case 'greet/SET_MESSAGE':
       return action.payload;
@@ -19,10 +15,7 @@ export const messageReducer = (
 
 export const initialTimes = 1;
 
-export const timesReducer = (
-  state: number = initialTimes,
-  action: StoreAction
-) => {
+export const timesReducer = (state = initialTimes, action) => {
   switch (action.type) {
     case 'greet/SET_TIMES':
       return action.payload;

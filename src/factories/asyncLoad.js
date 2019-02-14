@@ -1,17 +1,8 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 
-type AsyncLoadState = {
-  Component: React.ComponentType<any> | null,
-};
-
-type AsyncLoadOptions = {
-  importer: () => Promise<{ default: React.ComponentType<any> }>,
-};
-
-const asyncLoad = ({ importer }: AsyncLoadOptions): React.ComponentType<any> =>
-  class AsyncLoad extends React.Component<{}, AsyncLoadState> {
-    unmounted: boolean = false;
+const asyncLoad = ({ importer }) =>
+  class AsyncLoad extends React.Component {
+    unmounted = false;
 
     state = {
       Component: null,

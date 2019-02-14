@@ -25,7 +25,6 @@ module.exports = {
       },
     ],
     ['@babel/preset-react', { development: !isProduction, useBuiltIns: true }],
-    '@babel/preset-flow',
   ],
   plugins: [
     ['babel-plugin-emotion', emotionConfig],

@@ -1,4 +1,3 @@
-/* @flow */
 import * as selectors from '../selectors';
 
 const mockState = { greet: { message: 'hey', times: 3 } };

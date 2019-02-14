@@ -1,4 +1,3 @@
-/* @flow */
 import React from 'react';
 import { render } from 'react-testing-library';
 import { Component } from '../Layout';
