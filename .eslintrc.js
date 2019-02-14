@@ -25,7 +25,7 @@ module.exports = {
     },
   },
   plugins: ['react'],
-  extends: ['airbnb', 'prettier'],
+  extends: ['airbnb', 'prettier', 'prettier/react'],
   rules: {
     'no-console': 0,
     'global-require': 0,
@@ -36,7 +36,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 0, // allow import devDependencies
     'import/prefer-default-export': 0,
     'react/jsx-filename-extension': 0, // enforce all .js extension
-    'react/jsx-one-expression-per-line': 0, // prettier should handle this
     'jsx-a11y/anchor-is-valid': 0,
   },
 };
