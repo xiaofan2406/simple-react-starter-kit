@@ -16,6 +16,7 @@ const presetEnvConfig = isTest
     }
   : {
       useBuiltIns: 'usage',
+      corejs: { version: 3 },
       modules: false,
     };
 
@@ -25,13 +26,7 @@ module.exports = {
 
     ['@babel/preset-react', { development: !isProduction, useBuiltIns: true }],
 
-    [
-      '@emotion/babel-preset-css-prop',
-      {
-        autoLabel: true,
-        labelFormat: '[local]',
-      },
-    ],
+    '@emotion/babel-preset-css-prop',
   ],
   plugins: [
     '@babel/plugin-transform-destructuring',

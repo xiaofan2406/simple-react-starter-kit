@@ -8,7 +8,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const safePostCssParser = require('postcss-safe-parser');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const paths = require('./config/paths');
+const paths = require('./paths');
 
 const env = process.env.NODE_ENV;
 const isProduction = env === 'production';
@@ -29,16 +29,16 @@ const ignoredFiles = new RegExp(
 );
 
 // common function to get style loaders
-const getStyleLoaders = cssOptions => {
-  const loaders = [
-    !isProduction && 'style-loader',
+const getStyleLoaders = cssLoaderOptions =>
+  [
+    isDevelopment && 'style-loader',
     isProduction && {
       loader: MiniCssExtractPlugin.loader,
       options: shouldUseRelativeAssetPaths ? { publicPath: '../../' } : {},
     },
     {
       loader: 'css-loader',
-      options: cssOptions,
+      options: cssLoaderOptions,
     },
     {
       // Options for PostCSS as we reference these options twice
@@ -55,14 +55,15 @@ const getStyleLoaders = cssOptions => {
             autoprefixer: { flexbox: 'no-2009' },
             stage: 3,
           }),
+          // Adds PostCSS Normalize as the reset css with default options,
+          // so that it honors browserslist config in package.json
+          // which in turn let's users customize the target behavior as per their needs.
+          require('postcss-normalize')(),
         ],
-        sourceMap: isProduction ? shouldUseSourceMap : true,
+        sourceMap: isProduction && shouldUseSourceMap,
       },
     },
   ].filter(Boolean);
-
-  return loaders;
-};
 
 module.exports = {
   mode: env,
@@ -158,13 +159,6 @@ module.exports = {
       { parser: { requireEnsure: false } },
 
       {
-        test: /\.(js|mjs)$/,
-        enforce: 'pre',
-        loader: 'eslint-loader',
-        include: paths.appSrc,
-      },
-
-      {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
         // back to the "file" loader at the end of the loader list.
@@ -207,7 +201,7 @@ module.exports = {
             exclude: /\.module\.css$/,
             use: getStyleLoaders({
               importLoaders: 1,
-              sourceMap: isProduction ? shouldUseSourceMap : isDevelopment,
+              sourceMap: isProduction && shouldUseSourceMap,
             }),
             // Don't consider CSS imports dead code even if the
             // containing package claims to have no side effects.
@@ -222,7 +216,7 @@ module.exports = {
             test: /\.module\.css$/,
             use: getStyleLoaders({
               importLoaders: 1,
-              sourceMap: isProduction ? shouldUseSourceMap : isDevelopment,
+              sourceMap: isProduction && shouldUseSourceMap,
               modules: true,
               localIdentName: '[path][name]__[local]--[hash:base64:5]',
             }),
@@ -241,7 +235,7 @@ module.exports = {
             // its runtime that would otherwise be processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|mjs|jsx)$/, /\.html$/, /\.json$/],
+            exclude: [/\.(js|mjs)$/, /\.html$/, /\.json$/],
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
@@ -301,10 +295,12 @@ module.exports = {
     dgram: 'empty',
     dns: 'mock',
     fs: 'empty',
+    http2: 'empty',
     net: 'empty',
     tls: 'empty',
     child_process: 'empty',
   },
+  performance: false,
 
   devServer: {
     compress: true,
