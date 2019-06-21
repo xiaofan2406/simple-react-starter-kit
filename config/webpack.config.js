@@ -1,7 +1,8 @@
 const path = require('path');
-const webpack = require('webpack');
+const isWsl = require('is-wsl');
 const ip = require('ip');
 const escapeRegex = require('escape-string-regexp');
+const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
@@ -72,17 +73,18 @@ module.exports = {
     ? shouldUseSourceMap
       ? 'source-map'
       : false
-    : isDevelopment && 'eval-source-map',
+    : isDevelopment && 'cheap-module-source-map',
   entry: [`${paths.appSrc}/index.js`],
   output: {
     path: isProduction ? paths.appDist : undefined,
     // Add /* filename */ comments to generated require()s in the output.
     pathinfo: isDevelopment,
     filename: isProduction
-      ? 'static/js/[name].[chunkhash:8].js'
+      ? 'static/js/[name].[contenthash:8].js'
       : isDevelopment && 'static/js/bundle.js',
+    futureEmitAssets: true,
     chunkFilename: isProduction
-      ? 'static/js/[name].[chunkhash:8].chunk.js'
+      ? 'static/js/[name].[contenthash:8].chunk.js'
       : isDevelopment && 'static/js/[name].chunk.js',
     publicPath,
     devtoolModuleFilenameTemplate: isProduction
@@ -121,7 +123,7 @@ module.exports = {
             ascii_only: true,
           },
         },
-        parallel: true,
+        parallel: !isWsl,
         cache: true,
         sourceMap: shouldUseSourceMap,
       }),

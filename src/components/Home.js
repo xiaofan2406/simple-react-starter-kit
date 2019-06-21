@@ -60,7 +60,7 @@ const Home = () => (
             </Anchor>
           </td>
           <td>
-            <Anchor href="https://github.com/facebook/create-react-app/tree/next/packages/react-scripts">
+            <Anchor href="https://github.com/facebook/create-react-app/tree/master/packages/react-scripts">
               Github
             </Anchor>
           </td>
