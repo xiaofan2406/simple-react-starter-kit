@@ -1,8 +1,8 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { Link } from '@reach/router';
-import { theme, spacing } from 'styles';
-import { NAV_LINKS } from 'utils/constants';
+import { theme, spacing } from '../styles';
+import { NAV_LINKS } from '../utils/constants';
 
 const cssNavigation = css`
   position: fixed;

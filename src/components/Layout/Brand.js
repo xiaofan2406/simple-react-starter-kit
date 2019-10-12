@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { css } from '@emotion/core';
-import { fontSizes, spacing } from 'styles';
-import { APP_TITLE } from 'utils/constants';
-import logo from 'assets/logo.svg';
+import { fontSizes, spacing } from '../../styles';
+import { APP_TITLE } from '../../utils/constants';
+import logo from '../../assets/logo.svg';
 
 const Brand = () => (
   <div

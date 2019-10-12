@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { spacing } from 'styles';
-import { Anchor } from 'widgets';
+import { spacing } from '../styles';
+import { Anchor } from '../widgets';
 
 const Home = () => (
   <div>

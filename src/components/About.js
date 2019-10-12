@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { verticalScroll, spacing, fontSizes } from 'styles';
+import { verticalScroll, spacing, fontSizes } from '../styles';
 
 const About = () => (
   <div>

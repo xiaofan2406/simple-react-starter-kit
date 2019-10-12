@@ -1,8 +1,8 @@
 import React from 'react';
 import { Router } from '@reach/router';
-import { Layout, Home, Navigation, NotFound } from 'components';
-import 'styles/reset.css';
-import 'styles/animation.css';
+import { Layout, Home, Navigation, NotFound } from './components';
+import './styles/reset.css';
+import './styles/animation.css';
 
 const About = React.lazy(() =>
   import(/* webpackChunkName: "About" */ './components/About')
