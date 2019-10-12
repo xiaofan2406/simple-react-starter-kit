@@ -1,11 +1,8 @@
 const path = require('path');
-const isWsl = require('is-wsl');
 const ip = require('ip');
-const escapeRegex = require('escape-string-regexp');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const safePostCssParser = require('postcss-safe-parser');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -20,14 +17,6 @@ const publicPath = isProduction ? paths.servedPath : '/';
 // Some apps do not use client-side routing with pushState.
 // For these, "homepage" can be set to "." to enable relative asset paths.
 const shouldUseRelativeAssetPaths = publicPath === './';
-
-// https://github.com/facebookincubator/create-react-app/blob/master/packages/react-dev-utils/ignoredFiles.js
-const ignoredFiles = new RegExp(
-  `^(?!${escapeRegex(
-    path.normalize(`${paths.appSrc}/`).replace(/[\\]+/g, '/')
-  )}).+/node_modules/`,
-  'g'
-);
 
 // common function to get style loaders
 const getStyleLoaders = cssLoaderOptions =>
@@ -95,15 +84,6 @@ module.exports = {
       : isDevelopment &&
         (info => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')),
   },
-  resolve: {
-    alias: {
-      assets: `${paths.appSrc}/assets`,
-      components: `${paths.appSrc}/components`,
-      styles: `${paths.appSrc}/styles`,
-      utils: `${paths.appSrc}/utils`,
-      widgets: `${paths.appSrc}/widgets`,
-    },
-  },
   optimization: {
     minimize: isProduction,
     minimizer: [
@@ -115,16 +95,11 @@ module.exports = {
             comparisons: false,
             inline: 2,
           },
-          mangle: {
-            safari10: true,
-          },
           output: {
             comments: false,
             ascii_only: true,
           },
         },
-        parallel: !isWsl,
-        cache: true,
         sourceMap: shouldUseSourceMap,
       }),
       new OptimizeCSSAssetsPlugin({
@@ -281,14 +256,6 @@ module.exports = {
         filename: 'static/css/[name].[contenthash:8].css',
         chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
       }),
-
-    // Generate a manifest file which contains a mapping of all asset filenames
-    // to their corresponding output file so that tools can pick it up without
-    // having to parse `index.html`.
-    new ManifestPlugin({
-      fileName: 'asset-manifest.json',
-      publicPath,
-    }),
   ].filter(Boolean),
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
@@ -312,9 +279,6 @@ module.exports = {
     hot: true,
     publicPath: '/',
     stats: 'errors-only',
-    watchOptions: {
-      ignored: ignoredFiles,
-    },
     overlay: false,
     historyApiFallback: {
       disableDotRule: true,
