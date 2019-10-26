@@ -1,6 +1,5 @@
 module.exports = {
   collectCoverageFrom: ['src/**/*.{js,mjs}'],
-  setupFilesAfterEnv: ['@testing-library/react/cleanup-after-each'],
   testMatch: ['<rootDir>/src/**/__tests__/**/*.spec.{js,mjs}'],
   testEnvironment: 'jsdom',
   snapshotSerializers: ['jest-emotion'],
