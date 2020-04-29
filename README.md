@@ -2,19 +2,14 @@
 
 A simple boilerplate for starting new react projects.
 
-[![CI Status][ci-badge]][ci]
+![Build](https://github.com/xiaofan2406/react-starter-kit/workflows/Build/badge.svg)
 [![Coverage Status][coverage-badge]][coverage]
 [![Dependencies Status][dependencies-badge]][dependencies]
-[![Styled with prettier][prettier-badge]][prettier]
 
-[ci-badge]: https://img.shields.io/travis/xiaofan2406/react-starter-kit.svg?style=flat-square
-[ci]: https://travis-ci.org/xiaofan2406/react-starter-kit/branches
-[coverage-badge]: https://img.shields.io/codecov/c/github/xiaofan2406/react-starter-kit.svg?style=flat-square
+[coverage-badge]: https://img.shields.io/codecov/c/github/xiaofan2406/react-starter-kit.svg
 [coverage]: https://codecov.io/gh/xiaofan2406/react-starter-kit/branches
-[dependencies-badge]: https://img.shields.io/david/xiaofan2406/react-starter-kit.svg?style=flat-square
+[dependencies-badge]: https://img.shields.io/david/xiaofan2406/react-starter-kit.svg
 [dependencies]: https://david-dm.org/xiaofan2406/react-starter-kit
-[prettier-badge]: https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square
-[prettier]: https://github.com/prettier/prettier
 
 ## Getting started
 
