@@ -2,10 +2,12 @@
 
 A simple boilerplate for starting new react projects.
 
-![Build](https://github.com/xiaofan2406/react-starter-kit/workflows/Build/badge.svg)
+[![CI Status][ci-badge]][ci]
 [![Coverage Status][coverage-badge]][coverage]
 [![Dependencies Status][dependencies-badge]][dependencies]
 
+[ci-badge]: https://github.com/xiaofan2406/react-starter-kit/workflows/Build/badge.svg
+[ci]: https://github.com/xiaofan2406/react-starter-kit/actions
 [coverage-badge]: https://img.shields.io/codecov/c/github/xiaofan2406/react-starter-kit.svg
 [coverage]: https://codecov.io/gh/xiaofan2406/react-starter-kit/branches
 [dependencies-badge]: https://img.shields.io/david/xiaofan2406/react-starter-kit.svg
