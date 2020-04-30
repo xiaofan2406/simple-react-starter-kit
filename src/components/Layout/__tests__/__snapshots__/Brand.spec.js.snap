@@ -1,40 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches snapshot 1`] = `
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 12px;
-}
-
-.emotion-0 {
-  -webkit-animation: spin infinite 10s linear;
-  animation: spin infinite 10s linear;
-  height: 36px;
-}
-
-.emotion-1 {
-  -webkit-animation: fadeIn 2s ease;
-  animation: fadeIn 2s ease;
-  font-size: 18px;
-}
-
 <div
-  class="emotion-2"
+  class="flex items-center p-2"
 >
   <img
     alt="logo"
-    class="emotion-0"
+    class="spin h-10"
     src="logo.svg"
   />
   <span
-    class="emotion-1"
+    class="fade-in text-lg"
   >
     React Starter Kit
   </span>

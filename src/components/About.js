@@ -1,24 +1,9 @@
 import React from 'react';
-import { css } from '@emotion/core';
-import { verticalScroll, spacing, fontSizes } from '../styles';
 
 const About = () => (
   <div>
-    <div
-      css={css`
-        font-size: ${fontSizes.large}px;
-        font-weight: bold;
-        margin-bottom: ${spacing.external}px;
-      `}
-    >
-      About
-    </div>
-    <article
-      css={css`
-        height: 640px;
-        ${verticalScroll};
-      `}
-    >
+    <div className="font-bold mb-6 text-lg">About</div>
+    <article style={{ height: 640 }} className="vertical-scroll">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan
         consequat massa tempor condimentum. Integer id finibus erat. Aenean

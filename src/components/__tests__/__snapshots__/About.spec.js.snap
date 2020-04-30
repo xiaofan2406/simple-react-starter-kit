@@ -1,47 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`About component matches snapshot 1`] = `
-.emotion-0 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 16px;
-}
-
-.emotion-1 {
-  height: 640px;
-  overflow-y: scroll;
-}
-
-.emotion-1::-webkit-scrollbar {
-  width: 10px;
-  background-color: rgba(0,0,0,0);
-  border-radius: 40px;
-}
-
-.emotion-1::-webkit-scrollbar:hover {
-  background-color: rgba(0,0,0,0.09);
-}
-
-.emotion-1::-webkit-scrollbar-thumb:vertical {
-  background-color: rgba(0,0,0,0.5);
-  border-radius: 40px;
-  background-clip: padding-box;
-  border: 2px solid rgba(0,0,0,0);
-  min-height: 10px;
-}
-
-.emotion-1::-webkit-scrollbar-thumb:vertical:active {
-  background-color: rgba(0,0,0,0.61);
-}
-
 <div>
   <div
-    class="emotion-0"
+    class="font-bold mb-6 text-lg"
   >
     About
   </div>
   <article
-    class="emotion-1"
+    class="vertical-scroll"
+    style="height: 640px;"
   >
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan consequat massa tempor condimentum. Integer id finibus erat. Aenean sagittis justo eget mi tempor vestibulum. Donec nec eros convallis, scelerisque dui eu, congue sapien. Donec id tortor sit amet elit gravida semper ut sed ipsum. Pellentesque elit massa, commodo eget quam sit amet, malesuada rhoncus elit. Aliquam at malesuada turpis, ac finibus est. Maecenas vulputate ut risus at imperdiet.

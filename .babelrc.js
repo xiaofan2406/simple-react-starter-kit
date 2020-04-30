@@ -18,6 +18,7 @@ const presetEnvConfig = isTest
       useBuiltIns: 'usage',
       corejs: { version: 3 },
       modules: false,
+      exclude: ['transform-typeof-symbol'],
     };
 
 module.exports = {
@@ -25,16 +26,15 @@ module.exports = {
     ['@babel/preset-env', presetEnvConfig],
 
     ['@babel/preset-react', { development: !isProduction, useBuiltIns: true }],
-
-    '@emotion/babel-preset-css-prop',
   ],
   plugins: [
     ['@babel/plugin-proposal-class-properties', { loose: true }],
 
     ['@babel/plugin-proposal-object-rest-spread', { useBuiltIns: true }],
 
-    '@babel/plugin-syntax-dynamic-import',
-
-    isTest && 'babel-plugin-dynamic-import-node',
+    isProduction && [
+      'babel-plugin-transform-react-remove-prop-types',
+      { removeImport: true },
+    ],
   ].filter(Boolean),
 };

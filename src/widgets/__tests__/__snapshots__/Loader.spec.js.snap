@@ -1,56 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Loader matches snapshot 1`] = `
-.emotion-3 {
-  display: inline-block;
-}
-
-.emotion-2 {
-  width: 60px;
-  height: 60px;
-  position: relative;
-}
-
-.emotion-2 div {
-  width: 60px;
-  height: 60px;
-  border-style: solid;
-  border-width: 6px;
-  border-color: #00bcd4;
-  opacity: 0.4;
-  border-radius: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-perspective: 800px;
-  -moz-perspective: 800px;
-  -ms-perspective: 800px;
-  perspective: 800px;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-.emotion-0 {
-  -webkit-animation: loaderRigthRotate 2s 0s infinite linear;
-  animation: loaderRigthRotate 2s 0s infinite linear;
-}
-
-.emotion-1 {
-  -webkit-animation: loaderLeftRotate 2s 0s infinite linear;
-  animation: loaderLeftRotate 2s 0s infinite linear;
-}
-
 <div
-  class="emotion-3"
+  class="inline-block"
 >
   <div
-    class="emotion-2"
+    class="relative w-20 h-20"
   >
     <div
-      class="emotion-0"
+      class="border-solid border-blue-200 border-8 opacity-4 rounded-full absolute top-0 left-0 w-20 h-20 rotate-right fill-forwards"
     />
     <div
-      class="emotion-1"
+      class="border-solid border-blue-200 border-8 opacity-4 rounded-full absolute top-0 left-0 w-20 h-20 rotate-left fill-forwards"
     />
   </div>
 </div>

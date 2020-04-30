@@ -1,61 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout component matches snapshot 1`] = `
-.emotion-4 {
-  font-family: "Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  color: #242729;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 12px;
-}
-
-.emotion-0 {
-  -webkit-animation: spin infinite 10s linear;
-  animation: spin infinite 10s linear;
-  height: 36px;
-}
-
-.emotion-1 {
-  -webkit-animation: fadeIn 2s ease;
-  animation: fadeIn 2s ease;
-  font-size: 18px;
-}
-
-.emotion-3 {
-  width: 780px;
-  padding: 0px 12px;
-  margin: 36px auto;
-}
-
 <div
-  class="emotion-4"
+  class="font-sans text-base text-gray-800"
 >
   <div
-    class="emotion-2"
+    class="flex items-center p-2"
   >
     <img
       alt="logo"
-      class="emotion-0"
+      class="spin h-10"
       src="logo.svg"
     />
     <span
-      class="emotion-1"
+      class="fade-in text-lg"
     >
       React Starter Kit
     </span>
   </div>
   <div
-    class="emotion-3"
+    class="my-4 mx-auto w-3/4"
   >
     <div>
       child
