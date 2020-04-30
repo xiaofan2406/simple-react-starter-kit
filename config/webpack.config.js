@@ -11,49 +11,10 @@ const paths = require('./paths');
 const env = process.env.NODE_ENV;
 const isProduction = env === 'production';
 const isDevelopment = env === 'development';
+const isProductionProfile = isProduction && process.argv.includes('--profile');
 const shouldUseSourceMap = process.env.USE_SOURCEMAP !== 'false';
-const publicPath = isProduction ? paths.servedPath : '/';
 
-// Some apps do not use client-side routing with pushState.
-// For these, "homepage" can be set to "." to enable relative asset paths.
-const shouldUseRelativeAssetPaths = publicPath === './';
-
-// common function to get style loaders
-const getStyleLoaders = cssLoaderOptions =>
-  [
-    isDevelopment && 'style-loader',
-    isProduction && {
-      loader: MiniCssExtractPlugin.loader,
-      options: shouldUseRelativeAssetPaths ? { publicPath: '../../' } : {},
-    },
-    {
-      loader: 'css-loader',
-      options: cssLoaderOptions,
-    },
-    {
-      // Options for PostCSS as we reference these options twice
-      // Adds vendor prefixing based on your specified browser support in
-      // package.json
-      loader: 'postcss-loader',
-      options: {
-        // Necessary for external CSS imports to work
-        // https://github.com/facebook/create-react-app/issues/2677
-        ident: 'postcss',
-        plugins: () => [
-          require('postcss-flexbugs-fixes'),
-          require('postcss-preset-env')({
-            autoprefixer: { flexbox: 'no-2009' },
-            stage: 3,
-          }),
-          // Adds PostCSS Normalize as the reset css with default options,
-          // so that it honors browserslist config in package.json
-          // which in turn let's users customize the target behavior as per their needs.
-          require('postcss-normalize')(),
-        ],
-        sourceMap: isProduction && shouldUseSourceMap,
-      },
-    },
-  ].filter(Boolean);
+const publicPath = '/';
 
 module.exports = {
   mode: env,
@@ -83,6 +44,9 @@ module.exports = {
             .replace(/\\/g, '/')
       : isDevelopment &&
         (info => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')),
+    // this defaults to 'window', but by setting it to 'this' then
+    // module chunks which are built will work in web workers as well.
+    globalObject: 'this',
   },
   optimization: {
     minimize: isProduction,
@@ -95,6 +59,9 @@ module.exports = {
             comparisons: false,
             inline: 2,
           },
+          // Added for profiling in devtools
+          keep_classnames: isProductionProfile,
+          keep_fnames: isProductionProfile,
           output: {
             comments: false,
             ascii_only: true,
@@ -115,6 +82,9 @@ module.exports = {
               }
             : false,
         },
+        cssProcessorPluginOptions: {
+          preset: ['default', { minifyFontValues: { removeQuotes: false } }],
+        },
       }),
     ],
     // Automatically split vendor and commons
@@ -122,12 +92,22 @@ module.exports = {
     // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
     splitChunks: {
       chunks: 'all',
-      // TODO enable this will causes the vendors chunk not get injected in html
-      // name: false,
+      name: false,
     },
     // Keep the runtime chunk separated to enable long term caching
     // https://twitter.com/wSokra/status/969679223278505985
-    runtimeChunk: true,
+    runtimeChunk: {
+      name: entrypoint => `runtime-${entrypoint.name}`,
+    },
+  },
+  resolve: {
+    alias: {
+      // Allows for better profiling with ReactDevTools
+      ...(isProductionProfile && {
+        'react-dom$': 'react-dom/profiling',
+        'scheduler/tracing': 'scheduler/tracing-profiling',
+      }),
+    },
   },
   module: {
     strictExportPresence: true,
@@ -144,7 +124,7 @@ module.exports = {
           // smaller than specified limit in bytes as data URLs to avoid requests.
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: 'url-loader',
+            loader: require.resolve('url-loader'),
             options: {
               limit: 10000,
               name: 'static/media/[name].[hash:8].[ext]',
@@ -155,13 +135,13 @@ module.exports = {
           {
             test: /\.(js|mjs)$/,
             include: paths.appSrc,
-            loader: 'babel-loader',
+            loader: require.resolve('babel-loader'),
             options: {
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
               cacheDirectory: true,
-              cacheCompression: isProduction,
+              cacheCompression: false,
               compact: isProduction,
             },
           },
@@ -172,31 +152,47 @@ module.exports = {
           // In production, we use MiniCSSExtractPlugin to extract that CSS
           // to a file, but in development "style" loader enables hot editing
           // of CSS.
-          // By default we support CSS Modules with the extension .module.css
           {
             test: /\.css$/,
-            exclude: /\.module\.css$/,
-            use: getStyleLoaders({
-              importLoaders: 1,
-              sourceMap: isProduction && shouldUseSourceMap,
-            }),
+            use: [
+              isDevelopment && require.resolve('style-loader'),
+              isProduction && {
+                loader: MiniCssExtractPlugin.loader,
+              },
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  sourceMap: isProduction && shouldUseSourceMap,
+                },
+              },
+              {
+                // Options for PostCSS as we reference these options twice
+                // Adds vendor prefixing based on your specified browser support in
+                // package.json
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebook/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('tailwindcss'),
+                    require('postcss-flexbugs-fixes'),
+                    require('postcss-preset-env')({
+                      autoprefixer: { flexbox: 'no-2009' },
+                      stage: 0,
+                    }),
+                  ],
+                  sourceMap: isProduction && shouldUseSourceMap,
+                },
+              },
+            ].filter(Boolean),
+
             // Don't consider CSS imports dead code even if the
             // containing package claims to have no side effects.
             // Remove this when webpack adds a warning or an error for this.
             // See https://github.com/webpack/webpack/issues/6571
             sideEffects: true,
-          },
-
-          // Adds support for CSS Modules (https://github.com/css-modules/css-modules)
-          // using the extension .module.css
-          {
-            test: /\.module\.css$/,
-            use: getStyleLoaders({
-              importLoaders: 1,
-              sourceMap: isProduction && shouldUseSourceMap,
-              modules: true,
-              localIdentName: '[path][name]__[local]--[hash:base64:5]',
-            }),
           },
 
           // ** All ** new loaders must be added here, before file-loader!
@@ -207,7 +203,7 @@ module.exports = {
           // This loader doesn't use a "test" so it will catch all modules
           // that fall through the other loaders.
           {
-            loader: 'file-loader',
+            loader: require.resolve('file-loader'),
             // Exclude `js` files to keep "css" loader working as it injects
             // its runtime that would otherwise be processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
@@ -257,8 +253,7 @@ module.exports = {
         chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
       }),
   ].filter(Boolean),
-  // Some libraries import Node modules but don't use them in the browser.
-  // Tell Webpack to provide empty mocks for them so importing them works.
+
   node: {
     module: 'empty',
     dgram: 'empty',
@@ -275,9 +270,10 @@ module.exports = {
     compress: true,
     clientLogLevel: 'none',
     contentBase: `${paths.appSrc}/assets`,
+    contentBasePublicPath: publicPath,
     watchContentBase: true,
     hot: true,
-    publicPath: '/',
+    publicPath,
     stats: 'errors-only',
     overlay: false,
     historyApiFallback: {

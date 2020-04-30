@@ -1,35 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home component matches snapshot 1`] = `
-.emotion-0 {
-  font-size: 48px;
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.emotion-1 {
-  margin-top: 24px;
-}
-
-.emotion-1 td {
-  padding: 12px;
-}
-
 <div>
   <div
-    class="emotion-0"
+    class="text-6xl text-center mb-2"
   >
     Hello world!
   </div>
   <table
-    class="emotion-1"
+    class="mt-2"
   >
     <tbody>
       <tr>
-        <td>
+        <td
+          class="p-4"
+        >
           React
         </td>
-        <td>
+        <td
+          class="p-4"
+        >
           <a
             href="https://reactjs.org/docs/thinking-in-react.html"
             rel="noopener noreferrer"
@@ -38,7 +28,9 @@ exports[`Home component matches snapshot 1`] = `
             Docs
           </a>
         </td>
-        <td>
+        <td
+          class="p-4"
+        >
           <a
             href="https://github.com/facebook/react/"
             rel="noopener noreferrer"
@@ -49,10 +41,14 @@ exports[`Home component matches snapshot 1`] = `
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          class="p-4"
+        >
           Reach Router
         </td>
-        <td>
+        <td
+          class="p-4"
+        >
           <a
             href="https://reach.tech/router"
             rel="noopener noreferrer"
@@ -61,7 +57,9 @@ exports[`Home component matches snapshot 1`] = `
             Docs
           </a>
         </td>
-        <td>
+        <td
+          class="p-4"
+        >
           <a
             href="https://github.com/reach/router"
             rel="noopener noreferrer"
@@ -72,21 +70,27 @@ exports[`Home component matches snapshot 1`] = `
         </td>
       </tr>
       <tr>
-        <td>
-          Emotion
+        <td
+          class="p-4"
+        >
+          TailwindCSS
         </td>
-        <td>
+        <td
+          class="p-4"
+        >
           <a
-            href="https://emotion.sh/docs/composition"
+            href="https://tailwindcss.com"
             rel="noopener noreferrer"
             target="_blank"
           >
             Docs
           </a>
         </td>
-        <td>
+        <td
+          class="p-4"
+        >
           <a
-            href="https://github.com/emotion-js/emotion"
+            href="https://github.com/tailwindcss/tailwindcss"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -95,10 +99,14 @@ exports[`Home component matches snapshot 1`] = `
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          class="p-4"
+        >
           Create React App
         </td>
-        <td>
+        <td
+          class="p-4"
+        >
           <a
             href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents"
             rel="noopener noreferrer"
@@ -107,7 +115,9 @@ exports[`Home component matches snapshot 1`] = `
             Docs
           </a>
         </td>
-        <td>
+        <td
+          class="p-4"
+        >
           <a
             href="https://github.com/facebook/create-react-app/tree/master/packages/react-scripts"
             rel="noopener noreferrer"

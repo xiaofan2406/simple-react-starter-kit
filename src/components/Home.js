@@ -1,65 +1,50 @@
 import React from 'react';
-import { css } from '@emotion/core';
-import { spacing } from '../styles';
 import { Anchor } from '../widgets';
 
 const Home = () => (
   <div>
-    <div
-      css={css`
-        font-size: 48px;
-        text-align: center;
-        margin-bottom: ${spacing.breath}px;
-      `}
-    >
-      Hello world!
-    </div>
-    <table
-      css={css`
-        margin-top: ${spacing.breath}px;
-        & td {
-          padding: ${spacing.internal}px;
-        }
-      `}
-    >
+    <div className="text-6xl text-center mb-2">Hello world!</div>
+    <table className="mt-2">
       <tbody>
         <tr>
-          <td>React</td>
-          <td>
+          <td className="p-4">React</td>
+          <td className="p-4">
             <Anchor href="https://reactjs.org/docs/thinking-in-react.html">
               Docs
             </Anchor>
           </td>
-          <td>
+          <td className="p-4">
             <Anchor href="https://github.com/facebook/react/">Github</Anchor>
           </td>
         </tr>
         <tr>
-          <td>Reach Router</td>
-          <td>
+          <td className="p-4">Reach Router</td>
+          <td className="p-4">
             <Anchor href="https://reach.tech/router">Docs</Anchor>
           </td>
-          <td>
+          <td className="p-4">
             <Anchor href="https://github.com/reach/router">Github</Anchor>
           </td>
         </tr>
         <tr>
-          <td>Emotion</td>
-          <td>
-            <Anchor href="https://emotion.sh/docs/composition">Docs</Anchor>
+          <td className="p-4">TailwindCSS</td>
+          <td className="p-4">
+            <Anchor href="https://tailwindcss.com">Docs</Anchor>
           </td>
-          <td>
-            <Anchor href="https://github.com/emotion-js/emotion">Github</Anchor>
+          <td className="p-4">
+            <Anchor href="https://github.com/tailwindcss/tailwindcss">
+              Github
+            </Anchor>
           </td>
         </tr>
         <tr>
-          <td>Create React App</td>
-          <td>
+          <td className="p-4">Create React App</td>
+          <td className="p-4">
             <Anchor href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents">
               Docs
             </Anchor>
           </td>
-          <td>
+          <td className="p-4">
             <Anchor href="https://github.com/facebook/create-react-app/tree/master/packages/react-scripts">
               Github
             </Anchor>

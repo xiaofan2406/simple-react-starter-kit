@@ -1,37 +1,21 @@
 import React from 'react';
-import { css } from '@emotion/core';
 import { Link } from '@reach/router';
-import { theme, spacing } from '../styles';
 import { NAV_LINKS } from '../utils/constants';
 
-const cssNavigation = css`
-  position: fixed;
-  left: ${spacing.unit}px;
-  bottom: ${spacing.unit}px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid ${theme.borderColor};
-`;
-
-const cssLink = css`
-  text-decoration: none;
-  padding: 0.5em;
-  display: inline-block;
-  &:hover {
-    background-color: ${theme.borderColor};
-  }
-`;
+const linkClassNames = 'p-1 inline-block hover:bg-gray-100';
 
 const Navigation = () => (
-  <div css={cssNavigation}>
+  <div className="fixed left-0 bottom-0 m-2 flex flex-col border-solid border border-gray-100">
     {NAV_LINKS.map(link => (
       <Link
         key={link.to}
         to={link.to}
-        css={cssLink}
+        className={linkClassNames}
         getProps={({ isCurrent }) =>
           isCurrent
-            ? { style: { borderRight: `2px solid ${theme.primaryColor}` } }
+            ? {
+                className: `${linkClassNames} border-r-2 border-solid border-blue-500`,
+              }
             : null
         }
       >

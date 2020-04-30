@@ -1,5 +1,3 @@
-import { css } from '@emotion/core';
-
 export const colors = {
   blue: '#00bcd4',
   black: '#242729',
@@ -28,25 +26,3 @@ export const theme = {
   fontSize: fontSizes.regular,
   textColor: colors.black,
 };
-
-export const verticalScroll = css`
-  overflow-y: scroll;
-  &::-webkit-scrollbar {
-    width: 10px;
-    background-color: rgba(0, 0, 0, 0);
-    border-radius: 40px;
-  }
-  &::-webkit-scrollbar:hover {
-    background-color: rgba(0, 0, 0, 0.09);
-  }
-  &::-webkit-scrollbar-thumb:vertical {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 40px;
-    background-clip: padding-box;
-    border: 2px solid rgba(0, 0, 0, 0);
-    min-height: 10px;
-  }
-  &::-webkit-scrollbar-thumb:vertical:active {
-    background-color: rgba(0, 0, 0, 0.61);
-  }
-`;
