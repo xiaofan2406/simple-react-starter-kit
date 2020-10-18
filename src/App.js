@@ -1,6 +1,6 @@
 import React from 'react';
-import { Router } from '@reach/router';
-import { Layout, Home, Navigation, NotFound } from './components';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Layout, Home, Navigation } from './components';
 import './styles/index.css';
 
 const About = React.lazy(() =>
@@ -11,17 +11,29 @@ const Contact = React.lazy(() =>
   import(/* webpackChunkName: "Contact" */ './components/Contact')
 );
 
+const NotFound = React.lazy(() =>
+  import(/* webpackChunkName: "NotFound" */ './components/NotFound')
+);
+
 const App = () => (
   <React.Suspense fallback="loading...">
-    <Layout>
-      <Router>
-        <NotFound default />
-        <Home path="/" />
-        <About path="/about" />
-        <Contact path="/contact" />
-      </Router>
-      <Navigation />
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+        <Navigation />
+      </Layout>
+    </BrowserRouter>
   </React.Suspense>
 );
 

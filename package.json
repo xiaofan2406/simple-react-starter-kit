@@ -5,7 +5,7 @@
   "description": "A simple boilerplate for starting new React projects.",
   "keywords": [
     "react",
-    "@reach/router",
+    "react-router",
     "tailwindcss",
     "boilerplate"
   ],
@@ -52,10 +52,10 @@
     "Edge >= 15"
   ],
   "dependencies": {
-    "@reach/router": "^1.3.3",
     "core-js": "^3.6.5",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-router-dom": "^5.2.0",
     "tailwindcss": "^1.4.0"
   },
   "devDependencies": {
