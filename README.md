@@ -26,7 +26,7 @@ yarn dev
 
 ### Built With
 
-- [Reach Router](https://reach.tech/router)
+- [React Router](https://reactrouter.com/web/guides/quick-start)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Create React App](https://github.com/facebook/create-react-app)
 - [Jest](https://facebook.github.io/jest)

@@ -4,7 +4,6 @@ exports[`NotFound component matches snapshot 1`] = `
 <div>
   404 Nothing here. Go to 
   <a
-    aria-current="page"
     href="/"
   >
     homepage
