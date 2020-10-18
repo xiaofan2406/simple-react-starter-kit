@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { expect, test } from '@jest/globals';
 import Anchor from '../Anchor';
 
 test('Anchor matches snapshot', () => {
