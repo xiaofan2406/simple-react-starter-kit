@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const safePostCssParser = require('postcss-safe-parser');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const paths = require('./paths');
 
 const env = process.env.NODE_ENV;
@@ -13,18 +14,17 @@ const isProduction = env === 'production';
 const isDevelopment = env === 'development';
 const isProductionProfile = isProduction && process.argv.includes('--profile');
 const shouldUseSourceMap = process.env.USE_SOURCEMAP !== 'false';
-
 const publicPath = '/';
 
 module.exports = {
-  mode: env,
+  mode: isProduction ? 'production' : isDevelopment && 'development',
   bail: isProduction,
   devtool: isProduction
     ? shouldUseSourceMap
       ? 'source-map'
       : false
     : isDevelopment && 'cheap-module-source-map',
-  entry: [`${paths.appSrc}/index.js`],
+  entry: `${paths.appSrc}/index.js`,
   output: {
     path: isProduction ? paths.appDist : undefined,
     // Add /* filename */ comments to generated require()s in the output.
@@ -172,17 +172,19 @@ module.exports = {
                 // package.json
                 loader: require.resolve('postcss-loader'),
                 options: {
-                  // Necessary for external CSS imports to work
-                  // https://github.com/facebook/create-react-app/issues/2677
-                  ident: 'postcss',
-                  plugins: () => [
-                    require('tailwindcss'),
-                    require('postcss-flexbugs-fixes'),
-                    require('postcss-preset-env')({
-                      autoprefixer: { flexbox: 'no-2009' },
-                      stage: 0,
-                    }),
-                  ],
+                  postcssOptions: {
+                    plugins: [
+                      require.resolve('tailwindcss'),
+                      require.resolve('postcss-flexbugs-fixes'),
+                      [
+                        require.resolve('postcss-preset-env'),
+                        {
+                          autoprefixer: { flexbox: 'no-2009' },
+                          stage: 0,
+                        },
+                      ],
+                    ],
+                  },
                   sourceMap: isProduction && shouldUseSourceMap,
                 },
               },
@@ -244,6 +246,8 @@ module.exports = {
     }),
 
     isDevelopment && new webpack.HotModuleReplacementPlugin(),
+
+    isDevelopment && new ReactRefreshWebpackPlugin(),
 
     isProduction &&
       new MiniCssExtractPlugin({

@@ -36,5 +36,7 @@ module.exports = {
       'babel-plugin-transform-react-remove-prop-types',
       { removeImport: true },
     ],
+
+    isDevelopment && 'react-refresh/babel',
   ].filter(Boolean),
 };
