@@ -172,19 +172,15 @@ module.exports = {
                 // package.json
                 loader: require.resolve('postcss-loader'),
                 options: {
-                  postcssOptions: {
-                    plugins: [
-                      require.resolve('tailwindcss'),
-                      require.resolve('postcss-flexbugs-fixes'),
-                      [
-                        require.resolve('postcss-preset-env'),
-                        {
-                          autoprefixer: { flexbox: 'no-2009' },
-                          stage: 0,
-                        },
-                      ],
-                    ],
-                  },
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('tailwindcss'),
+                    require('postcss-flexbugs-fixes'),
+                    require('postcss-preset-env')({
+                      autoprefixer: { flexbox: 'no-2009' },
+                      stage: 0,
+                    }),
+                  ],
                   sourceMap: isProduction && shouldUseSourceMap,
                 },
               },
